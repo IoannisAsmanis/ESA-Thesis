@@ -5,7 +5,7 @@
 % fileID_diff = fopen('logs/20190912-1551/diff_pose.txt','r');
 
 %Read fil (46 extra char)
-[t, x, y, z]=textread('logs/20190912-1551/odom_world.txt', '%d%*f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+[t, x, y, z]=textread('logs/20190912-1551/odom_world.txt', '%d%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
 odom_pose = [t, x, y, z];
 [t, x, y, z]=textread('logs/20190912-1551/diff_pose.txt', '%d%f%f%f%*[^\n]', 'headerlines', 3, 'delimiter', '\t');
 diff_pose = [t, x, y, z];
