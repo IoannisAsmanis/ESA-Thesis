@@ -20,7 +20,11 @@ diff_pose = [t, x, y, z];
 gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
 
 figure(1);
-%plot(odom_pose(:,2), odom_pose(:,3), 'r', '-*', gt_pose(:,2), gt_pose(:,3), 'g', '-*');
+plot(odom_pose(:,2), odom_pose(:,3), 'r-', gt_pose(:,2), gt_pose(:,3), 'g-');
+legend('Visual Oodometry pose', 'GT pose'), grid on;
+xlabel('x'), ylabel('y'), title('XY Plane Visual Odometry Evaluation');
+
+figure(2);
 step = 10;
 plot(odom_pose(1:step:end,2), odom_pose(1:step:end,3), 'r-*', gt_pose(1:step:end,2), gt_pose(1:step:end,3), 'g-*');
 legend('Visual Oodometry pose', 'GT pose'), grid on;
