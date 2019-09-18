@@ -4,18 +4,46 @@
 % path = 'logs/20190912-1551';
 % path = 'logs/20190913-1250';
 % path = 'logs/20190913-1239.1';
-path = 'logs/20190913-1314';
+% path = 'logs/20190913-1314'; %not too far from 2%
 % path = 'logs/20190913-1436';
 % path = 'logs/20190913-1646';
 % path = 'logs/20190913-1707';
+% path = 'logs/20190916-1428';
+% path = 'logs/20190916-1530';
+% path = 'logs/20190916-1716';
+% path = 'logs/20190916-1811';
+% path = 'logs/20190916-1815';
+% path = 'logs/20190916-1840';
+% path = 'logs/20190916-1857';
+% path = 'logs/20190918-1108';
+path = 'logs/20190918-1521';
+% path = 'logs/20190918-1558';
+% path = 'logs/20190918-1609';
 
-% Read files 
+
+% Read odometry file
 [t, x, y, z, a, b, c, d]=textread(horzcat(path,'/odom_world.txt'), ...
-    '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 3, 'delimiter', '\t');
+    '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
 odom_pose = [t, x, y, z, a, b, c, d];
+
+% Read difference odometry/vicon file
 [t, x, y, z, a, b, c, d]=textread(horzcat(path,'/diff_pose.txt'), ...
     '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
 diff_pose = [t, x, y, z, a, b, c, d];
+
+% Read motion control file
+[ tr, rot, hdg]=textread(horzcat(path,'/control.txt'), ...
+    '%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+
+% Read control time file
+t=textread(horzcat(path,'/control_time.txt'), ...
+    '%d', 'headerlines', 2);
+control = [t, tr, rot];
+
+% Read joystick file
+% [t, a0, a1, a2, a3, a4, a5, b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11]=textread(horzcat(path,'/joystick_raw.txt'), ...
+%     '%*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %f %f %f %f %f %f %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %*d %f %f %f %f %f %f %f %f %f %f %f %f', 'headerlines', 2);
+% joystick_raw = [t, a0, a1, a2, a3, a4, a5, b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11];
 
 
 %% PROCESS DATA
@@ -32,6 +60,13 @@ gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
 diff_norm = zeros(size(diff_pose,1),1);
 for i = 1:size(diff_pose,1)
     diff_norm(i) = norm(diff_pose(i,2:3));
+end
+
+% travelled distance up to now
+dist_accum = zeros(size(odom_pose,1),1);
+for i = 2:size(odom_pose,1)
+    dist_accum(i) = norm(gt_pose(i,2:4) - gt_pose(i-1,2:4));
+    dist_accum(i) = dist_accum(i) + dist_accum(i-1);
 end
 
 
@@ -61,13 +96,15 @@ plot(odom_pose(1:step:end,1), odom_pose(1:step:end,4), 'r-*', gt_pose(1:step:end
 legend('Visual Oodometry pose', 'GT pose'), grid on;
 xlabel('time [s]'), ylabel('z [m]'), title('Visual Odometry Evaluation - Z over Time');
 
-% xy error norm over time
+% xy error norm over time vs 2% distance travelled
 figure(5);
-plot(diff_pose(:,1), diff_norm);
-grid on;
+plot(diff_pose(:,1), diff_norm, 'b-', diff_pose(:,1), dist_accum.*0.02, 'r-');
+grid on, legend('xy error norm', '2% travelled distance');
 xlabel('time [s]'), ylabel('xy error [m]'), title('Visual Odometry Evaluation - xy error norm');
 
-
-
-
+% x and y components error over time and control
+figure(6);
+plot(diff_pose(:,1), diff_pose(:,2), 'b-', diff_pose(:,1), diff_pose(:,3), 'r-');
+grid on, legend('x error', 'y error');
+xlabel('time [s]'), ylabel('xy error [m]'), title('Visual Odometry Evaluation - x y error components');
 
