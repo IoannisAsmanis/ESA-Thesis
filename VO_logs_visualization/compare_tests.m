@@ -69,16 +69,14 @@ end
 
 %% PLOT DATA
 
-% xy error norm over time vs 2% distance travelled
+% xy error norm over time vs distance travelled
 figure(1);
 hold on
 for i=1:n_logs
     plot(dist_accum_ca{i}, diff_norm_ca{i});
     grid on;
-    xlabel('time [s]'), ylabel('xy error [m]')
+    xlabel('distance travelled [m]'), ylabel('xy error [m]')
 end
 title('Visual Odometry Evaluation - xy error norm');
 legend(path_ca);
-% for i=1:n_logs
-%     legend(horzcat('xy error norm',path_ca{i}))
-% end
+
