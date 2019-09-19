@@ -16,9 +16,12 @@
 % path = 'logs/20190916-1840';
 % path = 'logs/20190916-1857';
 % path = 'logs/20190918-1108';
-path = 'logs/20190918-1521';
+% path = 'logs/20190918-1521';
 % path = 'logs/20190918-1558';
 % path = 'logs/20190918-1609';
+% path = 'logs/20190918-1806';
+% path = 'logs/20190918-1808';
+path = 'logs/20190918-1820';
 
 
 % Read odometry file
