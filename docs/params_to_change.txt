@@ -1,0 +1,26 @@
+tasks parameters
+   camera_firewire:
+        - exposure and exposure mode: auto/manual
+        - fps or right/left _frame_period in bumblebee
+        - gain
+        - gamma
+    viso2_with_imu: no changes
+    viso2_evaluation:
+    viso2:
+        - ransac_iters
+        - inliers_threshold
+        - match
+        - bucket
+
+Experiment parameters
+    speed: 
+        - motion_command.translation = 0 to 1.5
+        - are we interested in backwards translation?
+    turning speed:
+        - ackermann turn: motion_command.rotation = 0 to 1.5 combined with motion_commandn.translation = 0 to 1.5
+        - point turn: motion_command.rotation = 0 to 1.5
+    camera pointing
+    camera height
+    ambient light: can it be changed "externally" (switch off the lab lights) or must be simulated in software (reducing exposure)?
+    terrain texture : featureless sand, sand with tiny rocks, small rocks, big white-ish rocks
+    terrain morphology: flat, flat with slope in front, slope, slope with flat in front 

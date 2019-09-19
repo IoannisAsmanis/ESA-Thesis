@@ -1,0 +1,4 @@
+scp -rp marta@exoter:~/rock/bundles/exoter/logs/20190910-1035 ~/mdblogs/  
+pocolog unit_visual_odometry.0.log -s /viso2_evaluation.odometry_in_world_pose >> odom_world.txt
+
+
