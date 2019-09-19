@@ -1,13 +1,16 @@
 %% COMPARE MULTIPLE EXPERIMENTS
 clear all
+close all
+% clc
 
 
 %% OPEN FILES AND PROCESS DATA
 
 path_ca = {
-    'logs/20190918-1521', 
-    'logs/20190918-1609', 
-    'logs/20190918-1820'}; 
+    'logs/20190919-1342', 
+    'logs/20190919-1352', 
+    'logs/20190919-1359'}; 
+
 n_logs = size(path_ca,1);
 
 diff_pose_ca = cell(1,n_logs);
@@ -19,12 +22,12 @@ for i=1:n_logs
     
     % Read odometry file
     [t, x, y, z, a, b, c, d]=textread(horzcat(path_ca{i},'/odom_world.txt'), ...
-        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 3, 'delimiter', '\t');
     odom_pose = [t, x, y, z, a, b, c, d];
     
     % Read difference odometry/vicon file
     [t, x, y, z, a, b, c, d]=textread(horzcat(path_ca{i},'/diff_pose.txt'), ...
-        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 3, 'delimiter', '\t');
     diff_pose = [t, x, y, z, a, b, c, d];
     
     % Read control file
@@ -36,15 +39,20 @@ for i=1:n_logs
         '%d', 'headerlines', 2);
     t(size(tr,1)) = t(end);
     control = [t, tr, rot];
-        
-    % Create GT pose (gt = diff + odom)
-    gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
     
     % Normalize time
     odom_pose(:,1) = (odom_pose(:,1) - odom_pose(1,1))/10^6;
     diff_pose(:,1) = (diff_pose(:,1) - diff_pose(1,1))/10^6;
-    gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
+%     gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
     control(:,1) = (control(:,1) - control(1,1))/10^6;
+    
+    % Create GT pose (gt = diff + odom)
+    gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
+    
+    % cut neg time part
+    gt_pose(gt_pose(:,1)<0,:) = [];
+    diff_pose(diff_pose(:,1)<0,:) = [];
+    odom_pose(odom_pose(:,1)<0,:) = [];
     
     % compute error norm
     diff_norm = zeros(size(diff_pose,1),1);
@@ -77,6 +85,19 @@ for i=1:n_logs
     grid on;
     xlabel('distance travelled [m]'), ylabel('xy error [m]')
 end
-title('Visual Odometry Evaluation - xy error norm');
+title({'Visual Odometry Evaluation', 'xy error norm vs travelled distance'});
 legend(path_ca);
+hold off
+
+% xy error norm over time vs time
+figure(2);
+hold on
+for i=1:n_logs
+    plot(diff_pose_ca{i}(:,1), diff_norm_ca{i});
+    grid on;
+    xlabel('time [s]'), ylabel('xy error [m]')
+end
+title({'Visual Odometry Evaluation', 'xy error norm vs time'});
+legend(path_ca);
+hold off
 
