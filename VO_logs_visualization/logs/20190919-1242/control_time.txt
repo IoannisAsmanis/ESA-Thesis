@@ -1,5 +1,4 @@
 pocolog.rb[INFO]: building index ./control.0.idx ...
-pocolog.rb[INFO]: done
 /motion_translator.motion_command_time.microseconds
 1568889788277620
 1568889788377468
@@ -2403,4 +2402,5 @@ pocolog.rb[INFO]: done
 1568890028177585
 1568890028277596
 1568890028377599
+1568890028477575
 1568890028477575

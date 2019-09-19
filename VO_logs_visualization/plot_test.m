@@ -21,7 +21,13 @@
 % path = 'logs/20190918-1609'; %test
 % path = 'logs/20190918-1806'; %control
 % path = 'logs/20190918-1808'; %control
-path = 'logs/20190918-1820'; %test
+% path = 'logs/20190918-1820'; %test
+% path = 'logs/20190919-1242'; %control
+% path = 'logs/20190919-1255'; %control
+% path = 'logs/20190919-1308'; %control
+% path = 'logs/20190919-1342'; %test
+% path = 'logs/20190919-1352'; %test
+% path = 'logs/20190919-1359'; %test
 
 
 % Read odometry file
