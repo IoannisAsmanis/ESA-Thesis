@@ -28,6 +28,7 @@
 % path = 'logs/20190919-1342'; %test
 % path = 'logs/20190919-1352'; %test
 % path = 'logs/20190919-1359'; %test
+path = 'logs/20190919-1521'; %test
 
 
 % Read odometry file
@@ -126,7 +127,11 @@ plot(control(:,1), control(:,2), control(:,1), control(:,3));
 grid on, legend('translation', 'rotation');
 xlabel('time [s]'), ylabel('command'), title('Visual Odometry Evaluation - translation and rotation commands');
 
-
+% z over distance travelled
+figure(8);
+plot(dist_accum, gt_pose(:,4));
+grid on;
+xlabel('distance [m]'), ylabel('z [m]'), title('Visual Odometry Evaluation - z over distance travelled');
 
 
 

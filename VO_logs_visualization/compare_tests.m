@@ -7,7 +7,7 @@ close all
 %% OPEN FILES AND PROCESS DATA
 
 path_ca = {
-    'logs/20190919-1342', 
+    'logs/20190919-1521', 
     'logs/20190919-1352', 
     'logs/20190919-1359'}; 
 
@@ -78,7 +78,7 @@ end
 %% PLOT DATA
 
 % xy error norm over time vs distance travelled
-figure(1);
+figure(101);
 hold on
 for i=1:n_logs
     plot(dist_accum_ca{i}, diff_norm_ca{i});
@@ -90,7 +90,7 @@ legend(path_ca);
 hold off
 
 % xy error norm over time vs time
-figure(2);
+figure(102);
 hold on
 for i=1:n_logs
     plot(diff_pose_ca{i}(:,1), diff_norm_ca{i});
