@@ -41,6 +41,7 @@ diff_pose = [t, x, y, z, a, b, c, d];
 % Read control time file
 t=textread(horzcat(path,'/control_time.txt'), ...
     '%d', 'headerlines', 2);
+t(end+1) = t(end);
 control = [t, tr, rot];
 
 % Read joystick file
@@ -58,6 +59,8 @@ gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
 odom_pose(:,1) = (odom_pose(:,1) - odom_pose(1,1))/10^6;
 diff_pose(:,1) = (diff_pose(:,1) - diff_pose(1,1))/10^6;
 gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
+control(:,1) = (control(:,1) - control(1,1))/10^6;
+
 
 % compute error norm
 diff_norm = zeros(size(diff_pose,1),1);
@@ -111,3 +114,8 @@ plot(diff_pose(:,1), diff_pose(:,2), 'b-', diff_pose(:,1), diff_pose(:,3), 'r-')
 grid on, legend('x error', 'y error');
 xlabel('time [s]'), ylabel('xy error [m]'), title('Visual Odometry Evaluation - x y error components');
 
+% control 
+figure(7);
+plot(control(:,1), control(:,2), control(:,1), control(:,3));
+grid on, legend('translation', 'rotation');
+xlabel('time [s]'), ylabel('command'), title('Visual Odometry Evaluation - translation and rotation commands');
