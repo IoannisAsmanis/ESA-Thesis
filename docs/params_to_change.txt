@@ -2,8 +2,6 @@ tasks parameters
    camera_firewire:
         - exposure and exposure mode: auto/manual
         - fps or right/left _frame_period in bumblebee
-        - gain
-        - gamma
     viso2_with_imu: no changes
     viso2_evaluation:
     viso2:

@@ -7,7 +7,7 @@ close all
 %% OPEN FILES AND PROCESS DATA
 
 path_ca = {
-    'logs/20190919-1521', 
+    'logs/20190919-1521', %1521 %1342 %1628
     'logs/20190919-1352', 
     'logs/20190919-1359'}; 
 
@@ -72,6 +72,8 @@ for i=1:n_logs
     odom_pose_ca{i} = odom_pose;
     diff_norm_ca{i} = diff_norm;
     dist_accum_ca{i} = dist_accum;
+    control_ca{i} = control;
+    gt_pose_ca{i} = gt_pose;
 end
 
 
@@ -101,3 +103,26 @@ title({'Visual Odometry Evaluation', 'xy error norm vs time'});
 legend(path_ca);
 hold off
 
+% control over time
+figure(103);
+hold on
+for i=1:n_logs
+    plot(control_ca{i}(:,1), control_ca{i}(:,2));
+    grid on;
+    xlabel('time [s]'), ylabel('command [m/s]')
+end
+title({'Visual Odometry Evaluation', 'control signal vs time'});
+legend(path_ca);
+hold off
+
+% ground truth trajectory on xy plane
+figure(104);
+hold on
+for i=1:n_logs
+    plot(gt_pose_ca{i}(:,2), gt_pose_ca{i}(:,3));
+    grid on;
+    xlabel('x [m]'), ylabel('y [m]')
+end
+title({'Visual Odometry Evaluation', 'ground truth trajectory'});
+legend(path_ca);
+hold off
