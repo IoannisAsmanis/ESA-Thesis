@@ -40,10 +40,14 @@ for i=1:n_logs
     t(size(tr,1)) = t(end);
     control = [t, tr, rot];
     
+    % align control signals
+    control(control(:,2) == 0, :) = [];
+    % add end of control signal
+    control(end+1,:) = [control(end,1) 0 0];
+    
     % Normalize time
     odom_pose(:,1) = (odom_pose(:,1) - odom_pose(1,1))/10^6;
     diff_pose(:,1) = (diff_pose(:,1) - diff_pose(1,1))/10^6;
-%     gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
     control(:,1) = (control(:,1) - control(1,1))/10^6;
     
     % Create GT pose (gt = diff + odom)
