@@ -72,7 +72,6 @@ diff_pose(:,1) = (diff_pose(:,1) - diff_pose(1,1))/10^6;
 gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
 % control(:,1) = (control(:,1) - control(1,1))/10^6;
 
-
 % compute error norm
 diff_norm = zeros(size(diff_pose,1),1);
 for i = 1:size(diff_pose,1)
@@ -92,25 +91,25 @@ end
 % xy plot - line
 figure(1);
 plot(odom_pose(:,2), odom_pose(:,3), 'r-', gt_pose(:,2), gt_pose(:,3), 'g-');
-legend('Visual Oodometry pose', 'GT pose'), grid on;
+legend('Visual Oodometry pose', 'GT pose'), grid on, axis equal;
 xlabel('x [m]'), ylabel('y [m]'), title('Visual Odometry Evaluation - XY Plane');
 % xy plot - dotted line
 figure(2);
 step = 10;
 plot(odom_pose(1:step:end,2), odom_pose(1:step:end,3), 'r-*', gt_pose(1:step:end,2), gt_pose(1:step:end,3), 'g-*');
-legend('Visual Oodometry pose', 'GT pose'), grid on;
+legend('Visual Oodometry pose', 'GT pose'), grid on, axis equal;
 xlabel('x [m]'), ylabel('y [m]'), title('Visual Odometry Evaluation - XY Plane');
 
 % % zt plot - line
 % figure(3);
 % plot(odom_pose(:,1), odom_pose(:,4), 'r-', gt_pose(:,1), gt_pose(:,4), 'g-');
-% legend('Visual Oodometry pose', 'GT pose'), grid on;
+% legend('Visual Oodometry pose', 'GT pose'), grid on, axis equal;
 % xlabel('time [s]'), ylabel('z [m]'), title('Visual Odometry Evaluation - Z over Time');
 % % zt plot - dotted line
 % figure(4);
 % step = 10;
 % plot(odom_pose(1:step:end,1), odom_pose(1:step:end,4), 'r-*', gt_pose(1:step:end,1), gt_pose(1:step:end,4), 'g-*');
-% legend('Visual Oodometry pose', 'GT pose'), grid on;
+% legend('Visual Oodometry pose', 'GT pose'), grid on, axis equal;
 % xlabel('time [s]'), ylabel('z [m]'), title('Visual Odometry Evaluation - Z over Time');
 
 % xy error norm over time vs 2% distance travelled
@@ -128,34 +127,34 @@ xlabel('time [s]'), ylabel('xy error [m]'), title('Visual Odometry Evaluation - 
 % x and y components error and x and y trajectory over time 
 figure(6);
 subplot(2,1,1), plot(diff_pose(:,1), diff_pose(:,2), 'b-', diff_pose(:,1), diff_pose(:,3), 'r-');
-title({'Visual Odometry Evaluation', 'x y error components vs x y ground truth'})
+title({'Visual Odometry Evaluation', 'x y error components vs x y ground truth over time'})
 grid on, legend('x error', 'y error');
 subplot(2,1,2), plot(gt_pose(:,1), gt_pose(:,2), gt_pose(:,1), gt_pose(:,3));
 grid on, legend('GT x', 'GT y');
 xlabel('time [s]'), ylabel('xy error [m]');
 
-% % control 
+% % control over time
 % figure(7);
 % plot(control(:,1), control(:,2), control(:,1), control(:,3));
 % grid on, legend('translation', 'rotation');
 % xlabel('time [s]'), ylabel('command'), title('Visual Odometry Evaluation - translation and rotation commands');
-% 
+
 % % z over distance travelled
 % figure(8);
 % plot(dist_accum, gt_pose(:,4));
 % grid on;
 % xlabel('distance [m]'), ylabel('z [m]'), title('Visual Odometry Evaluation - z over distance travelled');
-% 
+
 % % xy gt plot over time - line
 % figure(9);
 % plot(gt_pose(:,1), gt_pose(:,2), 'r-', gt_pose(:,1), gt_pose(:,3), 'g-');
 % legend('x pose from vicon', 'y pose from vicon'), grid on;
 % xlabel('time [s]'), ylabel('x,y [m]'), title('Visual Odometry Evaluation - ');
-% 
+
 % % xy vo plot over time - line
 % figure(10);
 % plot(odom_pose(:,1), odom_pose(:,2), 'r-', odom_pose(:,1), odom_pose(:,3), 'g-');
-% legend('x pose from vo', 'y pose from vo'), grid on;
+% legend('x pose from vo', 'y pose from vo'), grid on, axis equal;
 % xlabel('time [s]'), ylabel('x,y [m]'), title('Visual Odometry Evaluation - ');
 
 

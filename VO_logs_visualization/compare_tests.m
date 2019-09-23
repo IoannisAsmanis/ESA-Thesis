@@ -116,13 +116,14 @@ legend(path_ca);
 hold off
 
 % ground truth trajectory on xy plane
+% xLim = [0.5 4.5]; yLim = [0.5 4.5];
 figure(104);
 hold on
 for i=1:n_logs
     plot(gt_pose_ca{i}(:,2), gt_pose_ca{i}(:,3));
-    grid on;
     xlabel('x [m]'), ylabel('y [m]')
 end
 title({'Visual Odometry Evaluation', 'ground truth trajectory'});
+grid on, axis equal; % xlim(xLim), ylim(yLim);
 legend(path_ca);
 hold off
