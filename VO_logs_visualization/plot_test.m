@@ -1,4 +1,7 @@
 %% IMPORT DATA
+clear all
+close all
+
 
 % set log path (uncomment one)
 path = 'logs/20190912-1551';
@@ -32,7 +35,8 @@ path = 'logs/20190916-1428'; % move along x and then along y ---
 % path = 'logs/20190919-1521'; %test
 % path = 'logs/20190919-1628'; %test
 % path = 'logs/20190919-1740'; %test
-path = 'logs/20190923-1327'; %point turn heading 
+% path = 'logs/20190923-1327'; %point turn heading 
+path = 'logs/20190923-1723'; %point turn heading 
 
 
 
@@ -59,7 +63,7 @@ diff_pose = [t, x, y, z, a, b, c, d];
 % read real gt file
 [t, x, y, z, b, c, d, a]=textread(horzcat(path,'/gt_pose.txt'), ...
     '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
-gt_pose2 = [t, x, y, z, a, b, c, d];
+gt_pose = [t, x, y, z, a, b, c, d];
 
 % read odom heading file
 [hdg]=textread(horzcat(path,'/odometry_heading.txt'), ...
@@ -69,7 +73,7 @@ odom_pose(:,9) = hdg;
 % read gt heading file
 [hdg]=textread(horzcat(path,'/gt_heading.txt'), ...
     '%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
-gt_pose2(:,9) = hdg;
+gt_pose(:,9) = hdg;
 
 % % Read joystick file
 % % [t, a0, a1, a2, a3, a4, a5, b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11]=textread(horzcat(path,'/joystick_raw.txt'), ...
@@ -79,15 +83,27 @@ gt_pose2(:,9) = hdg;
 
 %% PROCESS DATA
 
+% convert odom quaternion to odom heading
+hdg = quaternion2heading(odom_pose(:,5:8));
+% odom_pose(:,9) = hdg;
+
+% convert gt quaternion to gt heading
+hdg = quaternion2heading(gt_pose(:,5:8));
+% gt_pose(:,9) = hdg;
+
+% convert diff quaternion to diff heading
+hdg = quaternion2heading(diff_pose(:,5:8));
+diff_pose(:,9) = hdg;
+
 % Create GT pose (gt = diff + odom)
-%gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
+gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
 
 % Normalize time
 odom_pose(:,1) = (odom_pose(:,1) - odom_pose(1,1))/10^6;
 diff_pose(:,1) = (diff_pose(:,1) - diff_pose(1,1))/10^6;
-%gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
+gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
 % control(:,1) = (control(:,1) - control(1,1))/10^6;
-gt_pose2(:,1) = (gt_pose2(:,1) - gt_pose2(1,1))/10^6;
+% gt_pose2(:,1) = (gt_pose2(:,1) - gt_pose2(1,1))/10^6;
 
 % compute error norm
 diff_norm = zeros(size(diff_pose,1),1);
@@ -95,20 +111,12 @@ for i = 1:size(diff_pose,1)
     diff_norm(i) = norm(diff_pose(i,2:3));
 end
 
-% % travelled distance up to now
-% dist_accum = zeros(size(odom_pose,1),1);
-% for i = 2:size(odom_pose,1)
-%     dist_accum(i) = norm(gt_pose(i,2:4) - gt_pose(i-1,2:4));
-%     dist_accum(i) = dist_accum(i) + dist_accum(i-1);
-% end
-
-% % convert odom quaternion to odom heading
-% hdg = quaternion2heading(odom_pose(:,5:8));
-% odom_pose(:,9) = hdg;
-% 
-% % convert gt quaternion to gt heading
-% hdg = quaternion2heading(gt_pose(:,5:8));
-% gt_pose(:,9) = hdg;
+% travelled distance up to now
+dist_accum = zeros(size(odom_pose,1),1);
+for i = 2:size(odom_pose,1)
+    dist_accum(i) = norm(gt_pose(i,2:4) - gt_pose(i-1,2:4));
+    dist_accum(i) = dist_accum(i) + dist_accum(i-1);
+end
 
 
 %% PLOT DATA
@@ -184,16 +192,17 @@ end
 
 % heading vs gt_heading over time
 figure(11);
-plot(odom_pose(:,1), odom_pose(:,9), gt_pose2(:,1), gt_pose2(:,9));
+% plot(odom_pose(:,1), odom_pose(:,9), gt_pose2(:,1), gt_pose2(:,9));
+plot(odom_pose(:,1), odom_pose(:,9), gt_pose(:,1), gt_pose(:,9));
 grid on, legend('odom heading', 'GT heading');
 xlabel('time [s]'), ylabel('angle [rad]'), title('Visual Odometry Evaluation - heading evaluation over time');
 
-% xy trajectory over time(z)
+% xy trajectory over time (z)
 figure(12);
-plot3(gt_pose2(:,2), gt_pose2(:,3), gt_pose2(:,1));
-grid on, %legend('odom heading', 'GT heading');
+plot3(gt_pose(:,2), gt_pose(:,3), gt_pose(:,1));
+grid on, xlim([0 5]), ylim([2.5 7.5]); %legend('odom heading', 'GT heading');
 xlabel('position [m]'), ylabel('position [m]'), zlabel('time [s]');
-title('Visual Odometry Evaluation - heading evaluation over time');
+title('Visual Odometry Evaluation - xy trajectory over time');
 
 
 
