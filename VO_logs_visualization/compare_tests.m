@@ -13,21 +13,28 @@ path_ca = {
 
 n_logs = size(path_ca,1);
 
+legend_names = cell(1,n_logs);
+for i = 1:n_logs
+    legend_names{i} = horzcat('test ', num2str(i));
+end
+
 diff_pose_ca = cell(1,n_logs);
 odom_pose_ca = cell(1,n_logs);
 diff_norm_ca = cell(1,n_logs);
 dist_accum_ca = cell(1,n_logs);
+control_ca = cell(1,n_logs);
+gt_pose_ca = cell(1,n_logs);
     
 for i=1:n_logs
     
     % Read odometry file
     [t, x, y, z, a, b, c, d]=textread(horzcat(path_ca{i},'/odom_world.txt'), ...
-        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 3, 'delimiter', '\t');
+        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
     odom_pose = [t, x, y, z, a, b, c, d];
     
     % Read difference odometry/vicon file
     [t, x, y, z, a, b, c, d]=textread(horzcat(path_ca{i},'/diff_pose.txt'), ...
-        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 3, 'delimiter', '\t');
+        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
     diff_pose = [t, x, y, z, a, b, c, d];
     
     % Read control file
@@ -91,8 +98,8 @@ for i=1:n_logs
     grid on;
     xlabel('distance travelled [m]'), ylabel('xy error [m]')
 end
-title({'Visual Odometry Evaluation', 'xy error norm vs travelled distance'});
-legend(path_ca);
+title({'Visual Odometry Evaluation', 'xy error norm over travelled distance'});
+legend(legend_names);
 hold off
 
 % xy error norm over time vs time
@@ -103,8 +110,8 @@ for i=1:n_logs
     grid on;
     xlabel('time [s]'), ylabel('xy error [m]')
 end
-title({'Visual Odometry Evaluation', 'xy error norm vs time'});
-legend(path_ca);
+title({'Visual Odometry Evaluation', 'xy error norm over time'});
+legend(legend_names);
 hold off
 
 % control over time
@@ -115,12 +122,11 @@ for i=1:n_logs
     grid on;
     xlabel('time [s]'), ylabel('command [m/s]')
 end
-title({'Visual Odometry Evaluation', 'control signal vs time'});
-legend(path_ca);
+title({'Visual Odometry Evaluation', 'control signal over time'});
+legend(legend_names);
 hold off
 
 % ground truth trajectory on xy plane
-% xLim = [0.5 4.5]; yLim = [0.5 4.5];
 figure(104);
 hold on
 for i=1:n_logs
@@ -128,6 +134,26 @@ for i=1:n_logs
     xlabel('x [m]'), ylabel('y [m]')
 end
 title({'Visual Odometry Evaluation', 'ground truth trajectory'});
-grid on, axis equal; % xlim(xLim), ylim(yLim);
-legend(path_ca);
+grid on, axis equal; 
+legend(legend_names);
 hold off
+
+% % heading error over time
+% figure(105);
+% for i=1:n_logs
+%     plot(odom_pose_ca{i}(:,1), odom_pose_ca{i}(:,9)-gt_pose_ca{i}(:,9));
+%     grid on;
+%     xlabel('distance travelled [m]'), ylabel('heading [rad]')
+% end
+% grid on, legend(legend_names);
+% xlabel('time [s]'), ylabel('angle [rad]'), title('Visual Odometry Evaluation - heading error over time');
+% 
+% % heading error over distance travelled
+% figure(105);
+% for i=1:n_logs
+%     plot(dist_accum_ca{i}, odom_pose_ca{i}(:,9)-gt_pose_ca{i}(:,9));
+%     grid on;
+%     xlabel('distance travelled [m]'), ylabel('heading [rad]')
+% end
+% grid on, legend(legend_names);
+% xlabel('time [s]'), ylabel('angle [rad]'), title('Visual Odometry Evaluation - heading error over distance travelled');
