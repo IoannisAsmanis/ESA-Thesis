@@ -8,25 +8,13 @@ if (numel(q) < 4)
 
 % if a single quaternion is given
 elseif (numel(q) == 4)
-    q(2) = 0;
-    q(4) = 0;
-    mag = sqrt(q(1)*q(1)+q(3)*q(3));
-    
-    q(1) = q(1)/mag;
-    q(3) = q(3)/mag;
-    
-    hdg = 2*acos(q(1));
+    w=q(1); x=q(2); y=q(3); z=q(4); 
+    hdg = asin(2*x*y + 2*z*w);
 
 % if an array of quaternions is passed
 else 
-    q(:,2) = 0;
-    q(:,4) = 0;
-    mag = sqrt(q(:,1).*q(:,1)+q(:,3).*q(:,3));
-    
-    q(:,1) = q(:,1)./mag;
-    q(:,3) = q(:,3)./mag;
-    
-    hdg = 2*acos(q(:,1));
+    w=q(:,1); x=q(:,2); y=q(:,3); z=q(:,4); 
+    hdg = asin(2*x.*y + 2*z.*w);
     
 end
 
