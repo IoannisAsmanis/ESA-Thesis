@@ -19,5 +19,8 @@ EXPERIMENTS
 
    
 - 20190919-1342: control=20190919-1242, exposure=auto
+- 20190919-1521: control=20190919-1242, exposure=auto
 - 20190919-1352: control=20190919-1255, exposure=auto
 - 20190913-1359: control=20190919-1308, exposure=auto
+
+- 20190919-1628: manually transl=0.015 forward, autoexposure=auto
