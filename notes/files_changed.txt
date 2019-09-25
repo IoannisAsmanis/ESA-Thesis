@@ -1,0 +1,17 @@
+rock/bundles/exoter/script/
+    control.rb
+    arm_commands.rb 
+    visodom.rb
+    nojoy_visodom.rb
+
+rock/perception/orogen/viso2_evaluation/
+    tasks/Task.cpp
+    viso2_evaluation.orogen
+ 
+/rock/control/orogen/motion_translator/
+    motion_translator.orogen
+    tasks/Task.cpp
+
+
+
+

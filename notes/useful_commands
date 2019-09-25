@@ -1,4 +1,11 @@
-scp -rp marta@exoter:~/rock/bundles/exoter/logs/20190910-1035 ~/mdblogs/  
-pocolog unit_visual_odometry.0.log -s /viso2_evaluation.odometry_in_world_pose >> odom_world.txt
+Copy from exoter:
+    scp -rp marta@exoter:~/rock/bundles/exoter/logs/20190910-1035 ~/mdblogs/  
 
-
+Export logs to txt:
+    pocolog control.0.log -s /motion_translator.motion_command_time >> control_time.txt
+    pocolog control.0.log -s /motion_translator.motion_command >> control.txt          
+    pocolog unit_visual_odometry.0.log -s /viso2_evaluation.odometry_in_world_pose >> odom_world.txt
+    pocolog unit_visual_odometry.0.log -s /viso2_evaluation.diff_pose >> diff_pose.txt 
+    pocolog unit_visual_odometry.0.log -s /viso2_evaluation.odometry_heading >> odometry_heading.txt
+    pocolog unit_visual_odometry.0.log -s /viso2_evaluation.ground_truth_heading >> gt_heading.txt
+    pocolog unit_visual_odometry.0.log -s /viso2_evaluation.ground_truth_pose >> gt_pose.txt  
