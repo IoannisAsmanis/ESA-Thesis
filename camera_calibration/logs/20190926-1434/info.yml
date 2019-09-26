@@ -1,0 +1,7 @@
+---
+- time: 20190926-1434
+  cmdline: "./camera_calib.rb "
+  robot_name: default
+  robot_type: default
+  app_name: exoter
+  app_dir: "/home/marta/rock/bundles/exoter"
