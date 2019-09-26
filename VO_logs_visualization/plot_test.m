@@ -53,15 +53,15 @@ odom_pose = [t, x, y, z, a, b, c, d];
     '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
 diff_pose = [t, x, y, z, a, b, c, d];
 
-% Read control file
-[ tr, rot, hdg]=textread(horzcat(path,'/control.txt'), ...
-    '%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
-
-% Read control time file
-t=textread(horzcat(path,'/control_time.txt'), ...
-    '%d', 'headerlines', 2);
-% t(end+1) = t(end);
-control = [t, tr, rot];
+% % Read control file
+% [ tr, rot, hdg]=textread(horzcat(path,'/control.txt'), ...
+%     '%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+% 
+% % Read control time file
+% t=textread(horzcat(path,'/control_time.txt'), ...
+%     '%d', 'headerlines', 2);
+% % t(end+1) = t(end);
+% control = [t, tr, rot];
 
 % read real gt file
 [t, x, y, z, b, c, d, a]=textread(horzcat(path,'/gt_pose.txt'), ...
@@ -154,11 +154,11 @@ plot(diff_pose(:,1), diff_norm, 'b-', diff_pose(:,1), dist_accum.*0.02, 'r-');
 grid on, legend('xy error norm', '2% travelled distance');
 xlabel('time [s]'), ylabel('xy error [m]'), title('Visual Odometry Evaluation - xy error norm');
 
-% x and y components error and control over time
-figure(6);
-plot(diff_pose(:,1), diff_pose(:,2), 'b-', diff_pose(:,1), diff_pose(:,3), 'r-', control(:,1), control(:,2));
-grid on, legend('x error', 'y error', 'control');
-xlabel('time [s]'), ylabel('xy error [m] and control [m/s]'), title('Visual Odometry Evaluation - x y error components and control');
+% % x and y components error and control over time
+% figure(6);
+% plot(diff_pose(:,1), diff_pose(:,2), 'b-', diff_pose(:,1), diff_pose(:,3), 'r-', control(:,1), control(:,2));
+% grid on, legend('x error', 'y error', 'control');
+% xlabel('time [s]'), ylabel('xy error [m] and control [m/s]'), title('Visual Odometry Evaluation - x y error components and control');
 
 % x and y components error and x and y trajectory over time 
 figure(6);
