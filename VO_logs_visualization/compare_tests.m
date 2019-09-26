@@ -28,12 +28,12 @@ gt_pose_ca = cell(1,n_logs);
 for i=1:n_logs
     
     % Read odometry file
-    [t, x, y, z, a, b, c, d]=textread(horzcat(path_ca{i},'/odom_world.txt'), ...
+    [t, x, y, z, b, c, d, ad]=textread(horzcat(path_ca{i},'/odom_world.txt'), ...
         '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
     odom_pose = [t, x, y, z, a, b, c, d];
     
     % Read difference odometry/vicon file
-    [t, x, y, z, a, b, c, d]=textread(horzcat(path_ca{i},'/diff_pose.txt'), ...
+    [t, x, y, z, b, c, d, a]=textread(horzcat(path_ca{i},'/diff_pose.txt'), ...
         '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
     diff_pose = [t, x, y, z, a, b, c, d];
     
