@@ -12,6 +12,13 @@ rock/perception/orogen/viso2_evaluation/
     motion_translator.orogen
     tasks/Task.cpp
 
+/rock/bundles/rover/config/orogen/
+    stereo::Task.yml
+    camera_bb2::Task.yml
+    viso2::StereoOdometer.yml
+
+/rock/bundes/rover/scripts/tests/
+    bb2.rb
 
 
 
