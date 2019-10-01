@@ -1,0 +1,11 @@
+matches in the 2 pics
+[ INFO] - rock_widget_collection::Clicked at image coordinate (w,h) (768,562)
+[ INFO] - rock_widget_collection::Clicked at image coordinate (w,h) (1705,560)
+
+[drawMatches] match1 766 560[drawMatches] match2 680.245 558.672
+
+
+match distance
+[ INFO] - rock_widget_collection::Clicked at image coordinate (w,h) (647,756)
+[ INFO] - rock_widget_collection::Clicked at image coordinate (w,h) (1452,759)
+

@@ -1,2 +1,10 @@
 camera_calib_4 old transform: x=26,y=3,z=-3i
 camera_calib_4 new transform: 20190930-1551
+
+
+
+
+
+[ INFO] - rock_widget_collection::Clicked at image coordinate (w,h) (531,595)
+[ INFO] - rock_widget_collection::Clicked at image coordinate (w,h) (343,588)
+

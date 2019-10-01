@@ -1,11 +1,11 @@
 CONTROL
--20190918-1105: forward, transl=0.015 (2 clicks)
--20190919-1242: forward, transl=0.015 (2 clicks), dist=3m
--20190918-1108: forward, transl=0.03 (5 clicks)
--20190918-1558: forward, transl=0.045 (8 clicks)
--20190919-1255: forward, transl=0.045 (8 clicks), dist=3m
--20190918-1806: forward, transl=0.065 (12 clicks)
--20190919-1308: forward, transl=0.065 (12 clicks), dist=3m
+-20190918-1105: forward, transl=0.015
+-20190919-1242: forward, transl=0.015, dist=3m
+-20190918-1108: forward, transl=0.03
+-20190918-1558: forward, transl=0.045
+-20190919-1255: forward, transl=0.045, dist=3m
+-20190918-1806: forward, transl=0.065
+-20190919-1308: forward, transl=0.065, dist=3m
 
 -20190919-1250: backward, transl=-0.015 (2 clicks), dist=3m
 -20190918-1808: backward, transl=-0.03 (5 clicks)
@@ -29,3 +29,12 @@ CALIBRATION TESTS:
 - 20190627-1330: new orientation, old pos
 - 20190626-1649: new pos, old orientation
 - 20190626-1502: new orientation, new pos
+
+
+VO PARAMS TESTS:
+ransac_iters: 200 #number of RANSAC iterations
+inlier_threshold: 1.5 #fundamental matrix inlier threshold
+match_radius: 350 #200 #matching radius (du/dv in pixels)
+half_resolution: 0 #1 #0=disabled,1=match at half resolution, refine at full resolution
+- 20191001-1554
+
