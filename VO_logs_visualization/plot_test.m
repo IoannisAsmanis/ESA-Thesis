@@ -36,11 +36,17 @@ path = 'logs/20190916-1428'; % move along x and then along y ---
 % path = 'logs/20190919-1628'; %test
 % path = 'logs/20190919-1740'; %test
 % path = 'logs/20190923-1327'; %point turn heading 
-path = 'logs/20190923-1723'; %point turn heading 
-% from now with the new camera mount
-path = 'logs/20190924-1140'; %test with 20190919-1255
-% 1st calibration
-path = 'logs/20190924-1709'; %test with 20190919-1255
+% path = 'logs/20190923-1723'; %point turn heading 
+% % from now with the new camera mount
+% path = 'logs/20190924-1140'; %test with 20190919-1255
+% % 1st calibration
+% path = 'logs/20190924-1709'; %test with 20190919-1255
+% % calib with vicon
+path = 'logs/20190926-1502'; %test with 20190919-1255 and all the vicon transform
+path = 'logs/20190926-1649'; %test with 20190919-1255 and only the vicon position changes 
+path = 'logs/20190927-1330'; %test with 20190919-1255 and new orient old pos
+path = 'logs/20190930-1700'; %test with 20190919-1255 and new orient old pos
+
 
 
 % Read odometry file
