@@ -42,11 +42,13 @@ path = 'logs/20190916-1428'; % move along x and then along y ---
 % % 1st calibration
 % path = 'logs/20190924-1709'; %test with 20190919-1255
 % % calib with vicon
-path = 'logs/20190926-1502'; %test with 20190919-1255 and all the vicon transform
-path = 'logs/20190926-1649'; %test with 20190919-1255 and only the vicon position changes 
-path = 'logs/20190927-1330'; %test with 20190919-1255 and new orient old pos
-path = 'logs/20190930-1700'; %test with 20190919-1255 and new orient old pos
-
+% path = 'logs/20190926-1502'; %test with 20190919-1255 and all the vicon transform
+% path = 'logs/20190926-1649'; %test with 20190919-1255 and only the vicon position changes 
+% path = 'logs/20190927-1330'; %test with 20190919-1255 and new orient old pos
+% path = 'logs/20190930-1700'; %test with 20190919-1255 and new orient old pos
+% new vo params
+% path = 'logs/20190930-1700'; %test with 20190919-1255 and new orient old pos
+path = 'logs/20191001-1302'; %test with 20190919-1255 and new orient old pos
 
 
 % Read odometry file
@@ -70,9 +72,9 @@ diff_pose = [t, x, y, z, a, b, c, d];
 % control = [t, tr, rot];
 
 % read real gt file
-[t, x, y, z, b, c, d, a]=textread(horzcat(path,'/gt_pose.txt'), ...
-    '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
-gt_pose = [t, x, y, z, a, b, c, d];
+[t, x, y, z]=textread(horzcat(path,'/gt_pose.txt'), ...
+    '%d%*f%*f%*f%*f%*f%*f%*f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+gt_pose = [t, x, y, z];
 
 % read odom heading file
 [hdg]=textread(horzcat(path,'/odometry_heading.txt'), ...
@@ -92,6 +94,13 @@ gt_pose(:,9) = hdg;
 
 %% PROCESS DATA
 
+%%%
+% for i = 2:size(odom_pose,1)
+%     odom_pose(i,2) = odom_pose(i,2) +1*(odom_pose(i,2)-odom_pose(i-1,2));
+% end
+% diff_pose(:,2:4) = gt_pose(:,2:4) - odom_pose(:,2:4);
+%%%
+
 % convert odom quaternion to odom heading
 hdg = quaternion2heading(odom_pose(:,5:8));
 % odom_pose(:,9) = hdg;
@@ -105,7 +114,7 @@ hdg = quaternion2heading(diff_pose(:,5:8));
 diff_pose(:,9) = hdg;
 
 % Create GT pose (gt = diff + odom)
-gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
+% gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
 
 % Normalize time
 odom_pose(:,1) = (odom_pose(:,1) - odom_pose(1,1))/10^6;
