@@ -54,6 +54,7 @@ close all
 % path = 'logs/20191001-1554'; 
 path = 'logs/20191001-1703'; 
 path = 'logs/20191002-1458'; 
+path = 'logs/20191002-1535'; 
 
 % set true if also control.txt and control_time.txt are provided in the log folder
 CONTROL_FILE = false;
