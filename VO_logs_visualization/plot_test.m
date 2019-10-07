@@ -55,6 +55,8 @@ close all
 path = 'logs/20191001-1703'; 
 path = 'logs/20191002-1458'; 
 path = 'logs/20191002-1535'; 
+path = 'logs/20191007-1248'; 
+
 
 % set true if also control.txt and control_time.txt are provided in the log folder
 CONTROL_FILE = false;
@@ -183,10 +185,10 @@ figure(4);
 step = 10;
 subplot(2,2,1), plot(odom_pose(1:step:end,1), odom_pose(1:step:end,2), 'r-*', gt_pose(1:step:end,1), gt_pose(1:step:end,2), 'g-*');
 legend('Visual Oodometry pose', 'GT pose'), grid on; % axis equal;
-xlabel('time [s]'), ylabel('z [m]'), title('Visual Odometry Evaluation - X over Time');
+xlabel('time [s]'), ylabel('x [m]'), title('Visual Odometry Evaluation - X over Time');
 subplot(2,2,2), plot(odom_pose(1:step:end,1), odom_pose(1:step:end,3), 'r-*', gt_pose(1:step:end,1), gt_pose(1:step:end,3), 'g-*');
 legend('Visual Oodometry pose', 'GT pose'), grid on; % axis equal;
-xlabel('time [s]'), ylabel('z [m]'), title('Visual Odometry Evaluation - Y over Time');
+xlabel('time [s]'), ylabel('y [m]'), title('Visual Odometry Evaluation - Y over Time');
 subplot(2,2,3), plot(odom_pose(1:step:end,1), odom_pose(1:step:end,4), 'r-*', gt_pose(1:step:end,1), gt_pose(1:step:end,4), 'g-*');
 legend('Visual Oodometry pose', 'GT pose'), grid on; % axis equal;
 xlabel('time [s]'), ylabel('z [m]'), title('Visual Odometry Evaluation - Z over Time');
