@@ -1,0 +1,489 @@
+0.000 [ Info   ][Logger] Successfully extracted environment variable ORO_LOGLEVEL
+0.000 [ Info   ][Logger]  OROCOS version '2.8.99' compiled with GCC 5.4.0. Running in GNU/Linux.
+0.000 [ Info   ][Logger] Orocos Logging Activated at level : [ Info   ] ( 5 ) 
+0.000 [ Info   ][Logger] Reference System Time is : 15874702351618 ticks ( 15874.7 seconds ).
+0.000 [ Info   ][Logger] Logging is relative to this time.
+0.000 [ Info   ][Logger] No RTT_COMPONENT_PATH set. Using default: /
+0.000 [ Info   ][Logger] plugin 'rtt' not loaded before.
+0.000 [ Info   ][Logger] typekit 'rtt' not loaded before.
+0.000 [ Info   ][Logger] No RTT_COMPONENT_PATH set. Using default: /
+0.000 [ Info   ][TypekitRepository::Import] Loading Typekit base.
+0.001 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/base.
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/Frame>
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/FramePair>
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Affine3d
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Angle
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/AngleAxisd
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointLimits
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointState
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointState/MODE
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointTransform
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointTransformVector
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointsTrajectory
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Matrix2d
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Matrix3d
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Matrix4d
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Matrix6d
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/MatrixXd
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Pose
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Pressure
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Quaterniond
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Temperature
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Time
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Trajectory
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/TransformWithCovariance
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/TwistWithCovariance
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Vector2d
+0.001 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Vector3d
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Vector4d
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Vector6d
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/VectorXd
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Waypoint
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Wrench
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/commands/LinearAngular6DCommand
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/commands/Motion2D
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/commands/Speed6D
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/geometry/Spline<1>
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/geometry/Spline<3>
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/BodyState
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/DepthMap
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/DistanceImage
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/IMUSensors
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Joints
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/LaserScan
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Motion2D
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Pointcloud
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/PoseWithCovariance
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Pressure
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/RigidBodyAcceleration
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/RigidBodyState
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Sonar
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/SonarBeam
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/SonarScan
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Wrench
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Wrenches
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/frame/Frame
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/frame/FramePair
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/frame/frame_mode_t
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/string
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</base/Trajectory>
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</base/Vector3d>
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</base/Waypoint>
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</std/string>
+0.002 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</uint32_t>
+0.025 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/base.
+0.026 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/Frame>
+0.026 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/FramePair>
+0.026 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Affine3d
+0.026 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Angle
+0.026 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/AngleAxisd
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointLimits
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointState
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointState/MODE
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointTransform
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointTransformVector
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointsTrajectory
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Matrix2d
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Matrix3d
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Matrix4d
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Matrix6d
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/MatrixXd
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Pose
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Pressure
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Quaterniond
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Temperature
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Time
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Trajectory
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/TransformWithCovariance
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/TwistWithCovariance
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Vector2d
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Vector3d
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Vector4d
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Vector6d
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/VectorXd
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Waypoint
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Wrench
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/commands/LinearAngular6DCommand
+0.027 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/commands/Motion2D
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/commands/Speed6D
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/geometry/Spline<1>
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/geometry/Spline<3>
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/BodyState
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/DepthMap
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/DistanceImage
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/IMUSensors
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Joints
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/LaserScan
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Motion2D
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Pointcloud
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/PoseWithCovariance
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Pressure
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/RigidBodyAcceleration
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/RigidBodyState
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Sonar
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/SonarBeam
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/SonarScan
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Wrench
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Wrenches
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/frame/Frame
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/frame/FramePair
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/frame/frame_mode_t
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/string
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Trajectory>
+0.028 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Vector3d>
+0.029 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Waypoint>
+0.029 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</std/string>
+0.029 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</uint32_t>
+0.029 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/base.
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/Frame>
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/FramePair>
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Affine3d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Angle
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/AngleAxisd
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointLimits
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointState
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointState/MODE
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointTransform
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointTransformVector
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointsTrajectory
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Matrix2d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Matrix3d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Matrix4d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Matrix6d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/MatrixXd
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Pose
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Pressure
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Quaterniond
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Temperature
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Time
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Trajectory
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/TransformWithCovariance
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/TwistWithCovariance
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Vector2d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Vector3d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Vector4d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Vector6d
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/VectorXd
+0.044 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Waypoint
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Wrench
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/commands/LinearAngular6DCommand
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/commands/Motion2D
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/commands/Speed6D
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/geometry/Spline<1>
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/geometry/Spline<3>
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/BodyState
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/DepthMap
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/DistanceImage
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/IMUSensors
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Joints
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/LaserScan
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Motion2D
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Pointcloud
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/PoseWithCovariance
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Pressure
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/RigidBodyAcceleration
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/RigidBodyState
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Sonar
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/SonarBeam
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/SonarScan
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Wrench
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Wrenches
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/frame/Frame
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/frame/FramePair
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/frame/frame_mode_t
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/string
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/Trajectory>
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/Vector3d>
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/Waypoint>
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</std/string>
+0.045 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</uint32_t>
+0.045 [ Info   ][TypekitRepository::Import] Loading Typekit camera_base.
+0.046 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/camera_base.
+0.046 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /camera/GrabMode
+0.046 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /camera/double_attrib/CamAttrib
+0.046 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /camera/enum_attrib/CamAttrib
+0.046 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /camera/int_attrib/CamAttrib
+0.046 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /camera/str_attrib/CamAttrib
+0.046 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /frame_helper/CameraCalibration
+0.046 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /frame_helper/ResizeAlgorithm
+0.047 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/camera_base.
+0.048 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /camera/GrabMode
+0.048 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /camera/double_attrib/CamAttrib
+0.048 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /camera/enum_attrib/CamAttrib
+0.048 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /camera/int_attrib/CamAttrib
+0.048 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /camera/str_attrib/CamAttrib
+0.048 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /frame_helper/CameraCalibration
+0.048 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /frame_helper/ResizeAlgorithm
+0.048 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/camera_base.
+0.049 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /camera/GrabMode
+0.049 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /camera/double_attrib/CamAttrib
+0.049 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /camera/enum_attrib/CamAttrib
+0.049 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /camera/int_attrib/CamAttrib
+0.049 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /camera/str_attrib/CamAttrib
+0.049 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /frame_helper/CameraCalibration
+0.049 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /frame_helper/ResizeAlgorithm
+0.049 [ Info   ][TypekitRepository::Import] Loading Typekit camera_bb2.
+0.049 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/camera_bb2.
+0.049 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /frame_helper/StereoCalibration
+0.050 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/camera_bb2.
+0.050 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /frame_helper/StereoCalibration
+0.050 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/camera_bb2.
+0.051 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /frame_helper/StereoCalibration
+0.051 [ Info   ][TypekitRepository::Import] Loading Typekit dem_generation.
+0.051 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /frame_helper/CameraCalibration
+0.051 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/dem_generation.
+0.051 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</telemetry_telecommand/messages/Telecommand>
+0.051 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /telemetry_telecommand/messages/Telemetry
+0.051 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /velodyne_lidar/MultilevelLaserScan
+0.052 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/dem_generation.
+0.052 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /frame_helper/CameraCalibration
+0.053 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</telemetry_telecommand/messages/Telecommand>
+0.053 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /telemetry_telecommand/messages/Telemetry
+0.053 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /velodyne_lidar/MultilevelLaserScan
+0.053 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/dem_generation.
+0.054 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</telemetry_telecommand/messages/Telecommand>
+0.054 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /telemetry_telecommand/messages/Telemetry
+0.054 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /velodyne_lidar/MultilevelLaserScan
+0.054 [ Info   ][TypekitRepository::Import] Loading Typekit logger.
+0.054 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/logger.
+0.054 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /logger/Annotations
+0.054 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /logger/Marker
+0.054 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</logger/StreamMetadata>
+0.055 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/logger.
+0.055 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /logger/Annotations
+0.055 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /logger/Marker
+0.055 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</logger/StreamMetadata>
+0.055 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/logger.
+0.056 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /logger/Annotations
+0.056 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /logger/Marker
+0.056 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</logger/StreamMetadata>
+0.056 [ Info   ][TypekitRepository::Import] Loading Typekit pancam_360.
+0.056 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/pancam_360.
+0.056 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</base/Vector2d>
+0.057 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/pancam_360.
+0.057 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Vector2d>
+0.057 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/pancam_360.
+0.058 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/Vector2d>
+0.058 [ Info   ][TypekitRepository::Import] Loading Typekit pancam_panorama.
+0.058 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Vector2d>
+0.058 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/pancam_panorama.
+0.059 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/pancam_panorama.
+0.059 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Vector2d>
+0.059 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/pancam_panorama.
+0.059 [ Info   ][TypekitRepository::Import] Loading Typekit std.
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/string
+0.060 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/std.
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /bool
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /double
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /float
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /int16_t
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /int32_t
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /int64_t
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /int8_t
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /metadata/TaskContext
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</double>
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /uint16_t
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /uint32_t
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /uint64_t
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /uint8_t
+0.061 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/std.
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /bool
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /double
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /float
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /int16_t
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /int32_t
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /int64_t
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /int8_t
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /metadata/TaskContext
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/string
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</double>
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint16_t
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint32_t
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint64_t
+0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint8_t
+0.062 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/std.
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /bool
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /double
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /float
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int16_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int32_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int64_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int8_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /metadata/TaskContext
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</double>
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint16_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint32_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint64_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint8_t
+0.064 [ Info   ][TypekitRepository::Import] Loading Typekit stereo.
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /frame_helper/StereoCalibration
+0.064 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/stereo.
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /stereo/FeatureConfiguration
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /stereo/StereoFeatureArray
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /stereo/libElasConfiguration
+0.066 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/stereo.
+0.066 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /frame_helper/StereoCalibration
+0.066 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /stereo/FeatureConfiguration
+0.066 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /stereo/StereoFeatureArray
+0.066 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /stereo/libElasConfiguration
+0.066 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/stereo.
+0.068 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /stereo/FeatureConfiguration
+0.068 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /stereo/StereoFeatureArray
+0.068 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /stereo/libElasConfiguration
+0.068 [ Info   ][TypekitRepository::Import] Loading Typekit rtt-types.
+0.069 [ Info   ][TypekitRepository::Import] Loading Transport CORBA://rtt-types.
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for ConnPolicy
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for TaskContext
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for char
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for llong
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for rt_string
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for ullong
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for void
+0.069 [ Info   ][TypekitRepository::Import] Loading Transport mqueue://rtt-types.
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for char
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for llong
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for ullong
+0.070 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='GlobalEngine'
+0.070 [ Info   ][GlobalEngine] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1745 ).
+0.070 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='camera_firewire_loccam'
+0.070 [ Info   ][camera_firewire_loccam] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1746 ).
+0.071 [ Info   ][/home/marta/rock/install/bin/loccam::main()] Creating new TaskContextServer for camera_firewire_loccam
+0.071 [ Info   ][TaskContextServer()] CTaskContext 'camera_firewire_loccam' found CORBA Naming Service.
+0.072 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'camera_firewire_loccam' to CORBA Naming Service.
+0.072 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='camera_loccam'
+0.072 [ Info   ][camera_loccam] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1749 ).
+0.072 [ Info   ][/home/marta/rock/install/bin/loccam::main()] Creating new TaskContextServer for camera_loccam
+0.072 [ Info   ][TaskContextServer()] CTaskContext 'camera_loccam' found CORBA Naming Service.
+0.073 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'camera_loccam' to CORBA Naming Service.
+0.073 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='dem_generation_loccam'
+0.073 [ Info   ][dem_generation_loccam] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1750 ).
+0.073 [ Info   ][/home/marta/rock/install/bin/loccam::main()] Creating new TaskContextServer for dem_generation_loccam
+0.073 [ Info   ][TaskContextServer()] CTaskContext 'dem_generation_loccam' found CORBA Naming Service.
+0.074 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'dem_generation_loccam' to CORBA Naming Service.
+0.074 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='loccam_360'
+0.074 [ Info   ][loccam_360] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1751 ).
+0.074 [ Info   ][/home/marta/rock/install/bin/loccam::main()] Creating new TaskContextServer for loccam_360
+0.074 [ Info   ][TaskContextServer()] CTaskContext 'loccam_360' found CORBA Naming Service.
+0.075 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'loccam_360' to CORBA Naming Service.
+0.075 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='loccam_Logger'
+0.075 [ Info   ][loccam_Logger] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1752 ).
+0.075 [ Info   ][/home/marta/rock/install/bin/loccam::main()] Creating new TaskContextServer for loccam_Logger
+0.075 [ Info   ][TaskContextServer()] CTaskContext 'loccam_Logger' found CORBA Naming Service.
+0.075 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'loccam_Logger' to CORBA Naming Service.
+0.075 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='loccam_panorama'
+0.076 [ Info   ][loccam_panorama] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1753 ).
+0.076 [ Info   ][/home/marta/rock/install/bin/loccam::main()] Creating new TaskContextServer for loccam_panorama
+0.076 [ Info   ][TaskContextServer()] CTaskContext 'loccam_panorama' found CORBA Naming Service.
+0.076 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'loccam_panorama' to CORBA Naming Service.
+0.076 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='stereo_loccam'
+0.076 [ Info   ][stereo_loccam] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1754 ).
+0.077 [ Info   ][/home/marta/rock/install/bin/loccam::main()] Creating new TaskContextServer for stereo_loccam
+0.077 [ Info   ][TaskContextServer()] CTaskContext 'stereo_loccam' found CORBA Naming Service.
+0.077 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'stereo_loccam' to CORBA Naming Service.
+0.077 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='camera_firewire_loccam'
+0.077 [ Info   ][camera_firewire_loccam] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1755 ).
+0.077 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='camera_loccam'
+0.077 [ Info   ][camera_loccam] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1756 ).
+0.077 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='loccam_panorama'
+0.077 [ Info   ][loccam_panorama] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0.01 (PID= 1757 ).
+0.078 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='loccam_360'
+0.078 [ Info   ][loccam_360] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0.01 (PID= 1758 ).
+0.078 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='stereo_loccam'
+0.078 [ Info   ][stereo_loccam] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1759 ).
+0.078 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='dem_generation_loccam'
+0.078 [ Info   ][dem_generation_loccam] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1760 ).
+0.078 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='loccam_Logger'
+0.078 [ Info   ][loccam_Logger] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1761 ).
+0.078 [ Info   ][ThreadOrb] Starting Orb in a thread.
+0.078 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='OrbRunner'
+0.078 [ Info   ][OrbRunner] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1762 ).
+0.078 [ Info   ][OrbRunner] Entering orb->run().
+0.644 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='camera_firewire_loccamCorba'
+0.644 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.644 [ Warning][camera_firewire_loccamCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.644 [ Info   ][camera_firewire_loccamCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1791 ).
+0.644 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started camera_firewire_loccamCorba.
+0.645 [ Info   ][OrbRunner] requested firewire camera id: 49712223536067003
+0.646 [ Info   ][OrbRunner] creating new dc1394 bus device...done.
+0.649 [ Info   ][OrbRunner] cam's uid is 49712223536067003 and desired id is 49712223536067003
+0.652 [ Info   ][OrbRunner] end of configureHook
+0.655 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='camera_loccamCorba'
+0.655 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.655 [ Warning][camera_loccamCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.655 [ Info   ][camera_loccamCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1793 ).
+0.655 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started camera_loccamCorba.
+0.706 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='loccam_LoggerCorba'
+0.706 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.706 [ Warning][loccam_LoggerCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.706 [ Info   ][loccam_LoggerCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1794 ).
+0.706 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started loccam_LoggerCorba.
+1.083 [ Info   ][CDataFlowInterface_i::createConnection] OutputPort left_frame is already connected to /camera_loccam.left_frame, ignoring new connection.
+1.083 [ Info   ][CDataFlowInterface_i::createConnection] OutputPort right_frame is already connected to /camera_loccam.right_frame, ignoring new connection.
+1.084 [ Info   ][CDataFlowInterface_i::createConnection] OutputPort state is already connected to /camera_loccam.state, ignoring new connection.
+1.920 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='stereo_loccamCorba'
+1.920 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.920 [ Warning][stereo_loccamCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.920 [ Info   ][stereo_loccamCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1831 ).
+1.920 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started stereo_loccamCorba.
+1.924 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='dem_generation_loccamCorba'
+1.924 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.924 [ Warning][dem_generation_loccamCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.924 [ Info   ][dem_generation_loccamCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1838 ).
+1.924 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started dem_generation_loccamCorba.
+1.927 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='loccam_360Corba'
+1.927 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.927 [ Warning][loccam_360Corba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.927 [ Info   ][loccam_360Corba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1841 ).
+1.928 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started loccam_360Corba.
+1.928 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='loccam_panoramaCorba'
+1.928 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.928 [ Warning][RemoteInputPort::buildRemoteChannelOutput] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.928 [ Info   ][loccam_panoramaCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 1842 ).
+1.928 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started loccam_panoramaCorba.
+22.553 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] configure camera:
+22.554 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Binning is not supported by the camera
+22.557 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Region is not supported by the camera
+22.557 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] GammaToOff is not supported by the camera
+22.557 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] SaturationToOn is not supported by the camera
+22.558 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] SharpnessToOn is not supported by the camera
+22.559 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] SyncOut1ModeToFrameTrigger is not supported by the camera
+22.559 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] SyncOut2ModeToFrameTrigger is not supported by the camera
+22.562 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] WhitebalAutoRate is not supported by the camera
+22.562 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] WhitebalAutoAdjustTol is not supported by the camera
+22.563 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] camera configuration: width=1024; height=768; region_x=0; region_y=0; Trigger mode=fixed; fps=7.5; exposure=10; Whitebalance mode=manual
+22.566 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Available cameras:
+Unique Id: 49712223536067003
+Display Name: Bumblebee2 BB2-08S2C
+Interface ID: 0
+Interface Type: 1
+Part Number: 0
+Part Version: 0
+Permitted Access: 0
+Reachable: 0
+Serial String: 
+
+
+This camerea interface does not support getCameraInfo.
+ Cannot display CamInfo of the opened camera. 
+Testing syncin ports (time interval = 10 ms):
+test syncin ports is not supported by the camera.
+
+
+22.593 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] using FD activity !
+22.593 [ Info   ][RemoteInputPort::buildRemoteChannelOutput]   FD=42
+97.540 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] clear FD watches
+97.540 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] stop grabbing
+98.561 [ Info   ][ShutdownOrb] Cleaning up TaskContextServers...
+98.562 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'loccam_Logger' from CORBA Naming Service.
+98.562 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'loccam_panorama' from CORBA Naming Service.
+98.562 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'camera_firewire_loccam' from CORBA Naming Service.
+98.562 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'loccam_360' from CORBA Naming Service.
+98.562 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'stereo_loccam' from CORBA Naming Service.
+98.562 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'camera_loccam' from CORBA Naming Service.
+98.562 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'dem_generation_loccam' from CORBA Naming Service.
+98.562 [ Info   ][ShutdownOrb] Orb Shutdown...waiting...
+98.563 [ Info   ][ShutdownOrb] done.
+98.563 [ Info   ][DestroyOrb] Breaking out of orb->run().
+98.563 [ Info   ][OrbRunner] Safely stopped.
+98.563 [ Info   ][/home/marta/rock/install/bin/loccam::main()] Orb destroyed.
+98.570 [ Info   ][Logger] Orocos Logging Deactivated.
