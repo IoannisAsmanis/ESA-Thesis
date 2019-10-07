@@ -56,6 +56,10 @@ path = 'logs/20191001-1703';
 path = 'logs/20191002-1458'; 
 path = 'logs/20191002-1535'; 
 path = 'logs/20191007-1248'; 
+path = 'logs/20191007-1445'; 
+path = 'logs/20191007-1504'; 
+% path = 'logs/20191007-1547'; 
+
 
 
 % set true if also control.txt and control_time.txt are provided in the log folder
@@ -70,8 +74,12 @@ CONTROL_FILE = false;
 odom_pose = [t, x, y, z, a, b, c, d];
 
 % %%% sneaky trick do not uncomment
-% for i=1:size(odom_pose,1)
-%     odom_pose(i,2:4) = odom_pose(i,2:4)-(gt_pose(1,2:4)-odom_pose(1,2:4));
+% for i=2:size(odom_pose,1)
+%   gain_t(:,i-1) = odom_pose(i,2:4)-odom_pose(i-1,2:4); 
+% end
+% gain = mean(gain_t,2);
+% for i=2:size(odom_pose,1)
+%     odom_pose2(i,2:4) = odom_pose(i,2:4)+gain.*(odom_pose(i,2:4)-odom_pose(i-1,2:4));
 % end
 % %%%
 
