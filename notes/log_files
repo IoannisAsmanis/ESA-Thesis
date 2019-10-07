@@ -35,5 +35,9 @@ NEW VO PARAMS:
 - 20191002-1355
 - 20191002-1458
 - 20191002-1535: calib_1
-- 20191002-1544: camera calib 5
-- 20191007-1245: camera_calib_5, match_radius=350, small rocks
+
+- 20191007-1445: camera_calib_5, match_radius=350, small rocks
+- 20191007-1504: camera_calib_2, match_radius=350, small rocks
+
+- 20191007-1628: camera_calib_5, match_radius=350, small rocks, control=20191007-1615
+- 20191007-1633: camera_calib_4, match_radius=350, small rocks, control=20191007-1615
