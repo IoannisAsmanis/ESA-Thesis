@@ -6,10 +6,15 @@ close all
 
 %% OPEN FILES AND PROCESS DATA
 
+% path_ca = {
+%     'logs/20190919-1521', %1521 %1342 %1628
+%     'logs/20190919-1352', 
+%     'logs/20190919-1359'}; 
 path_ca = {
-    'logs/20190919-1521', %1521 %1342 %1628
-    'logs/20190919-1352', 
-    'logs/20190919-1359'}; 
+    'logs/20191007-1628', 
+    'logs/20191007-1633'}; 
+% set true if also control.txt and control_time.txt are provided in the log folder
+CONTROL_FILE = false;
 
 n_logs = size(path_ca,1);
 
@@ -37,25 +42,29 @@ for i=1:n_logs
         '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
     diff_pose = [t, x, y, z, a, b, c, d];
     
-    % Read control file
-    [ tr, rot, hdg]=textread(horzcat(path_ca{i},'/control.txt'), ...
-        '%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
-    
-    % Read control time file
-    t=textread(horzcat(path_ca{i},'/control_time.txt'), ...
-        '%d', 'headerlines', 2);
-    t(size(tr,1)) = t(end);
-    control = [t, tr, rot];
-    
-    % align control signals
-    control(control(:,2) == 0, :) = [];
-    % add end of control signal
-    control(end+1,:) = [control(end,1) 0 0];
+    if(CONTROL_FILE)
+        % Read control file
+        [ tr, rot, hdg]=textread(horzcat(path_ca{i},'/control.txt'), ...
+            '%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+        
+        % Read control time file
+        t=textread(horzcat(path_ca{i},'/control_time.txt'), ...
+            '%d', 'headerlines', 2);
+        t(size(tr,1)) = t(end);
+        control = [t, tr, rot];
+        
+        % align control signals
+        control(control(:,2) == 0, :) = [];
+        % add end of control signal
+        control(end+1,:) = [control(end,1) 0 0];
+    end
     
     % Normalize time
     odom_pose(:,1) = (odom_pose(:,1) - odom_pose(1,1))/10^6;
     diff_pose(:,1) = (diff_pose(:,1) - diff_pose(1,1))/10^6;
-    control(:,1) = (control(:,1) - control(1,1))/10^6;
+    if(CONTROL_FILE)
+        control(:,1) = (control(:,1) - control(1,1))/10^6;
+    end
     
     % Create GT pose (gt = diff + odom)
     gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
@@ -83,7 +92,9 @@ for i=1:n_logs
     odom_pose_ca{i} = odom_pose;
     diff_norm_ca{i} = diff_norm;
     dist_accum_ca{i} = dist_accum;
-    control_ca{i} = control;
+    if(CONTROL_FILE)
+        control_ca{i} = control;
+    end
     gt_pose_ca{i} = gt_pose;
 end
 
@@ -114,17 +125,19 @@ title({'Visual Odometry Evaluation', 'xy error norm over time'});
 legend(legend_names);
 hold off
 
-% control over time
-figure(103);
-hold on
-for i=1:n_logs
-    plot(control_ca{i}(:,1), control_ca{i}(:,2));
-    grid on;
-    xlabel('time [s]'), ylabel('command [m/s]')
+if(CONTROL_FILE)
+    % control over time
+    figure(103);
+    hold on
+    for i=1:n_logs
+        plot(control_ca{i}(:,1), control_ca{i}(:,2));
+        grid on;
+        xlabel('time [s]'), ylabel('command [m/s]')
+    end
+    title({'Visual Odometry Evaluation', 'control signal over time'});
+    legend(legend_names);
+    hold off
 end
-title({'Visual Odometry Evaluation', 'control signal over time'});
-legend(legend_names);
-hold off
 
 % ground truth trajectory on xy plane
 figure(104);
