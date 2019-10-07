@@ -106,7 +106,6 @@ Disparity frame from bundles/rover/scripts/tests/bb2.rb:
             ry: -0.00333 #rotation along y (rad)
             rz: 0.00542 #rotation along z (rad)
 
-
     camera_calib_4:
         calib_parameters:
           camLeft:
@@ -143,3 +142,4 @@ Disparity frame from bundles/rover/scripts/tests/bb2.rb:
             rx: 0.001819615757731449
             ry: 0.008842211883599646
             rz: 0.003584645009846816
+
