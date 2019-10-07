@@ -29,3 +29,7 @@ codegen/
 
 # Octave session info
 octave-workspace
+
+# txt swp/swo
+*.swp
+*.swo
