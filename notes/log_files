@@ -11,6 +11,7 @@ CONTROL
 -20190918-1808: backward, transl=-0.03 (5 clicks)
 -20190919-1258: backward, transl=-0.045 (8 clicks), dist=3m
 
+-20191007-1615: forward, transl=0.03, dist=~2m
 
 EXPERIMENTS
 - 20190918-1521: control=20190918-1108, exposure=auto
