@@ -11,8 +11,8 @@ close all
 %     'logs/20190919-1352', 
 %     'logs/20190919-1359'}; 
 path_ca = {
-    'logs/20191007-1628', 
-    'logs/20191007-1633'}; 
+    'logs/20191007-1633', % camera_calib_4
+    'logs/20191007-1628'}; % camera_calib_5
 % set true if also control.txt and control_time.txt are provided in the log folder
 CONTROL_FILE = false;
 
@@ -59,15 +59,31 @@ for i=1:n_logs
         control(end+1,:) = [control(end,1) 0 0];
     end
     
+    % Create GT pose (gt = diff + odom)
+    %gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
+    
+    % read real gt pose file
+    [t, x, y, z]=textread(horzcat(path_ca{i},'/gt_pose.txt'), ...
+        '%u%*f%*f%*f%*f%*f%*f%*f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+    gt_pose = [t, x, y, z];
+    
+    % read odom heading file
+    [hdg]=textread(horzcat(path_ca{i},'/odometry_heading.txt'), ...
+        '%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+    odom_pose(:,9) = hdg;
+    
+    % read gt heading file
+    [hdg]=textread(horzcat(path_ca{i},'/gt_heading.txt'), ...
+        '%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+    gt_pose(:,9) = hdg;
+    
     % Normalize time
     odom_pose(:,1) = (odom_pose(:,1) - odom_pose(1,1))/10^6;
-    diff_pose(:,1) = (diff_pose(:,1) - diff_pose(1,1))/10^6;
+    diff_pose(:,1) = (diff_pose(:,1) - diff_pose(1,1))/10^6;    
+    gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
     if(CONTROL_FILE)
         control(:,1) = (control(:,1) - control(1,1))/10^6;
     end
-    
-    % Create GT pose (gt = diff + odom)
-    gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
     
     % cut neg time part
     gt_pose(gt_pose(:,1)<0,:) = [];
@@ -77,7 +93,7 @@ for i=1:n_logs
     % compute error norm
     diff_norm = zeros(size(diff_pose,1),1);
     for j = 1:size(diff_pose,1)
-        diff_norm(j) = norm(diff_pose(j,2:3));
+        diff_norm(j) = norm(diff_pose(j,2:4));
     end
     
     % travelled distance up to now
@@ -114,15 +130,21 @@ legend(legend_names);
 hold off
 
 % xy error norm over time vs time
+legend_names_2pdt = cell(1,n_logs);
+for i = 1:n_logs
+    legend_names_2pdt{(i-1)+i} = horzcat('test ', num2str(i));
+    legend_names_2pdt{(i-1)+i+1} = horzcat('test ', num2str(i), ', 2% distance traveled');
+end
 figure(102);
 hold on
 for i=1:n_logs
-    plot(diff_pose_ca{i}(:,1), diff_norm_ca{i});
+    plot(diff_pose_ca{i}(:,1), diff_norm_ca{i}, diff_pose_ca{i}(:,1), dist_accum_ca{i}.*0.02, 'r--');
     grid on;
     xlabel('time [s]'), ylabel('xy error [m]')
 end
+% plot(diff_pose_ca{i}(:,1), dist_accum_ca{i}.*0.02, 'r-')
 title({'Visual Odometry Evaluation', 'xy error norm over time'});
-legend(legend_names);
+legend(legend_names_2pdt);
 hold off
 
 if(CONTROL_FILE)
@@ -170,3 +192,16 @@ hold off
 % end
 % grid on, legend(legend_names);
 % xlabel('time [s]'), ylabel('angle [rad]'), title('Visual Odometry Evaluation - heading error over distance travelled');
+
+% heading error vs heading change over time
+figure(105);
+for i=1:n_logs
+    subplot(n_logs,1,i);
+    plot(odom_pose_ca{i}(:,1), odom_pose_ca{i}(:,9), gt_pose_ca{i}(:,1), gt_pose_ca{i}(:,9));
+    grid on, legend('odom heading', 'GT heading');
+    xlabel('time [s]'), ylabel('angle [rad]');
+    title({horzcat('Visual Odometry Evaluation - test ', num2str(i)), 'heading error vs GT heading over time'});
+end
+% title({'Visual Odometry Evaluation', 'heading error vs travelled distance'});
+
+
