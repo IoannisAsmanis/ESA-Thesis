@@ -42,3 +42,6 @@ NEW VO PARAMS:
 
 - 20191007-1628: camera_calib_5, match_radius=350, small rocks, control=20191007-1615
 - 20191007-1633: camera_calib_4, match_radius=350, small rocks, control=20191007-1615
+
+- 20191008-0847: camera_calib_5, pitch=30.4, old pos
+- 20191008-1538: camera_calib_5, new bucketing

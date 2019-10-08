@@ -1,3 +1,8 @@
+BRANCHES CREATED:
+    - bundles/exoter
+    - bundles/rover
+    - control/orogen/motion_translator
+
 rock/bundles/exoter/script/
     control.rb
     arm_commands.rb 
