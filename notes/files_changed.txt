@@ -2,6 +2,7 @@ BRANCHES CREATED:
     - bundles/exoter
     - bundles/rover
     - control/orogen/motion_translator
+    - perception/orogen/viso2
 
 rock/bundles/exoter/script/
     control.rb
