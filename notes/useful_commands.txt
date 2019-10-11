@@ -17,6 +17,15 @@ ALWAYS!!!!!!! gitmatteo BEFORE commits ALWAYS!!!!!!!!!!!!!!!!
 
 to check: git config user.name
 
-git checkout -b visodom  //create local branch
-git push -u exoter visodom    // push branch remote
+git checkout -b visodom         //create local branch
+git push -u rover visodom       //push branch remote
+git log rover/visodom..visodom  //see commits not yet pushed
+git remote -v                   //print names of repo (git push <repo_name> <branch_name>)
+
+
+
+
+
+
+
 
