@@ -33,3 +33,7 @@ octave-workspace
 # txt swp/swo
 *.swp
 *.swo
+
+# rock log files that are usually too big
+unit_visual_odometry.*.log
+loccam.*.log
