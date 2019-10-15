@@ -1,5 +1,9 @@
 %% PLOT A SINGLE TEST PERFORMANCES
+% IMPORTANT: for reasons beyond magic, sometimes odom_world.txt contains an
+% extra header line. either delete it manually, or change the headerlines
+% param in textread to from 2 to 3 (line 79)
 
+%%
 clear all
 close all
 
@@ -52,14 +56,16 @@ close all
 % path = 'logs/20191001-1417'; 
 % path = 'logs/20191001-1422'; 
 % path = 'logs/20191001-1554'; 
-path = 'logs/20191001-1703'; 
-path = 'logs/20191002-1458'; 
-path = 'logs/20191002-1535'; 
-path = 'logs/20191007-1248'; 
-path = 'logs/20191007-1445'; 
-path = 'logs/20191007-1504'; 
+% path = 'logs/20191001-1703'; 
+% path = 'logs/20191002-1458'; 
+% path = 'logs/20191002-1535'; 
+% path = 'logs/20191007-1248'; 
+% path = 'logs/20191007-1445'; 
+% path = 'logs/20191007-1504'; 
 % path = 'logs/20191007-1547'; 
-
+% path = 'logs/20191009-1619'; 
+% path = 'logs/20191011-1544'; 
+path = 'logs/20191014-1431'; % first virtual odom run
 
 
 % set true if also control.txt and control_time.txt are provided in the log folder
@@ -70,7 +76,7 @@ CONTROL_FILE = false;
 
 % Read odometry file
 [t, x, y, z, b, c, d, a]=textread(horzcat(path,'/odom_world.txt'), ...
-    '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+    '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 3, 'delimiter', '\t');
 odom_pose = [t, x, y, z, a, b, c, d];
 
 % %%% sneaky trick do not uncomment
@@ -163,9 +169,11 @@ end
 
 % travelled distance up to now
 dist_accum = zeros(size(odom_pose,1),1);
+% dist_accum_temp = zeros(size(odom_pose,1),1);
 for i = 2:size(odom_pose,1)
-    dist_accum(i) = norm(gt_pose(i,2:4) - gt_pose(i-1,2:4));
-    dist_accum(i) = dist_accum(i) + dist_accum(i-1);
+%     dist_accum(i) = norm(gt_pose(i,2:4) - gt_pose(i-1,2:4));
+%     dist_accum(i) = dist_accum(i) + dist_accum(i-1);
+    dist_accum(i,1) = norm(gt_pose(i,2:4) - gt_pose(1,2:4));
 end
 
 
