@@ -10,11 +10,26 @@ close all
 %     'logs/20190919-1521', %1521 %1342 %1628
 %     'logs/20190919-1352', 
 %     'logs/20190919-1359'}; 
+
+% path_ca = {
+%     'logs/20191007-1633', % camera_calib_4
+%     'logs/20191008-0927', % camera_calib_5, pitch=30.4, old pos transform
+%     'logs/20191008-0847', % camera_calib_5 and new body-cam transform
+%     'logs/20191007-1628'}; % camera_calib_5 and old body-cam transform
+
 path_ca = {
-    'logs/20191007-1633', % camera_calib_4
-    'logs/20191007-1628'}; % camera_calib_5
+    'logs/20191011-1544', % master branch so when I arrived
+    'logs/20191014-1235', % new params no block if not moving
+%     'logs/20191014-1244', % new params, no block if not moving, old transform
+    'logs/20191007-1628'}; % camera_calib_5 and old body-cam transform
+
+path_ca = {
+    'logs/20191014-1431'}; % camera_calib_5 and old body-cam transform
+
 % set true if also control.txt and control_time.txt are provided in the log folder
 CONTROL_FILE = false;
+
+%% READ FILES
 
 n_logs = size(path_ca,1);
 
@@ -34,7 +49,7 @@ for i=1:n_logs
     
     % Read odometry file
     [t, x, y, z, b, c, d, a]=textread(horzcat(path_ca{i},'/odom_world.txt'), ...
-        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 3, 'delimiter', '\t');
     odom_pose = [t, x, y, z, a, b, c, d];
     
     % Read difference odometry/vicon file
@@ -99,8 +114,9 @@ for i=1:n_logs
     % travelled distance up to now
     dist_accum = zeros(size(odom_pose,1),1);
     for j = 2:size(odom_pose,1)
-        dist_accum(j) = norm(gt_pose(j,2:4) - gt_pose(j-1,2:4));
-        dist_accum(j) = dist_accum(j) + dist_accum(j-1);
+        %dist_accum(j) = norm(gt_pose(j,2:4) - gt_pose(j-1,2:4));
+        %dist_accum(j) = dist_accum(j) + dist_accum(j-1);
+        dist_accum(j) = norm(gt_pose(j,2:4) - gt_pose(1,2:4));
     end
     
     % save in cell array
@@ -117,6 +133,17 @@ end
 
 %% PLOT DATA
 
+close all
+
+% del = diff_pose_ca{2}(2,1) - diff_pose_ca{2}(1,1);
+% diff_pose_ca{2}(:,1) = diff_pose_ca{2}(:,1) - del;
+% diff_pose_ca{2}(1,1) = 0;
+
+% % realign diff pose times (align test 3 to test 1, if needed align all to a single one)
+% del = diff_pose_ca{3}(2,1) - diff_pose_ca{3}(1,1);
+% diff_pose_ca{3}(:,1) = diff_pose_ca{3}(:,1) - del;
+% diff_pose_ca{3}(1,1) = 0;
+
 % xy error norm over time vs distance travelled
 figure(101);
 hold on
@@ -125,8 +152,9 @@ for i=1:n_logs
     grid on;
     xlabel('distance travelled [m]'), ylabel('xy error [m]')
 end
-title({'Visual Odometry Evaluation', 'xy error norm over travelled distance'});
-legend(legend_names);
+plot(dist_accum_ca{i}, dist_accum_ca{i}*0.02, 'r--')
+title({'Visual Odometry Evaluation', 'xyz error norm over travelled distance'});
+legend_names_t = [legend_names(:)', {'2% distance traveled'}]; legend(legend_names_t)
 hold off
 
 % xy error norm over time vs time
@@ -204,4 +232,19 @@ for i=1:n_logs
 end
 % title({'Visual Odometry Evaluation', 'heading error vs travelled distance'});
 
-
+% % IF NO FIRST STEP ERROR 
+% % xy error norm over time vs distance travelled
+% for i=1:n_logs
+%     diff_norm_ca_nofirsterror{i} = [diff_norm_ca{i}(1); diff_norm_ca{i}(2:end) - diff_norm_ca{i}(2)];
+% end
+% figure(106);
+% hold on
+% for i=1:n_logs
+%     plot(dist_accum_ca{i}, diff_norm_ca_nofirsterror{i});
+%     grid on;
+%     xlabel('distance travelled [m]'), ylabel('xy error [m]')
+% end
+% plot(dist_accum_ca{i}, dist_accum_ca{i}*0.02)
+% title({'Visual Odometry Evaluation', 'xyz error norm over travelled distance'});
+% legend_names_t = [legend_names(:)', {'2% distance traveled'}]; legend(legend_names_t)
+% hold off
