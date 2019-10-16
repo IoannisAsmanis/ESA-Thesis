@@ -1,0 +1,65 @@
+Press Enter to exit
+translation=0.005
+translation=0.005
+25.095 [ Warning][RemoteInputPort::buildRemoteChannelOutput] [VISO2] Stereo Odometer failed!!
+inliers size=91 iter=3 RESULT=2success=1 tr_delta=0.000312418 0.000196301 -0.000127509 
+inliers size=83 iter=3 RESULT=2success=1 tr_delta=-0.000346782 0.000399844 -0.000435339 
+inliers size=75 iter=3 RESULT=2success=1 tr_delta=-0.000714086 0.000282351 -6.65229e-05 
+inliers size=62 iter=3 RESULT=2success=1 tr_delta=-0.000838328 0.00099983 -0.000315873 
+inliers size=64 iter=3 RESULT=2success=1 tr_delta=-0.000585692 0.000242669 -0.000381554 
+inliers size=64 iter=3 RESULT=2success=1 tr_delta=-0.00072495 -1.57425e-05 0.000457984 
+inliers size=73 iter=3 RESULT=2success=1 tr_delta=-0.000796466 0.000173902 6.95463e-05 
+inliers size=69 iter=3 RESULT=2success=1 tr_delta=-0.000261618 0.000421227 -0.000920275 
+inliers size=62 iter=3 RESULT=2success=1 tr_delta=-0.000504807 0.00015342 -0.000523958 
+inliers size=69 iter=3 RESULT=2success=1 tr_delta=-0.000825378 -4.43575e-05 0.000153003 
+inliers size=72 iter=3 RESULT=2success=1 tr_delta=-0.00102851 -8.76057e-05 0.000283041 
+inliers size=71 iter=3 RESULT=2success=1 tr_delta=-0.000916419 6.14246e-05 -0.000165745 
+translation=0.005
+inliers size=69 iter=3 RESULT=2success=1 tr_delta=-0.000566467 -1.81515e-05 -4.24672e-05 
+
+
+
+
+Press Enter to exit
+translation=0.01
+translation=0.01
+Tr_valid false
+No matches
+No matches
+28.918 [ Warning][RemoteInputPort::buildRemoteChannelOutput] [VISO2] Stereo Odometer failed!!
+Tr_valid false
+inliers size=73 iter=3 RESULT=2success=1 tr_delta=-0.00151724 4.7636e-05 0.000646158 
+inliers size=64 iter=3 RESULT=2success=1 tr_delta=-0.00103196 -0.000210167 0.000472532 
+inliers size=73 iter=3 RESULT=2success=1 tr_delta=-0.00107516 0.00105939 -0.000156517 
+inliers size=74 iter=3 RESULT=2success=1 tr_delta=-0.000633311 0.0010342 -0.000754003 
+translation=0.01
+
+
+
+take a look at: 20191014-1025
+20191014-1235: new params, no block if not moving
+20191014-1244: new params, old transform, no block if not moving
+20191014-1431: first virtual visodom run
+
+camera_calib_2:
+20191016-1316: no imu, drift still
+20191016-1320: si imu, drift still
+20191016-1332: si imu, moving
+20191016-1336: no imu, moving
+
+camera_calib_5:
+20191016-1344: no imu, drift still
+20191016-1352: si imu, drift still
+20191016-1356: si imu, moving
+20191016-1347: no imu, moving
+
+
+
+
+
+
+
+
+
+
+
