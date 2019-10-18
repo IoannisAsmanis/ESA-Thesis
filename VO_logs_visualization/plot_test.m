@@ -66,7 +66,7 @@ close all
 % path = 'logs/20191009-1619'; 
 % path = 'logs/20191011-1544'; 
 path = 'logs/20191014-1431'; % first virtual odom run
-
+path = 'logs/20191015-1627'; % drift
 
 % set true if also control.txt and control_time.txt are provided in the log folder
 CONTROL_FILE = false;
@@ -164,7 +164,7 @@ end
 % compute error norm
 diff_norm = zeros(size(diff_pose,1),1);
 for i = 1:size(diff_pose,1)
-    diff_norm(i) = norm(diff_pose(i,2:4));
+    diff_norm(i) = norm(diff_pose(i,2:3));
 end
 
 % travelled distance up to now
@@ -173,7 +173,7 @@ dist_accum = zeros(size(odom_pose,1),1);
 for i = 2:size(odom_pose,1)
 %     dist_accum(i) = norm(gt_pose(i,2:4) - gt_pose(i-1,2:4));
 %     dist_accum(i) = dist_accum(i) + dist_accum(i-1);
-    dist_accum(i,1) = norm(gt_pose(i,2:4) - gt_pose(1,2:4));
+    dist_accum(i,1) = norm(gt_pose(i,2:3) - gt_pose(1,2:3));
 end
 
 
@@ -197,6 +197,7 @@ xlabel('x [m]'), ylabel('y [m]'), title('Visual Odometry Evaluation - XY Plane')
 % legend('Visual Oodometry pose', 'GT pose'), grid on, axis equal;
 % xlabel('time [s]'), ylabel('z [m]'), title('Visual Odometry Evaluation - Z over Time');
 % zt plot - dotted line
+
 figure(4);
 step = 10;
 subplot(2,2,1), plot(odom_pose(1:step:end,1), odom_pose(1:step:end,2), 'r-*', gt_pose(1:step:end,1), gt_pose(1:step:end,2), 'g-*');
