@@ -13,6 +13,17 @@ CONTROL
 
 -20191007-1615: forward, transl=0.03, dist=~2m
 
+-20191021-1357:transl=0.03, dist=5m
+-20191021-1435:transl=0.015, dist=5m
+-20191021-1535:transl=0.045, dist=5m
+
+-20191021-1634.1:rot=0.015, dist=-90deg
+-20191021-1649:rot=0.030, dist=-90deg
+-20191021-1659:rot=0.045, dist=-90deg
+-20191021-1710:rot=0.060, dist=-90deg
+-20191021-1713:rot=0.075, dist=-90deg
+
+
 EXPERIMENTS
 - 20190918-1521: control=20190918-1108, exposure=auto
 - 20190918-1609: control=20190918-1558, exposure=auto
@@ -24,6 +35,18 @@ EXPERIMENTS
 - 20190913-1359: control=20190919-1308, exposure=auto
 
 - 20190919-1628: manually transl=0.015 forward, autoexposure=auto
+
+
+-20191021-1511: control=20191021-1357, set=test16
+-20191021-1517: control=20191021-1435, set=test16
+-20191021-1540: control=20191021-1535, set=test16
+
+
+-20191021-1723: control=20191021-1634, set=test16
+-20191021-1726: control=20191021-1649, set=test16
+-20191021-1728: control=20191021-1659, set=test16
+-20191021-1729: control=20191021-1710, set=test16
+-20191021-1731: control=20191021-1713, set=test16
 
 
 CALIBRATION TESTS:
