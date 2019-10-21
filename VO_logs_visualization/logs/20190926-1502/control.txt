@@ -1,3 +1,0 @@
-pocolog.rb[INFO]: building index ./control.0.idx ...
-/motion_translator.motion_command.translation /motion_translator.motion_command.rotation /motion_translator.motion_command.heading.rad
-0 0 0

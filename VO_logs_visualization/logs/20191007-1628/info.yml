@@ -1,7 +1,0 @@
----
-- time: 20191007-1628
-  cmdline: "./nojoy_visodom.rb "
-  robot_name: default
-  robot_type: default
-  app_name: exoter
-  app_dir: "/home/marta/rock/bundles/exoter"
