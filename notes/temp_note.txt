@@ -53,6 +53,9 @@ camera_calib_5:
 20191016-1356: si imu, moving
 20191016-1347: no imu, moving
 
+camera_calib_2:
+20191016-1757: si imu
+20191016-1800: no imu
 
 
 
