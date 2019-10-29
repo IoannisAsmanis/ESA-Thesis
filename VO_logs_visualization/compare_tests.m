@@ -1,4 +1,8 @@
 %% COMPARE MULTIPLE EXPERIMENTS
+% IMPORTANT: for reasons beyond magic, sometimes odom_world.txt contains an
+% extra header line. either delete it manually, or change the headerlines
+% param in textread to from 2 to 3 (line 79)
+
 clear all
 close all
 % clc
@@ -35,15 +39,24 @@ close all
 %     'logs/20191016-1344', % cam_calib_5, no imu, drift still
 %     'logs/20191016-1352'}; % cam_calib_5, si imu, drift still
 
-path_ca = {
-    'logs/20191016-1332', % cam_calib_2, si imu, moving
-    'logs/20191016-1336', % cam_calib_2, no imu, moving
-    'logs/20191016-1356', % cam_calib_5, si imu, moving
-    'logs/20191016-1347'}; % cam_calib_5, no imu, moving
+% path_ca = {
+%     'logs/20191016-1332', % cam_calib_2, si imu, moving
+%     'logs/20191016-1336', % cam_calib_2, no imu, moving
+%     'logs/20191016-1356', % cam_calib_5, si imu, moving
+%     'logs/20191016-1347'}; % cam_calib_5, no imu, moving
 
 % path_ca = {
 %     'logs/20191016-1757', % cam_calib_2, si imu, moving
 %     'logs/20191016-1800'}; % cam_calib_5, no imu, moving
+
+% new tests translation
+path_ca = {
+%     'logs/20191021-1511', % 
+    'logs/20191021-1517', % 
+    'logs/20191021-1540'}; % 
+
+% new tests point turn
+% path_ca = {'logs/20191021-1723','logs/20191021-1726', 'logs/20191021-1728', 'logs/20191021-1729', 'logs/20191021-1731'}; 
 
 % set true if also control.txt and control_time.txt are provided in the log folder
 CONTROL_FILE = false;
@@ -139,7 +152,7 @@ for i=1:n_logs
     
     % travelled distance up to now
     dist_accum = zeros(size(odom_pose,1),1);
-    for j = 2:size(odom_pose,1)
+    for j = 2:size(gt_pose,1)
         %dist_accum(j) = norm(gt_pose(j,2:4) - gt_pose(j-1,2:4));
         %dist_accum(j) = dist_accum(j) + dist_accum(j-1);
         dist_accum(j) = norm(gt_pose(j,2:3) - gt_pose(1,2:3));
@@ -295,6 +308,17 @@ for i=1:n_logs
 end
 legend(legend_names);
 hold off;
+
+
+
+%% STUFF
+
+delta_tim_vo(1) = odom_pose_ca{1}(1,1);
+for i=2:size(odom_pose_ca{1},1)-1
+    delta_tim_vo(i) = odom_pose_ca{1}(i+1,1)-odom_pose_ca{1}(i,1);
+end
+
+
 
 
 
