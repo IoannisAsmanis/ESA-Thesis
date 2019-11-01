@@ -37,3 +37,7 @@ octave-workspace
 # rock log files that are usually too big
 unit_visual_odometry.*.log
 loccam.*.log
+spartan.*.log
+
+# tar.gz files that are usually too big
+*.tar.gz
