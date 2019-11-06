@@ -50,13 +50,26 @@ close all
 %     'logs/20191016-1800'}; % cam_calib_5, no imu, moving
 
 % new tests translation
-path_ca = {
+% path_ca = {
 %     'logs/20191021-1511', % 
-    'logs/20191021-1517', % 
-    'logs/20191021-1540'}; % 
+%     'logs/20191104-1713', % 
+%     'logs/20191011-1544'}; % master branch so when I arrived
 
 % new tests point turn
 % path_ca = {'logs/20191021-1723','logs/20191021-1726', 'logs/20191021-1728', 'logs/20191021-1729', 'logs/20191021-1731'}; 
+
+% velocity tests on Spartan VO
+path_ca = {
+    'logs/20191105-1534', % 
+    'logs/20191105-1556', % 
+    'logs/20191105-1602', % 
+    'logs/20191105-1610', % 
+    'logs/20191105-1615', % 
+    'logs/20191105-1618', % 
+    'logs/20191105-1619', % 
+    'logs/20191105-1621', % 
+    'logs/20191105-1623'}; % master branch so when I arrived
+
 
 % set true if also control.txt and control_time.txt are provided in the log folder
 CONTROL_FILE = false;
@@ -158,6 +171,12 @@ for i=1:n_logs
         dist_accum(j) = norm(gt_pose(j,2:3) - gt_pose(1,2:3));
     end
     
+    
+    % currently spartan VO does NOT put time in the vo, so use the timestamps
+    % from vicon
+    odom_pose(:,1) = gt_pose(:,1);
+    diff_pose(:,1) = gt_pose(:,1);
+    
     % save in cell array
     diff_pose_ca{i} = diff_pose; clear diff_pose;
     odom_pose_ca{i} = odom_pose; clear odom_pose;
@@ -199,23 +218,23 @@ legend_names_t = [legend_names(:)', {'2% distance traveled'}]; legend(legend_nam
 hold off
 
 
-% xy error norm over time vs time
-figure(102); close(102); figure(102);
-legend_names_2pdt = cell(1,n_logs);
-for i = 1:n_logs
-    legend_names_2pdt{(i-1)+i} = horzcat('test ', num2str(i));
-    legend_names_2pdt{(i-1)+i+1} = horzcat('test ', num2str(i), ', 2% distance traveled');
-end
-hold on
-for i=1:n_logs
-    plot(diff_pose_ca{i}(:,1), diff_norm_xy_ca{i}, diff_pose_ca{i}(:,1), dist_accum_ca{i}.*0.02, 'r--');
-    grid on;
-    xlabel('time [s]'), ylabel('xy error [m]')
-end
-plot(diff_pose_ca{i}(:,1), 0.03*diff_pose_ca{i}.*0.02, 'r-')
-title({'Visual Odometry Evaluation', 'xy error norm over time'});
-legend(legend_names_2pdt);
-hold off
+% % xy error norm over time vs time
+% figure(102); close(102); figure(102);
+% legend_names_2pdt = cell(1,n_logs);
+% for i = 1:n_logs
+%     legend_names_2pdt{(i-1)+i} = horzcat('test ', num2str(i));
+%     legend_names_2pdt{(i-1)+i+1} = horzcat('test ', num2str(i), ', 2% distance traveled');
+% end
+% hold on
+% for i=1:n_logs
+%     plot(diff_pose_ca{i}(:,1), diff_norm_xy_ca{i}, diff_pose_ca{i}(:,1), dist_accum_ca{i}.*0.02, 'r--');
+%     grid on;
+%     xlabel('time [s]'), ylabel('xy error [m]')
+% end
+% plot(diff_pose_ca{i}(:,1), 0.03*diff_pose_ca{i}.*0.02, 'r-')
+% title({'Visual Odometry Evaluation', 'xy error norm over time'});
+% legend(legend_names_2pdt);
+% hold off
 
 
 if(CONTROL_FILE)
@@ -246,15 +265,15 @@ legend(legend_names);
 hold off
 
 
-% heading estimate vs heading gt over time
-figure(105);
-for i=1:n_logs
-    subplot(n_logs,1,i);
-    plot(odom_pose_ca{i}(:,1), odom_pose_ca{i}(:,9), gt_pose_ca{i}(:,1), gt_pose_ca{i}(:,9));
-    grid on, legend('odom heading', 'GT heading');
-    xlabel('time [s]'), ylabel('angle [rad]');
-    title({horzcat('Visual Odometry Evaluation - test ', num2str(i)), 'heading error vs GT heading over time'});
-end
+% % heading estimate vs heading gt over time
+% figure(105);
+% for i=1:n_logs
+%     subplot(n_logs,1,i);
+%     plot(odom_pose_ca{i}(:,1), odom_pose_ca{i}(:,9), gt_pose_ca{i}(:,1), gt_pose_ca{i}(:,9));
+%     grid on, legend('odom heading', 'GT heading');
+%     xlabel('time [s]'), ylabel('angle [rad]');
+%     title({horzcat('Visual Odometry Evaluation - test ', num2str(i)), 'heading error vs GT heading over time'});
+% end
 
 
 % x y z error components over time
@@ -313,12 +332,17 @@ hold off;
 
 %% STUFF
 
-delta_tim_vo(1) = odom_pose_ca{1}(1,1);
+% compute telta time in vo samples
+delta_time_vo(1) = odom_pose_ca{1}(1,1);
 for i=2:size(odom_pose_ca{1},1)-1
-    delta_tim_vo(i) = odom_pose_ca{1}(i+1,1)-odom_pose_ca{1}(i,1);
+    delta_time_vo(i) = odom_pose_ca{1}(i+1,1)-odom_pose_ca{1}(i,1);
 end
 
-
+% fit line to diff_pose
+for i=1:n_logs
+    p(i,:) = polyfit(dist_accum_ca{i}, diff_norm_xy_ca{i}, 1)
+end
+p(:,1)
 
 
 

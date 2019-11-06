@@ -65,8 +65,13 @@ close all
 % path = 'logs/20191007-1547'; 
 % path = 'logs/20191009-1619'; 
 % path = 'logs/20191011-1544'; 
-path = 'logs/20191014-1431'; % first virtual odom run
-path = 'logs/20191015-1627'; % drift
+% path = 'logs/20191014-1431'; % first virtual odom run
+% path = 'logs/20191015-1627'; % drift
+% path = 'logs/20191017-1651'; % best of params selection
+% ---------- SPARTAN VO ---------- %
+path = 'logs/20191104-1713'; % 
+% path = 'logs/20191007-1628'; % camera_calib_5 and old body-cam transform
+
 
 % set true if also control.txt and control_time.txt are provided in the log folder
 CONTROL_FILE = false;
@@ -148,7 +153,7 @@ diff_pose = [odom_pose(:,1) gt_pose(:,2:end) - odom_pose(:,2:end)];
 
 % convert diff quaternion to diff heading
 hdg = quaternion2heading(diff_pose(:,5:8));
-diff_pose(:,9) = hdg;
+diff_pose(:,9) = gt_pose(:,9) - odom_pose(:,9); %hdg;
 
 % Create GT pose (gt = diff + odom)
 % gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
@@ -167,6 +172,11 @@ for i = 1:size(diff_pose,1)
     diff_norm(i) = norm(diff_pose(i,2:3));
 end
 
+% diff2 = [gt_pose(:,2)-odom_pose(:,2), gt_pose(:,3)-odom_pose(:,3)];
+% for i = 1:size(diff2,1)
+%     diff_norm(i) = norm(diff2(i,:));
+% end
+
 % travelled distance up to now
 dist_accum = zeros(size(odom_pose,1),1);
 % dist_accum_temp = zeros(size(odom_pose,1),1);
@@ -175,6 +185,11 @@ for i = 2:size(odom_pose,1)
 %     dist_accum(i) = dist_accum(i) + dist_accum(i-1);
     dist_accum(i,1) = norm(gt_pose(i,2:3) - gt_pose(1,2:3));
 end
+
+% currently spartan VO does NOT put time in the vo, so use the timestamps
+% from vicon
+odom_pose(:,1) = gt_pose(:,1);
+diff_pose(:,1) = gt_pose(:,1);
 
 
 %% PLOT DATA
@@ -262,9 +277,9 @@ end
 % heading vs gt_heading over time
 figure(11);
 % plot(odom_pose(:,1), odom_pose(:,9), gt_pose2(:,1), gt_pose2(:,9));
-plot(odom_pose(:,1), odom_pose(:,9), gt_pose(:,1), gt_pose(:,9));
+plot(odom_pose(:,1), rad2deg(odom_pose(:,9)), gt_pose(:,1), rad2deg(gt_pose(:,9)));
 grid on, legend('odom heading', 'GT heading');
-xlabel('time [s]'), ylabel('angle [rad]'), title('Visual Odometry Evaluation - heading evaluation over time');
+xlabel('time [s]'), ylabel('angle [deg]'), title('Visual Odometry Evaluation - heading evaluation over time');
 
 % xy trajectory over time (z)
 figure(12);

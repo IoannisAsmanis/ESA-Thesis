@@ -50,7 +50,7 @@ for i=1:n_logs
     diff_pose = [t, x, y, z, a, b, c, d];
 
     % save result array
-    results(i,:) = [i, norm([diff_pose(end,2) diff_pose(end,3)])];
+    results(i,:) = [i, norm([diff_pose(end,2) diff_pose(end,3)]), rad2deg(quaternion2heading(diff_pose(end,5:8)))];
     
     % save in cell array
     diff_pose_ca{i} = diff_pose; clear diff_pose;
@@ -59,7 +59,13 @@ end
 
 %% DISPLAY RESULTS
 
+% sort by xy error norm
 results_sorted = sortrows(results,2);
+
+% remove >1 deg heaing error
+hdg_idx = abs(results_sorted(:,3)) > 1;
+results_sorted(hdg_idx,:) = [];
+
 disp(results_sorted(1,:));
 
 
