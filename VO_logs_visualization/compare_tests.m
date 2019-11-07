@@ -157,18 +157,24 @@ for i=1:n_logs
     diff_pose(diff_pose(:,1)<0,:) = [];
     odom_pose(odom_pose(:,1)<0,:) = [];
 
-    % compute error norm
-    diff_norm = zeros(size(diff_pose,1),1);
+    % compute xy error norm
+    diff_norm_xy = zeros(size(diff_pose,1),1);
     for j = 1:size(diff_pose,1)
-        diff_norm(j) = norm(diff_pose(j,2:3));
+        diff_norm_xy(j) = norm(diff_pose(j,2:3));
+    end
+    
+    % compute xyz error norm
+    diff_norm_xyz = zeros(size(diff_pose,1),1);
+    for j = 1:size(diff_pose,1)
+        diff_norm_xyz(j) = norm(diff_pose(j,2:4));
     end
     
     % travelled distance up to now
     dist_accum = zeros(size(odom_pose,1),1);
     for j = 2:size(gt_pose,1)
-        %dist_accum(j) = norm(gt_pose(j,2:4) - gt_pose(j-1,2:4));
-        %dist_accum(j) = dist_accum(j) + dist_accum(j-1);
-        dist_accum(j) = norm(gt_pose(j,2:3) - gt_pose(1,2:3));
+        dist = norm(gt_pose(j,2:4) - gt_pose(j-1,2:4));
+        dist_accum(j) = dist + dist_accum(j-1);     
+        %dist_accum(j) = norm(gt_pose(j,2:4) - gt_pose(1,2:4));
     end
     
     
@@ -180,7 +186,8 @@ for i=1:n_logs
     % save in cell array
     diff_pose_ca{i} = diff_pose; clear diff_pose;
     odom_pose_ca{i} = odom_pose; clear odom_pose;
-    diff_norm_xy_ca{i} = diff_norm; clear diff_norm;
+    diff_norm_xy_ca{i} = diff_norm_xy; clear diff_norm_xy;
+    diff_norm_xyz_ca{i} = diff_norm_xyz; clear diff_norm_xyz;
     dist_accum_ca{i} = dist_accum; clear dist_accum;
     hdg_err_ca{i} = hdg_err; clear hdg_err;
     if(CONTROL_FILE)
@@ -190,7 +197,8 @@ for i=1:n_logs
 end
 
 
-%% PLOT DATA
+%% PLOT DATA 
+% figs used: 110
 
 close all
 
@@ -204,13 +212,27 @@ close all
 % diff_pose_ca{3}(1,1) = 0;
 
 
-% xy error norm over time vs distance travelled
-figure(101);
+% % xy error norm over time vs distance travelled
+% figure(101);
+% hold on
+% for i=1:n_logs
+%     plot(dist_accum_ca{i}, diff_norm_xy_ca{i});
+%     grid on;
+%     xlabel('distance travelled [m]'), ylabel('xy error [m]')
+% end
+% plot(dist_accum_ca{i}, dist_accum_ca{i}*0.02, 'r--')
+% title({'Visual Odometry Evaluation', 'xy error norm over travelled distance'});
+% legend_names_t = [legend_names(:)', {'2% distance traveled'}]; legend(legend_names_t)
+% hold off
+
+
+% xyz error norm over time vs distance travelled
+figure(109);
 hold on
 for i=1:n_logs
-    plot(dist_accum_ca{i}, diff_norm_xy_ca{i});
+    plot(dist_accum_ca{i}, diff_norm_xyz_ca{i});
     grid on;
-    xlabel('distance travelled [m]'), ylabel('xy error [m]')
+    xlabel('distance travelled [m]'), ylabel('xyz error [m]')
 end
 plot(dist_accum_ca{i}, dist_accum_ca{i}*0.02, 'r--')
 title({'Visual Odometry Evaluation', 'xyz error norm over travelled distance'});
@@ -252,17 +274,17 @@ if(CONTROL_FILE)
 end
 
 
-% ground truth trajectory on xy plane
-figure(104);
-hold on
-for i=1:n_logs
-    plot(gt_pose_ca{i}(:,2), gt_pose_ca{i}(:,3));
-    xlabel('x [m]'), ylabel('y [m]')
-end
-title({'Visual Odometry Evaluation', 'ground truth trajectory'});
-grid on, axis equal; 
-legend(legend_names);
-hold off
+% % ground truth trajectory on xy plane
+% figure(104);
+% hold on
+% for i=1:n_logs
+%     plot(gt_pose_ca{i}(:,2), gt_pose_ca{i}(:,3));
+%     xlabel('x [m]'), ylabel('y [m]')
+% end
+% title({'Visual Odometry Evaluation', 'ground truth trajectory'});
+% grid on, axis equal; 
+% legend(legend_names);
+% hold off
 
 
 % % heading estimate vs heading gt over time
@@ -276,27 +298,27 @@ hold off
 % end
 
 
-% x y z error components over time
-figure(106); close(106); figure(106);
-comp = {'X', 'Y', 'Z', 'XY'};
-for j = 1:3
-    subplot(2,2,j);
-    hold on;
-    for i=1:n_logs
-        plot(diff_pose_ca{i}(:,1), diff_pose_ca{i}(:,j+1));
-    end
-    legend(legend_names);
-    grid on, xlabel('time [s]'), ylabel('error [m]'), title(horzcat('Visual Odometry Evaluation - ', comp{j}, ' error over Time'));
-    hold off;
-end
-subplot(2,2,4);
-hold on;
-for i=1:n_logs
-    plot(diff_pose_ca{i}(:,1), diff_norm_xy_ca{i});
-end
-legend(legend_names);
-grid on, xlabel('time [s]'), ylabel('error [m]'), title(horzcat('Visual Odometry Evaluation - XY error norm over Time'));
-hold off;
+% % x y z error components over time
+% figure(106); close(106); figure(106);
+% comp = {'X', 'Y', 'Z', 'XY'};
+% for j = 1:3
+%     subplot(2,2,j);
+%     hold on;
+%     for i=1:n_logs
+%         plot(diff_pose_ca{i}(:,1), diff_pose_ca{i}(:,j+1));
+%     end
+%     legend(legend_names);
+%     grid on, xlabel('time [s]'), ylabel('error [m]'), title(horzcat('Visual Odometry Evaluation - ', comp{j}, ' error over Time'));
+%     hold off;
+% end
+% subplot(2,2,4);
+% hold on;
+% for i=1:n_logs
+%     plot(diff_pose_ca{i}(:,1), diff_norm_xy_ca{i});
+% end
+% legend(legend_names);
+% grid on, xlabel('time [s]'), ylabel('error [m]'), title(horzcat('Visual Odometry Evaluation - XY error norm over Time'));
+% hold off;
 
 
 % % IF NO FIRST STEP ERROR 
@@ -317,13 +339,25 @@ hold off;
 % hold off
 
 
-% heading error over time
-figure(108);
+% % heading error over time
+% figure(108);
+% hold on;
+% for i=1:n_logs
+%     plot(diff_pose_ca{i}(:,1), abs(rad2deg(diff_pose_ca{i}(:,9))));
+%     grid on; xlabel('time [s]'), ylabel('angle [deg]');
+%     title({horzcat('Visual Odometry Evaluation - test ', num2str(i)), 'heading error over time'});
+% end
+% legend(legend_names);
+% hold off;
+
+
+% heading error over distance traveled
+figure(110);
 hold on;
 for i=1:n_logs
-    plot(diff_pose_ca{i}(:,1), abs(rad2deg(diff_pose_ca{i}(:,9))));
-    grid on; xlabel('time [s]'), ylabel('angle [deg]');
-    title({horzcat('Visual Odometry Evaluation - test ', num2str(i)), 'heading error over time'});
+    plot(dist_accum_ca{i}(:,1), abs(rad2deg(diff_pose_ca{i}(:,9))));
+    grid on; xlabel('distance traveled [m]'), ylabel('angle [deg]');
+    title({horzcat('Visual Odometry Evaluation - test ', num2str(i)), 'heading error over distance traveled'});
 end
 legend(legend_names);
 hold off;
@@ -339,10 +373,16 @@ for i=2:size(odom_pose_ca{1},1)-1
 end
 
 % fit line to diff_pose
+p = zeros(n_logs,2);erf
 for i=1:n_logs
-    p(i,:) = polyfit(dist_accum_ca{i}, diff_norm_xy_ca{i}, 1)
+    p(i,:) = polyfit(dist_accum_ca{i}, diff_norm_xyz_ca{i}, 1);
 end
 p(:,1)
+
+% plot errorn norm and fitted line
+i=1;
+figure;
+plot(dist_accum_ca{i}(:,1), diff_norm_xyz_ca{i}, dist_accum_ca{i}(:,1), dist_accum_ca{i}(:,1)*p(i,1) + p(i,2))
 
 
 
