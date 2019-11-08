@@ -19,7 +19,7 @@ elseif (numel(q) == 4)
 % if an array of quaternions is passed
 else
     w=q(:,1); x=q(:,2); y=q(:,3); z=q(:,4);
-    sinp = +2.0 * (w*y - z*x);
+    sinp = +2.0 * (w.*y - z.*x);
     if (abs(sinp) >= 1)
         pitch = copysign(M_PI / 2, sinp);
     else
