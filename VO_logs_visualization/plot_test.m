@@ -1,11 +1,14 @@
 %% PLOT A SINGLE TEST PERFORMANCES
 % IMPORTANT: for reasons beyond magic, sometimes odom_world.txt contains an
 % extra header line. either delete it manually, or change the headerlines
-% param in textread to from 2 to 3 (line 79)
+% param in textread to from 2 to 3
+
 
 %%
 clear all
 close all
+
+addpath('../functions')
 
 % set log path (uncomment one)
 % path = 'logs/20190912-1551';
@@ -69,8 +72,9 @@ close all
 % path = 'logs/20191015-1627'; % drift
 % path = 'logs/20191017-1651'; % best of params selection
 % ---------- SPARTAN VO ---------- %
-path = 'logs/20191104-1713'; % 
+% path = 'logs/20191104-1713'; % 
 % path = 'logs/20191007-1628'; % camera_calib_5 and old body-cam transform
+path = 'logs/20191107-1304'; % 
 
 
 % set true if also control.txt and control_time.txt are provided in the log folder
@@ -186,10 +190,10 @@ for i = 2:size(odom_pose,1)
     dist_accum(i,1) = norm(gt_pose(i,2:3) - gt_pose(1,2:3));
 end
 
-% currently spartan VO does NOT put time in the vo, so use the timestamps
-% from vicon
-odom_pose(:,1) = gt_pose(:,1);
-diff_pose(:,1) = gt_pose(:,1);
+% % currently spartan VO does NOT put time in the vo, so use the timestamps
+% % from vicon
+% odom_pose(:,1) = gt_pose(:,1);
+% diff_pose(:,1) = gt_pose(:,1);
 
 
 %% PLOT DATA

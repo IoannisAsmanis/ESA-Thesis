@@ -42,13 +42,13 @@ exoter_pose_avg = mean(exoter_pose);
 
 % convert quaternion to Euler ZYX
 cam_eul = [quaternion2heading(cam_pose_avg(5:8))
-           quaternion2roll(cam_pose_avg(5:8))
-           quaternion2pitch(cam_pose_avg(5:8))];
-cam_eul = quat2eul(cam_pose_avg(5:8), 'ZYX')';   
+           quaternion2pitch(cam_pose_avg(5:8))
+           quaternion2roll(cam_pose_avg(5:8))];
+% cam_eul2 = quat2eul(cam_pose_avg(5:8), 'ZYX')';   
 exoter_eul = [quaternion2heading(exoter_pose_avg(5:8))
-              quaternion2roll(exoter_pose_avg(5:8))
-              quaternion2pitch(exoter_pose_avg(5:8))];       
-exoter_eul = quat2eul(exoter_pose_avg(5:8), 'ZYX')'; 
+              quaternion2pitch(exoter_pose_avg(5:8))
+              quaternion2roll(exoter_pose_avg(5:8))];       
+% exoter_eul2 = quat2eul(exoter_pose_avg(5:8), 'ZYX')'; 
 
           
 %% Create transform from world to exoter body 

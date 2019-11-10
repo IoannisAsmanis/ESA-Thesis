@@ -1,7 +1,7 @@
 %% COMPARE MULTIPLE EXPERIMENTS
 % IMPORTANT: for reasons beyond magic, sometimes odom_world.txt contains an
 % extra header line. either delete it manually, or change the headerlines
-% param in textread to from 2 to 3 (line 79)
+% param in textread to from 2 to 3
 
 clear all
 close all
@@ -9,6 +9,8 @@ close all
 
 
 %% OPEN FILES AND PROCESS DATA
+
+addpath('../functions')
 
 % path_ca = {
 %     'logs/20190919-1521', %1521 %1342 %1628
@@ -58,21 +60,74 @@ close all
 % new tests point turn
 % path_ca = {'logs/20191021-1723','logs/20191021-1726', 'logs/20191021-1728', 'logs/20191021-1729', 'logs/20191021-1731'}; 
 
-% velocity tests on Spartan VO
+% % velocity tests on Spartan VO
+% path_ca = {
+%     'logs/20191105-1534', % 
+% %     'logs/20191105-1556', % 
+%     'logs/20191105-1602', % 
+% %     'logs/20191105-1610', % 
+%     'logs/20191105-1615', % 
+% %     'logs/20191105-1618', % 
+%     'logs/20191105-1619', % 
+% %     'logs/20191105-1621', % 
+%     'logs/20191105-1623'}; % 
+
+% % initial error investigation on Spartan VO
+% % SUPER WEIRD AND UNREPEATABLE 
+% path_ca = {
+%     'logs/20191107-1247', %1056', % start at t=1
+%     'logs/20191107-1135'}; %1057'}; % start at t=6
+
+% initial error investigation on Spartan VO
 path_ca = {
-    'logs/20191105-1534', % 
-    'logs/20191105-1556', % 
-    'logs/20191105-1602', % 
-    'logs/20191105-1610', % 
-    'logs/20191105-1615', % 
-    'logs/20191105-1618', % 
-    'logs/20191105-1619', % 
-    'logs/20191105-1621', % 
-    'logs/20191105-1623'}; % master branch so when I arrived
+    'logs/20191107-1345', %1056', % start at t=1
+    'logs/20191107-1346'}; %1057'}; % start at t=6
 
 
-% set true if also control.txt and control_time.txt are provided in the log folder
+% % initial error investigation on Spartan VO - forwards then backwards
+% path_ca = {
+%     'logs/20191107-1314', % start immediately at t=1
+%     'logs/20191107-1304'}; % start later at t=6
+
+% initial error investigation on Spartan VO if removing 1 vo step
+path_ca = {
+    'logs/20191107-1345', % start at t=1
+    'logs/20191107-1510', % start at t=1 with the if
+    'logs/20191107-1557', % start at t=1 with the ifx3
+    'logs/20191107-1619', % start at t=1 with the ifx5
+    'logs/20191107-1630', % start at t=1 with the ifx15
+    'logs/20191107-1346', % start at t=6
+    'logs/20191107-1509', % start at t=6 with the if
+    'logs/20191107-1556', % start at t=6 with the ifx3
+    'logs/20191107-1620', % start at t=6 with the ifx5
+    'logs/20191107-1632'}; % start at t=6 with the ifx15
+
+% % gradual acceleration
+path_ca = {
+    'logs/20191108-1633', % instant at t=1
+    'logs/20191108-1634', % instant at t=1
+    'logs/20191108-1635', % instant at t=1
+    'logs/20191108-1636', % instant at t=1
+    'logs/20191108-1637', % instant at t=1
+    'logs/20191108-1638', % instant at t=1
+    'logs/20191108-1638.1'}; % vstep=0.01 with tstep=0.5
+
+% % check IMU
+% path_ca = {
+%     'logs/20191108-1451'}; % instant at t=1
+    
+% % comparing transforms
+path_ca = {
+    'logs/20191108-1731', % instant at t=1
+    'logs/20191108-1752', % instant at t=1
+    'logs/20191108-1754', % instant at t=1
+    'logs/20191108-1757', % instant at t=1
+    'logs/20191108-1806'}; % 
+
+% set true if also other files are provided in the log folder
 CONTROL_FILE = false;
+IMU_FILE = false;
+
 
 %% READ FILES
 
@@ -90,7 +145,8 @@ dist_accum_ca = cell(1,n_logs);
 control_ca = cell(1,n_logs);
 gt_pose_ca = cell(1,n_logs);
 hdg_err_ca = cell(1,n_logs);
-    
+imu_ca{i} = cell(1,n_logs);
+
 for i=1:n_logs
     
     % Read odometry file
@@ -119,14 +175,26 @@ for i=1:n_logs
         % add end of control signal
         control(end+1,:) = [control(end,1) 0 0];
     end
+    if(IMU_FILE)
+        % read imu file
+        [t, b, c, d, a]=textread(horzcat(path_ca{i},'/imu.txt'), ...
+            '%d%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+        imu = [t, a, b, c, d];
+        imu(:,6) = quaternion2heading(imu(:,2:5));
+        imu(:,7) = quaternion2pitch(imu(:,2:5));
+        imu(:,8) = quaternion2roll(imu(:,2:5));
+    end
     
     % Create GT pose (gt = diff + odom)
     %gt_pose = [odom_pose(:,1) odom_pose(:,2:end)+diff_pose(:,2:end)];
     
     % read real gt pose file
-    [t, x, y, z]=textread(horzcat(path_ca{i},'/gt_pose.txt'), ...
-        '%u%*f%*f%*f%*f%*f%*f%*f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
-    gt_pose = [t, x, y, z];
+    [t, x, y, z, b, c, d, a]=textread(horzcat(path_ca{i},'/gt_pose.txt'), ...
+        '%d%f%f%f%*f%*f%*f%*f%*f%*f%*f%*f%*f%f%f%f%f%*[^\n]', 'headerlines', 2, 'delimiter', '\t');
+    gt_pose = [t, x, y, z, a, b, c, d];
+    gt_pose(:,9) = quaternion2heading(gt_pose(:,5:8)); 
+    gt_pose(:,10) = quaternion2pitch(gt_pose(:,5:8));
+    gt_pose(:,11) = quaternion2roll(gt_pose(:,5:8));
     
     % convert diff heading QUAT to ZYX
     diff_pose(:,9) = quaternion2heading(diff_pose(:,5:8));
@@ -150,6 +218,9 @@ for i=1:n_logs
     gt_pose(:,1) = (gt_pose(:,1) - gt_pose(1,1))/10^6;
     if(CONTROL_FILE)
         control(:,1) = (control(:,1) - control(1,1))/10^6;
+    end
+    if(IMU_FILE)
+        imu(:,1) = (imu(:,1) - imu(1,1))/10^6;
     end
     
     % cut neg time part
@@ -194,11 +265,21 @@ for i=1:n_logs
         control_ca{i} = control; clear control;
     end
     gt_pose_ca{i} = gt_pose; clear gt_pose;
+    if(IMU_FILE)
+        imu_ca{i} = imu; clear imu;
+    end
 end
 
 
 %% PLOT DATA 
-% figs used: 110
+
+% % remove by hand stuff over tot indexes
+% tot=20;
+% for i = 1:n_logs
+%     dist_accum_ca{i} = dist_accum_ca{i}(1:tot);
+%     diff_pose_ca{i} = diff_pose_ca{i}(1:tot,:);
+%     diff_norm_xyz_ca{i} = diff_norm_xyz_ca{i}(1:tot);
+% end
 
 close all
 
@@ -226,7 +307,7 @@ close all
 % hold off
 
 
-% xyz error norm over time vs distance travelled
+% xyz error norm over distance travelled vs 2% error
 figure(109);
 hold on
 for i=1:n_logs
@@ -240,7 +321,7 @@ legend_names_t = [legend_names(:)', {'2% distance traveled'}]; legend(legend_nam
 hold off
 
 
-% % xy error norm over time vs time
+% % xy error norm over time vs 2% error
 % figure(102); close(102); figure(102);
 % legend_names_2pdt = cell(1,n_logs);
 % for i = 1:n_logs
@@ -259,8 +340,27 @@ hold off
 % hold off
 
 
+% xyz error norm over time vs 2% error
+figure(111); close(111); figure(111);
+legend_names_2pdt = cell(1,n_logs);
+for i = 1:n_logs
+    legend_names_2pdt{(i-1)+i} = horzcat('test ', num2str(i));
+    legend_names_2pdt{(i-1)+i+1} = horzcat('test ', num2str(i), ', 2% distance traveled');
+end
+hold on
+for i=1:n_logs
+    plot(diff_pose_ca{i}(:,1), diff_norm_xyz_ca{i}, '-*');%, diff_pose_ca{i}(:,1), dist_accum_ca{i}.*0.02, 'r--');
+    grid on;
+    xlabel('time [s]'), ylabel('xyz error [m]')
+end
+% plot(diff_pose_ca{i}(:,1), 0.03*diff_pose_ca{i}.*0.02, 'r-')
+title({'Visual Odometry Evaluation', 'xyz error norm over time'});
+legend(legend_names);%_2pdt);
+hold off
+
+
+% control over time
 if(CONTROL_FILE)
-    % control over time
     figure(103);
     hold on
     for i=1:n_logs
@@ -298,27 +398,27 @@ end
 % end
 
 
-% % x y z error components over time
-% figure(106); close(106); figure(106);
-% comp = {'X', 'Y', 'Z', 'XY'};
-% for j = 1:3
-%     subplot(2,2,j);
-%     hold on;
-%     for i=1:n_logs
-%         plot(diff_pose_ca{i}(:,1), diff_pose_ca{i}(:,j+1));
-%     end
-%     legend(legend_names);
-%     grid on, xlabel('time [s]'), ylabel('error [m]'), title(horzcat('Visual Odometry Evaluation - ', comp{j}, ' error over Time'));
-%     hold off;
-% end
-% subplot(2,2,4);
-% hold on;
-% for i=1:n_logs
-%     plot(diff_pose_ca{i}(:,1), diff_norm_xy_ca{i});
-% end
-% legend(legend_names);
-% grid on, xlabel('time [s]'), ylabel('error [m]'), title(horzcat('Visual Odometry Evaluation - XY error norm over Time'));
-% hold off;
+% x y z error components over time
+figure(106); close(106); figure(106);
+comp = {'X', 'Y', 'Z', 'XY'};
+for j = 1:3
+    subplot(2,2,j);
+    hold on;
+    for i=1:n_logs
+        plot(diff_pose_ca{i}(:,1), diff_pose_ca{i}(:,j+1));
+    end
+    legend(legend_names);
+    grid on, xlabel('time [s]'), ylabel('error [m]'), title(horzcat('Visual Odometry Evaluation - ', comp{j}, ' error over Time'));
+    hold off;
+end
+subplot(2,2,4);
+hold on;
+for i=1:n_logs
+    plot(diff_pose_ca{i}(:,1), diff_norm_xy_ca{i});
+end
+legend(legend_names);
+grid on, xlabel('time [s]'), ylabel('error [m]'), title(horzcat('Visual Odometry Evaluation - XY error norm over Time'));
+hold off;
 
 
 % % IF NO FIRST STEP ERROR 
@@ -363,26 +463,59 @@ legend(legend_names);
 hold off;
 
 
+% heading, pitch, roll error of the IMU over time
+if (IMU_FILE)
+    figure(112);
+    hold on;
+    for i=1:n_logs
+        %interpolate gt_pose to fill all the idx of imu
+        gt_pose_interp = interp1(gt_pose_ca{i}(:,1),gt_pose_ca{i}(:,9),imu_ca{i}(:,1),'pchip');
+        hdg_err_imu = gt_pose_interp - imu_ca{i}(:,6);
+        
+        %interpolate gt_pose to fill all the idx of imu
+        gt_pose_interp = interp1(gt_pose_ca{i}(:,1),gt_pose_ca{i}(:,10),imu_ca{i}(:,1),'pchip');
+        pitch_err_imu = gt_pose_interp - imu_ca{i}(:,7);
+        
+        %interpolate gt_pose to fill all the idx of imu
+        gt_pose_interp = interp1(gt_pose_ca{i}(:,1),gt_pose_ca{i}(:,11),imu_ca{i}(:,1),'pchip');
+        roll_err_imu = gt_pose_interp - imu_ca{i}(:,8);
+        
+        plot(imu_ca{i}(:,1), abs(rad2deg(hdg_err_imu)), imu_ca{i}(:,1), abs(rad2deg(pitch_err_imu)), imu_ca{i}(:,1), abs(rad2deg(roll_err_imu)));
+        grid on; ylabel('Orientation error [deg]'), xlabel('time [s]');
+        title({horzcat('Visual Odometry Evaluation - test ', num2str(i)), 'orientation error over time'});
+        legend('heading error', 'pitch error', 'roll error');
+    end
+    % legend(legend_names);
+    hold off;
+end
+
+% figs used: 112
+
 
 %% STUFF
 
-% compute telta time in vo samples
-delta_time_vo(1) = odom_pose_ca{1}(1,1);
-for i=2:size(odom_pose_ca{1},1)-1
-    delta_time_vo(i) = odom_pose_ca{1}(i+1,1)-odom_pose_ca{1}(i,1);
-end
+% % compute telta time in vo samples
+% t = 2;
+% delta_time_vo(1) = odom_pose_ca{t}(1,1);
+% for i=2:size(odom_pose_ca{t},1)-1
+%     delta_time_vo(i) = odom_pose_ca{t}(i+1,1)-odom_pose_ca{t}(i,1);
+% end
+% 
+% % fit line to diff_pose
+% p = zeros(n_logs,2);
+% for i=1:n_logs
+%     p(i,:) = polyfit(dist_accum_ca{i}, diff_norm_xyz_ca{i}, 1);
+% end
+% p(:,1)
+% 
+% % plot errorn norm and fitted line
+% i=1;
+% figure;
+% plot(dist_accum_ca{i}(:,1), diff_norm_xyz_ca{i}, dist_accum_ca{i}(:,1), dist_accum_ca{i}(:,1)*p(i,1) + p(i,2))
+% 
+% 
 
-% fit line to diff_pose
-p = zeros(n_logs,2);erf
-for i=1:n_logs
-    p(i,:) = polyfit(dist_accum_ca{i}, diff_norm_xyz_ca{i}, 1);
-end
-p(:,1)
 
-% plot errorn norm and fitted line
-i=1;
-figure;
-plot(dist_accum_ca{i}(:,1), diff_norm_xyz_ca{i}, dist_accum_ca{i}(:,1), dist_accum_ca{i}(:,1)*p(i,1) + p(i,2))
 
 
 
