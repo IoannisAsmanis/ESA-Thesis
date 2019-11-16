@@ -52,8 +52,6 @@ pocolog.rb[INFO]: loading file info from ./viso2_evaluation.0.idx...
 0.94073021661632605
 0.94101045766065772
 0.94112310992158066
-pocolog.rb[INFO]: loading file info from ./viso2_evaluation.0.idx... 
-/viso2_evaluation.travelled_distance
 0.00010358449643162257
 0.00018172641891414968
 0.00056342853826098801

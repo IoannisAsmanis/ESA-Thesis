@@ -1,6 +1,7 @@
 pocolog.rb[INFO]: loading file info from ./viso2_evaluation.0.idx... 
 /viso2_evaluation.odometry_heading
 -1.710569414459005e-49
+-1.710569414459005e-49
 1.6520443518656076e-20
 -1.8264437381409766e-22
 -1.1689239924410399e-20
