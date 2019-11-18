@@ -52,8 +52,6 @@ pocolog.rb[INFO]: loading file info from ./viso2_evaluation.0.idx...
 0.0078764771194865611
 0.0077315600495477341
 0.0079983482650082382
-pocolog.rb[INFO]: loading file info from ./viso2_evaluation.0.idx... 
-/viso2_evaluation.perc_error
 0.92763590241043592
 3.3136075023560445
 0.55552889278660023

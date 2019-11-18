@@ -1,6 +1,7 @@
 pocolog.rb[INFO]: loading file info from ./viso2_evaluation.0.idx... 
 /viso2_evaluation.ground_truth_heading
 0.031232634102327062
+0.031232634102327062
 0.031682714796548557
 0.031497504401005384
 0.031546465019976169
