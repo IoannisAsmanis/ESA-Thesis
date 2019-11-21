@@ -1,0 +1,912 @@
+0.000 [ Info   ][Logger] No ORO_LOGLEVEL environment variable set.
+0.000 [ Info   ][Logger]  OROCOS version '2.8.99' compiled with GCC 5.4.0. Running in GNU/Linux.
+0.000 [ Info   ][Logger] Orocos Logging Activated at level : [ Warning] ( 4 ) 
+0.000 [ Info   ][Logger] Reference System Time is : 16567967304379 ticks ( 16568 seconds ).
+0.000 [ Info   ][Logger] Logging is relative to this time.
+0.000 [ Info   ][Logger] No RTT_COMPONENT_PATH set. Using default: /
+0.000 [ Info   ][Logger] plugin 'rtt' not loaded before.
+0.000 [ Info   ][Logger] typekit 'rtt' not loaded before.
+0.000 [ Info   ][Logger] No RTT_COMPONENT_PATH set. Using default: /
+0.000 [ Info   ][TypekitRepository::Import] Loading Typekit vicon.
+0.000 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/vicon.
+0.003 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/vicon.
+0.003 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/vicon.
+0.003 [ Info   ][TypekitRepository::Import] Loading Typekit base.
+0.004 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/base.
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/Frame>
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/FramePair>
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Affine3d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Angle
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/AngleAxisd
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointLimits
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointState
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointState/MODE
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointTransform
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointTransformVector
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/JointsTrajectory
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Matrix2d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Matrix3d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Matrix4d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Matrix6d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/MatrixXd
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Pose
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Pressure
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Quaterniond
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Temperature
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Time
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Trajectory
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/TransformWithCovariance
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/TwistWithCovariance
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Vector2d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Vector3d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Vector4d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Vector6d
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/VectorXd
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Waypoint
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/Wrench
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/commands/LinearAngular6DCommand
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/commands/Motion2D
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/commands/Speed6D
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/geometry/Spline<1>
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/geometry/Spline<3>
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/BodyState
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/DepthMap
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/DistanceImage
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/IMUSensors
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Joints
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/LaserScan
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Motion2D
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Pointcloud
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/PoseWithCovariance
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Pressure
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/RigidBodyAcceleration
+0.004 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/RigidBodyState
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Sonar
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/SonarBeam
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/SonarScan
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Wrench
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/Wrenches
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/frame/Frame
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/frame/FramePair
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /base/samples/frame/frame_mode_t
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/string
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</base/Trajectory>
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</base/Vector3d>
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</base/Waypoint>
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</std/string>
+0.005 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</uint32_t>
+0.031 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/base.
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/Frame>
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/FramePair>
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Affine3d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Angle
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/AngleAxisd
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointLimits
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointState
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointState/MODE
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointTransform
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointTransformVector
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/JointsTrajectory
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Matrix2d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Matrix3d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Matrix4d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Matrix6d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/MatrixXd
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Pose
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Pressure
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Quaterniond
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Temperature
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Time
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Trajectory
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/TransformWithCovariance
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/TwistWithCovariance
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Vector2d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Vector3d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Vector4d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Vector6d
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/VectorXd
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Waypoint
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/Wrench
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/commands/LinearAngular6DCommand
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/commands/Motion2D
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/commands/Speed6D
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/geometry/Spline<1>
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/geometry/Spline<3>
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/BodyState
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/DepthMap
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/DistanceImage
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/IMUSensors
+0.032 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Joints
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/LaserScan
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Motion2D
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Pointcloud
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/PoseWithCovariance
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Pressure
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/RigidBodyAcceleration
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/RigidBodyState
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Sonar
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/SonarBeam
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/SonarScan
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Wrench
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Wrenches
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/frame/Frame
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/frame/FramePair
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/frame/frame_mode_t
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/string
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Trajectory>
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Vector3d>
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</base/Waypoint>
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</std/string>
+0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</uint32_t>
+0.033 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/base.
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/Frame>
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /RTT/extras/ReadOnlyPointer</base/samples/frame/FramePair>
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Affine3d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Angle
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/AngleAxisd
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointLimits
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointState
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointState/MODE
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointTransform
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointTransformVector
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/JointsTrajectory
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Matrix2d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Matrix3d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Matrix4d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Matrix6d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/MatrixXd
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Pose
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Pressure
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Quaterniond
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Temperature
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Time
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Trajectory
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/TransformWithCovariance
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/TwistWithCovariance
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Vector2d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Vector3d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Vector4d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Vector6d
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/VectorXd
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Waypoint
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/Wrench
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/commands/LinearAngular6DCommand
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/commands/Motion2D
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/commands/Speed6D
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/geometry/Spline<1>
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/geometry/Spline<3>
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/BodyState
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/DepthMap
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/DistanceImage
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/IMUSensors
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Joints
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/LaserScan
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Motion2D
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Pointcloud
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/PoseWithCovariance
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Pressure
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/RigidBodyAcceleration
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/RigidBodyState
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Sonar
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/SonarBeam
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/SonarScan
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Wrench
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Wrenches
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/frame/Frame
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/frame/FramePair
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/frame/frame_mode_t
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/string
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/Trajectory>
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/Vector3d>
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/Waypoint>
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</std/string>
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</uint32_t>
+0.061 [ Info   ][TypekitRepository::Import] Loading Typekit logger.
+0.061 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/logger.
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /logger/Annotations
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /logger/Marker
+0.061 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</logger/StreamMetadata>
+0.063 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/logger.
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /logger/Annotations
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /logger/Marker
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</logger/StreamMetadata>
+0.063 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/logger.
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /logger/Annotations
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /logger/Marker
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</logger/StreamMetadata>
+0.064 [ Info   ][TypekitRepository::Import] Loading Typekit std.
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/string
+0.064 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/std.
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /bool
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /double
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /float
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /int16_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /int32_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /int64_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /int8_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /metadata/TaskContext
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /std/vector</double>
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /uint16_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /uint32_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /uint64_t
+0.064 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /uint8_t
+0.067 [ Info   ][TypekitRepository::Import] Loading Transport MQueue:///orogen/std.
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /bool
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /double
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /float
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /int16_t
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /int32_t
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /int64_t
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /int8_t
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /metadata/TaskContext
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/string
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/vector</double>
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint16_t
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint32_t
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint64_t
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint8_t
+0.067 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/std.
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /bool
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /double
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /float
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int16_t
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int32_t
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int64_t
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int8_t
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /metadata/TaskContext
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</double>
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint16_t
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint32_t
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint64_t
+0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint8_t
+0.069 [ Info   ][TypekitRepository::Import] Loading Typekit rtt-types.
+0.070 [ Info   ][TypekitRepository::Import] Loading Transport CORBA://rtt-types.
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for ConnPolicy
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for TaskContext
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for char
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for llong
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for rt_string
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for ullong
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for void
+0.070 [ Info   ][TypekitRepository::Import] Loading Transport mqueue://rtt-types.
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for char
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for llong
+0.070 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for ullong
+0.071 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='GlobalEngine'
+0.071 [ Info   ][GlobalEngine] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 441 ).
+0.071 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='vicon'
+0.072 [ Info   ][vicon] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 442 ).
+0.073 [ Info   ][/home/marta/rock/install/bin/orogen_default_vicon__Task::main()] Creating new TaskContextServer for vicon
+0.074 [ Info   ][TaskContextServer()] CTaskContext 'vicon' found CORBA Naming Service.
+0.074 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'vicon' to CORBA Naming Service.
+0.074 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='vicon_Logger'
+0.075 [ Info   ][vicon_Logger] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 446 ).
+0.075 [ Info   ][/home/marta/rock/install/bin/orogen_default_vicon__Task::main()] Creating new TaskContextServer for vicon_Logger
+0.075 [ Info   ][TaskContextServer()] CTaskContext 'vicon_Logger' found CORBA Naming Service.
+0.076 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'vicon_Logger' to CORBA Naming Service.
+0.076 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='orogen_default_vicon__Task'
+0.076 [ Info   ][orogen_default_vicon__Task] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0.01 (PID= 448 ).
+0.076 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='orogen_default_vicon__Task_Logger'
+0.076 [ Info   ][orogen_default_vicon__Task_Logger] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 450 ).
+0.076 [ Info   ][ThreadOrb] Starting Orb in a thread.
+0.076 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='OrbRunner'
+0.076 [ Info   ][OrbRunner] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 452 ).
+0.077 [ Info   ][OrbRunner] Entering orb->run().
+0.749 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='viconCorba'
+0.749 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.749 [ Warning][viconCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.749 [ Info   ][viconCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 550 ).
+0.749 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started viconCorba.
+1.644 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='vicon_LoggerCorba'
+1.644 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.644 [ Warning][vicon_LoggerCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+1.644 [ Info   ][vicon_LoggerCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 588 ).
+1.644 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started vicon_LoggerCorba.
+23.008 [ ERROR  ][OrbRunner] subject exoter not found!
+23.016 [ ERROR  ][OrbRunner] subject exoter not found!
+23.026 [ ERROR  ][OrbRunner] subject exoter not found!
+23.036 [ ERROR  ][OrbRunner] subject exoter not found!
+23.046 [ ERROR  ][OrbRunner] subject exoter not found!
+23.056 [ ERROR  ][OrbRunner] subject exoter not found!
+23.066 [ ERROR  ][OrbRunner] subject exoter not found!
+23.077 [ ERROR  ][OrbRunner] subject exoter not found!
+23.087 [ ERROR  ][OrbRunner] subject exoter not found!
+23.097 [ ERROR  ][OrbRunner] subject exoter not found!
+23.107 [ ERROR  ][OrbRunner] subject exoter not found!
+23.117 [ ERROR  ][OrbRunner] subject exoter not found!
+23.127 [ ERROR  ][OrbRunner] subject exoter not found!
+23.136 [ ERROR  ][OrbRunner] subject exoter not found!
+23.146 [ ERROR  ][OrbRunner] subject exoter not found!
+23.156 [ ERROR  ][OrbRunner] subject exoter not found!
+23.166 [ ERROR  ][OrbRunner] subject exoter not found!
+23.177 [ ERROR  ][OrbRunner] subject exoter not found!
+23.187 [ ERROR  ][OrbRunner] subject exoter not found!
+23.207 [ ERROR  ][OrbRunner] subject exoter not found!
+23.217 [ ERROR  ][OrbRunner] subject exoter not found!
+23.226 [ ERROR  ][OrbRunner] subject exoter not found!
+23.236 [ ERROR  ][OrbRunner] subject exoter not found!
+23.246 [ ERROR  ][OrbRunner] subject exoter not found!
+23.257 [ ERROR  ][OrbRunner] subject exoter not found!
+23.267 [ ERROR  ][OrbRunner] subject exoter not found!
+23.276 [ ERROR  ][OrbRunner] subject exoter not found!
+23.287 [ ERROR  ][OrbRunner] subject exoter not found!
+23.297 [ ERROR  ][OrbRunner] subject exoter not found!
+23.306 [ ERROR  ][OrbRunner] subject exoter not found!
+23.316 [ ERROR  ][OrbRunner] subject exoter not found!
+23.326 [ ERROR  ][OrbRunner] subject exoter not found!
+23.336 [ ERROR  ][OrbRunner] subject exoter not found!
+23.346 [ ERROR  ][OrbRunner] subject exoter not found!
+23.356 [ ERROR  ][OrbRunner] subject exoter not found!
+23.366 [ ERROR  ][OrbRunner] subject exoter not found!
+23.377 [ ERROR  ][OrbRunner] subject exoter not found!
+23.387 [ ERROR  ][OrbRunner] subject exoter not found!
+23.396 [ ERROR  ][OrbRunner] subject exoter not found!
+23.407 [ ERROR  ][OrbRunner] subject exoter not found!
+23.417 [ ERROR  ][OrbRunner] subject exoter not found!
+23.427 [ ERROR  ][OrbRunner] subject exoter not found!
+23.437 [ ERROR  ][OrbRunner] subject exoter not found!
+23.446 [ ERROR  ][OrbRunner] subject exoter not found!
+23.456 [ ERROR  ][OrbRunner] subject exoter not found!
+23.466 [ ERROR  ][OrbRunner] subject exoter not found!
+23.477 [ ERROR  ][OrbRunner] subject exoter not found!
+23.487 [ ERROR  ][OrbRunner] subject exoter not found!
+23.497 [ ERROR  ][OrbRunner] subject exoter not found!
+23.507 [ ERROR  ][OrbRunner] subject exoter not found!
+23.517 [ ERROR  ][OrbRunner] subject exoter not found!
+23.526 [ ERROR  ][OrbRunner] subject exoter not found!
+23.536 [ ERROR  ][OrbRunner] subject exoter not found!
+23.546 [ ERROR  ][OrbRunner] subject exoter not found!
+23.556 [ ERROR  ][OrbRunner] subject exoter not found!
+23.566 [ ERROR  ][OrbRunner] subject exoter not found!
+23.576 [ ERROR  ][OrbRunner] subject exoter not found!
+23.586 [ ERROR  ][OrbRunner] subject exoter not found!
+23.596 [ ERROR  ][OrbRunner] subject exoter not found!
+23.606 [ ERROR  ][OrbRunner] subject exoter not found!
+23.616 [ ERROR  ][OrbRunner] subject exoter not found!
+23.626 [ ERROR  ][OrbRunner] subject exoter not found!
+23.636 [ ERROR  ][OrbRunner] subject exoter not found!
+23.646 [ ERROR  ][OrbRunner] subject exoter not found!
+23.656 [ ERROR  ][OrbRunner] subject exoter not found!
+23.666 [ ERROR  ][OrbRunner] subject exoter not found!
+23.676 [ ERROR  ][OrbRunner] subject exoter not found!
+23.686 [ ERROR  ][OrbRunner] subject exoter not found!
+23.696 [ ERROR  ][OrbRunner] subject exoter not found!
+23.706 [ ERROR  ][OrbRunner] subject exoter not found!
+23.716 [ ERROR  ][OrbRunner] subject exoter not found!
+23.727 [ ERROR  ][OrbRunner] subject exoter not found!
+23.736 [ ERROR  ][OrbRunner] subject exoter not found!
+23.746 [ ERROR  ][OrbRunner] subject exoter not found!
+23.756 [ ERROR  ][OrbRunner] subject exoter not found!
+23.766 [ ERROR  ][OrbRunner] subject exoter not found!
+23.776 [ ERROR  ][OrbRunner] subject exoter not found!
+23.786 [ ERROR  ][OrbRunner] subject exoter not found!
+23.796 [ ERROR  ][OrbRunner] subject exoter not found!
+23.806 [ ERROR  ][OrbRunner] subject exoter not found!
+23.816 [ ERROR  ][OrbRunner] subject exoter not found!
+23.826 [ ERROR  ][OrbRunner] subject exoter not found!
+23.836 [ ERROR  ][OrbRunner] subject exoter not found!
+23.846 [ ERROR  ][OrbRunner] subject exoter not found!
+23.856 [ ERROR  ][OrbRunner] subject exoter not found!
+23.866 [ ERROR  ][OrbRunner] subject exoter not found!
+23.876 [ ERROR  ][OrbRunner] subject exoter not found!
+23.886 [ ERROR  ][OrbRunner] subject exoter not found!
+23.896 [ ERROR  ][OrbRunner] subject exoter not found!
+23.906 [ ERROR  ][OrbRunner] subject exoter not found!
+23.916 [ ERROR  ][OrbRunner] subject exoter not found!
+23.926 [ ERROR  ][OrbRunner] subject exoter not found!
+23.936 [ ERROR  ][OrbRunner] subject exoter not found!
+23.946 [ ERROR  ][OrbRunner] subject exoter not found!
+23.956 [ ERROR  ][OrbRunner] subject exoter not found!
+23.966 [ ERROR  ][OrbRunner] subject exoter not found!
+23.977 [ ERROR  ][OrbRunner] subject exoter not found!
+23.987 [ ERROR  ][OrbRunner] subject exoter not found!
+23.997 [ ERROR  ][OrbRunner] subject exoter not found!
+24.007 [ ERROR  ][OrbRunner] subject exoter not found!
+24.017 [ ERROR  ][OrbRunner] subject exoter not found!
+24.027 [ ERROR  ][OrbRunner] subject exoter not found!
+24.037 [ ERROR  ][OrbRunner] subject exoter not found!
+24.047 [ ERROR  ][OrbRunner] subject exoter not found!
+24.056 [ ERROR  ][OrbRunner] subject exoter not found!
+24.066 [ ERROR  ][OrbRunner] subject exoter not found!
+24.076 [ ERROR  ][OrbRunner] subject exoter not found!
+24.086 [ ERROR  ][OrbRunner] subject exoter not found!
+24.097 [ ERROR  ][OrbRunner] subject exoter not found!
+24.107 [ ERROR  ][OrbRunner] subject exoter not found!
+24.117 [ ERROR  ][OrbRunner] subject exoter not found!
+24.128 [ ERROR  ][OrbRunner] subject exoter not found!
+24.137 [ ERROR  ][OrbRunner] subject exoter not found!
+24.146 [ ERROR  ][OrbRunner] subject exoter not found!
+24.156 [ ERROR  ][OrbRunner] subject exoter not found!
+24.166 [ ERROR  ][OrbRunner] subject exoter not found!
+24.176 [ ERROR  ][OrbRunner] subject exoter not found!
+24.186 [ ERROR  ][OrbRunner] subject exoter not found!
+24.196 [ ERROR  ][OrbRunner] subject exoter not found!
+24.206 [ ERROR  ][OrbRunner] subject exoter not found!
+24.216 [ ERROR  ][OrbRunner] subject exoter not found!
+24.226 [ ERROR  ][OrbRunner] subject exoter not found!
+24.236 [ ERROR  ][OrbRunner] subject exoter not found!
+24.246 [ ERROR  ][OrbRunner] subject exoter not found!
+24.256 [ ERROR  ][OrbRunner] subject exoter not found!
+24.266 [ ERROR  ][OrbRunner] subject exoter not found!
+24.276 [ ERROR  ][OrbRunner] subject exoter not found!
+24.286 [ ERROR  ][OrbRunner] subject exoter not found!
+24.296 [ ERROR  ][OrbRunner] subject exoter not found!
+24.306 [ ERROR  ][OrbRunner] subject exoter not found!
+24.316 [ ERROR  ][OrbRunner] subject exoter not found!
+24.327 [ ERROR  ][OrbRunner] subject exoter not found!
+24.337 [ ERROR  ][OrbRunner] subject exoter not found!
+24.347 [ ERROR  ][OrbRunner] subject exoter not found!
+24.357 [ ERROR  ][OrbRunner] subject exoter not found!
+24.366 [ ERROR  ][OrbRunner] subject exoter not found!
+24.376 [ ERROR  ][OrbRunner] subject exoter not found!
+24.386 [ ERROR  ][OrbRunner] subject exoter not found!
+24.396 [ ERROR  ][OrbRunner] subject exoter not found!
+24.406 [ ERROR  ][OrbRunner] subject exoter not found!
+24.416 [ ERROR  ][OrbRunner] subject exoter not found!
+24.427 [ ERROR  ][OrbRunner] subject exoter not found!
+24.437 [ ERROR  ][OrbRunner] subject exoter not found!
+24.447 [ ERROR  ][OrbRunner] subject exoter not found!
+24.457 [ ERROR  ][OrbRunner] subject exoter not found!
+24.467 [ ERROR  ][OrbRunner] subject exoter not found!
+24.476 [ ERROR  ][OrbRunner] subject exoter not found!
+24.486 [ ERROR  ][OrbRunner] subject exoter not found!
+24.496 [ ERROR  ][OrbRunner] subject exoter not found!
+24.506 [ ERROR  ][OrbRunner] subject exoter not found!
+24.517 [ ERROR  ][OrbRunner] subject exoter not found!
+24.527 [ ERROR  ][OrbRunner] subject exoter not found!
+24.537 [ ERROR  ][OrbRunner] subject exoter not found!
+24.547 [ ERROR  ][OrbRunner] subject exoter not found!
+24.557 [ ERROR  ][OrbRunner] subject exoter not found!
+24.567 [ ERROR  ][OrbRunner] subject exoter not found!
+24.576 [ ERROR  ][OrbRunner] subject exoter not found!
+24.586 [ ERROR  ][OrbRunner] subject exoter not found!
+24.596 [ ERROR  ][OrbRunner] subject exoter not found!
+24.606 [ ERROR  ][OrbRunner] subject exoter not found!
+24.616 [ ERROR  ][OrbRunner] subject exoter not found!
+24.626 [ ERROR  ][OrbRunner] subject exoter not found!
+24.636 [ ERROR  ][OrbRunner] subject exoter not found!
+24.647 [ ERROR  ][OrbRunner] subject exoter not found!
+24.657 [ ERROR  ][OrbRunner] subject exoter not found!
+24.667 [ ERROR  ][OrbRunner] subject exoter not found!
+24.677 [ ERROR  ][OrbRunner] subject exoter not found!
+24.686 [ ERROR  ][OrbRunner] subject exoter not found!
+24.696 [ ERROR  ][OrbRunner] subject exoter not found!
+24.706 [ ERROR  ][OrbRunner] subject exoter not found!
+24.716 [ ERROR  ][OrbRunner] subject exoter not found!
+24.726 [ ERROR  ][OrbRunner] subject exoter not found!
+24.736 [ ERROR  ][OrbRunner] subject exoter not found!
+24.746 [ ERROR  ][OrbRunner] subject exoter not found!
+24.756 [ ERROR  ][OrbRunner] subject exoter not found!
+24.766 [ ERROR  ][OrbRunner] subject exoter not found!
+24.776 [ ERROR  ][OrbRunner] subject exoter not found!
+24.786 [ ERROR  ][OrbRunner] subject exoter not found!
+24.796 [ ERROR  ][OrbRunner] subject exoter not found!
+24.806 [ ERROR  ][OrbRunner] subject exoter not found!
+24.816 [ ERROR  ][OrbRunner] subject exoter not found!
+24.827 [ ERROR  ][OrbRunner] subject exoter not found!
+24.837 [ ERROR  ][OrbRunner] subject exoter not found!
+24.847 [ ERROR  ][OrbRunner] subject exoter not found!
+24.857 [ ERROR  ][OrbRunner] subject exoter not found!
+24.867 [ ERROR  ][OrbRunner] subject exoter not found!
+24.877 [ ERROR  ][OrbRunner] subject exoter not found!
+24.887 [ ERROR  ][OrbRunner] subject exoter not found!
+24.896 [ ERROR  ][OrbRunner] subject exoter not found!
+24.906 [ ERROR  ][OrbRunner] subject exoter not found!
+24.916 [ ERROR  ][OrbRunner] subject exoter not found!
+24.926 [ ERROR  ][OrbRunner] subject exoter not found!
+24.936 [ ERROR  ][OrbRunner] subject exoter not found!
+24.946 [ ERROR  ][OrbRunner] subject exoter not found!
+24.956 [ ERROR  ][OrbRunner] subject exoter not found!
+24.967 [ ERROR  ][OrbRunner] subject exoter not found!
+24.977 [ ERROR  ][OrbRunner] subject exoter not found!
+24.987 [ ERROR  ][OrbRunner] subject exoter not found!
+24.997 [ ERROR  ][OrbRunner] subject exoter not found!
+25.007 [ ERROR  ][OrbRunner] subject exoter not found!
+25.016 [ ERROR  ][OrbRunner] subject exoter not found!
+25.026 [ ERROR  ][OrbRunner] subject exoter not found!
+25.036 [ ERROR  ][OrbRunner] subject exoter not found!
+25.046 [ ERROR  ][OrbRunner] subject exoter not found!
+25.056 [ ERROR  ][OrbRunner] subject exoter not found!
+25.066 [ ERROR  ][OrbRunner] subject exoter not found!
+25.076 [ ERROR  ][OrbRunner] subject exoter not found!
+25.087 [ ERROR  ][OrbRunner] subject exoter not found!
+25.097 [ ERROR  ][OrbRunner] subject exoter not found!
+25.107 [ ERROR  ][OrbRunner] subject exoter not found!
+25.116 [ ERROR  ][OrbRunner] subject exoter not found!
+25.126 [ ERROR  ][OrbRunner] subject exoter not found!
+25.136 [ ERROR  ][OrbRunner] subject exoter not found!
+25.147 [ ERROR  ][OrbRunner] subject exoter not found!
+25.157 [ ERROR  ][OrbRunner] subject exoter not found!
+25.166 [ ERROR  ][OrbRunner] subject exoter not found!
+25.176 [ ERROR  ][OrbRunner] subject exoter not found!
+25.186 [ ERROR  ][OrbRunner] subject exoter not found!
+25.196 [ ERROR  ][OrbRunner] subject exoter not found!
+25.206 [ ERROR  ][OrbRunner] subject exoter not found!
+25.216 [ ERROR  ][OrbRunner] subject exoter not found!
+25.227 [ ERROR  ][OrbRunner] subject exoter not found!
+25.237 [ ERROR  ][OrbRunner] subject exoter not found!
+25.246 [ ERROR  ][OrbRunner] subject exoter not found!
+25.257 [ ERROR  ][OrbRunner] subject exoter not found!
+25.267 [ ERROR  ][OrbRunner] subject exoter not found!
+25.277 [ ERROR  ][OrbRunner] subject exoter not found!
+25.287 [ ERROR  ][OrbRunner] subject exoter not found!
+25.297 [ ERROR  ][OrbRunner] subject exoter not found!
+25.307 [ ERROR  ][OrbRunner] subject exoter not found!
+25.316 [ ERROR  ][OrbRunner] subject exoter not found!
+25.326 [ ERROR  ][OrbRunner] subject exoter not found!
+25.336 [ ERROR  ][OrbRunner] subject exoter not found!
+25.346 [ ERROR  ][OrbRunner] subject exoter not found!
+25.356 [ ERROR  ][OrbRunner] subject exoter not found!
+25.366 [ ERROR  ][OrbRunner] subject exoter not found!
+25.377 [ ERROR  ][OrbRunner] subject exoter not found!
+25.387 [ ERROR  ][OrbRunner] subject exoter not found!
+25.397 [ ERROR  ][OrbRunner] subject exoter not found!
+25.408 [ ERROR  ][OrbRunner] subject exoter not found!
+25.419 [ ERROR  ][OrbRunner] subject exoter not found!
+25.427 [ ERROR  ][OrbRunner] subject exoter not found!
+25.436 [ ERROR  ][OrbRunner] subject exoter not found!
+25.446 [ ERROR  ][OrbRunner] subject exoter not found!
+25.456 [ ERROR  ][OrbRunner] subject exoter not found!
+25.466 [ ERROR  ][OrbRunner] subject exoter not found!
+25.476 [ ERROR  ][OrbRunner] subject exoter not found!
+25.487 [ ERROR  ][OrbRunner] subject exoter not found!
+25.497 [ ERROR  ][OrbRunner] subject exoter not found!
+25.507 [ ERROR  ][OrbRunner] subject exoter not found!
+25.517 [ ERROR  ][OrbRunner] subject exoter not found!
+25.527 [ ERROR  ][OrbRunner] subject exoter not found!
+25.537 [ ERROR  ][OrbRunner] subject exoter not found!
+25.546 [ ERROR  ][OrbRunner] subject exoter not found!
+25.556 [ ERROR  ][OrbRunner] subject exoter not found!
+25.566 [ ERROR  ][OrbRunner] subject exoter not found!
+25.576 [ ERROR  ][OrbRunner] subject exoter not found!
+25.587 [ ERROR  ][OrbRunner] subject exoter not found!
+25.597 [ ERROR  ][OrbRunner] subject exoter not found!
+25.607 [ ERROR  ][OrbRunner] subject exoter not found!
+25.617 [ ERROR  ][OrbRunner] subject exoter not found!
+25.627 [ ERROR  ][OrbRunner] subject exoter not found!
+25.637 [ ERROR  ][OrbRunner] subject exoter not found!
+25.646 [ ERROR  ][OrbRunner] subject exoter not found!
+25.656 [ ERROR  ][OrbRunner] subject exoter not found!
+25.666 [ ERROR  ][OrbRunner] subject exoter not found!
+25.676 [ ERROR  ][OrbRunner] subject exoter not found!
+25.686 [ ERROR  ][OrbRunner] subject exoter not found!
+25.696 [ ERROR  ][OrbRunner] subject exoter not found!
+25.706 [ ERROR  ][OrbRunner] subject exoter not found!
+25.716 [ ERROR  ][OrbRunner] subject exoter not found!
+25.726 [ ERROR  ][OrbRunner] subject exoter not found!
+25.736 [ ERROR  ][OrbRunner] subject exoter not found!
+25.746 [ ERROR  ][OrbRunner] subject exoter not found!
+25.756 [ ERROR  ][OrbRunner] subject exoter not found!
+25.766 [ ERROR  ][OrbRunner] subject exoter not found!
+25.777 [ ERROR  ][OrbRunner] subject exoter not found!
+25.786 [ ERROR  ][OrbRunner] subject exoter not found!
+25.797 [ ERROR  ][OrbRunner] subject exoter not found!
+25.807 [ ERROR  ][OrbRunner] subject exoter not found!
+25.817 [ ERROR  ][OrbRunner] subject exoter not found!
+25.827 [ ERROR  ][OrbRunner] subject exoter not found!
+25.837 [ ERROR  ][OrbRunner] subject exoter not found!
+25.847 [ ERROR  ][OrbRunner] subject exoter not found!
+25.856 [ ERROR  ][OrbRunner] subject exoter not found!
+25.866 [ ERROR  ][OrbRunner] subject exoter not found!
+25.876 [ ERROR  ][OrbRunner] subject exoter not found!
+25.886 [ ERROR  ][OrbRunner] subject exoter not found!
+25.896 [ ERROR  ][OrbRunner] subject exoter not found!
+25.906 [ ERROR  ][OrbRunner] subject exoter not found!
+25.916 [ ERROR  ][OrbRunner] subject exoter not found!
+25.926 [ ERROR  ][OrbRunner] subject exoter not found!
+25.936 [ ERROR  ][OrbRunner] subject exoter not found!
+25.946 [ ERROR  ][OrbRunner] subject exoter not found!
+25.956 [ ERROR  ][OrbRunner] subject exoter not found!
+25.969 [ ERROR  ][OrbRunner] subject exoter not found!
+25.976 [ ERROR  ][OrbRunner] subject exoter not found!
+25.986 [ ERROR  ][OrbRunner] subject exoter not found!
+25.996 [ ERROR  ][OrbRunner] subject exoter not found!
+26.006 [ ERROR  ][OrbRunner] subject exoter not found!
+26.016 [ ERROR  ][OrbRunner] subject exoter not found!
+26.026 [ ERROR  ][OrbRunner] subject exoter not found!
+26.036 [ ERROR  ][OrbRunner] subject exoter not found!
+26.046 [ ERROR  ][OrbRunner] subject exoter not found!
+26.056 [ ERROR  ][OrbRunner] subject exoter not found!
+26.066 [ ERROR  ][OrbRunner] subject exoter not found!
+26.076 [ ERROR  ][OrbRunner] subject exoter not found!
+26.086 [ ERROR  ][OrbRunner] subject exoter not found!
+26.096 [ ERROR  ][OrbRunner] subject exoter not found!
+26.106 [ ERROR  ][OrbRunner] subject exoter not found!
+26.117 [ ERROR  ][OrbRunner] subject exoter not found!
+26.127 [ ERROR  ][OrbRunner] subject exoter not found!
+26.137 [ ERROR  ][OrbRunner] subject exoter not found!
+26.147 [ ERROR  ][OrbRunner] subject exoter not found!
+26.157 [ ERROR  ][OrbRunner] subject exoter not found!
+26.167 [ ERROR  ][OrbRunner] subject exoter not found!
+26.176 [ ERROR  ][OrbRunner] subject exoter not found!
+26.186 [ ERROR  ][OrbRunner] subject exoter not found!
+26.196 [ ERROR  ][OrbRunner] subject exoter not found!
+26.207 [ ERROR  ][OrbRunner] subject exoter not found!
+26.217 [ ERROR  ][OrbRunner] subject exoter not found!
+26.226 [ ERROR  ][OrbRunner] subject exoter not found!
+26.236 [ ERROR  ][OrbRunner] subject exoter not found!
+26.247 [ ERROR  ][OrbRunner] subject exoter not found!
+26.256 [ ERROR  ][OrbRunner] subject exoter not found!
+26.266 [ ERROR  ][OrbRunner] subject exoter not found!
+26.276 [ ERROR  ][OrbRunner] subject exoter not found!
+26.286 [ ERROR  ][OrbRunner] subject exoter not found!
+26.296 [ ERROR  ][OrbRunner] subject exoter not found!
+26.306 [ ERROR  ][OrbRunner] subject exoter not found!
+26.316 [ ERROR  ][OrbRunner] subject exoter not found!
+26.326 [ ERROR  ][OrbRunner] subject exoter not found!
+26.336 [ ERROR  ][OrbRunner] subject exoter not found!
+26.357 [ ERROR  ][OrbRunner] subject exoter not found!
+26.367 [ ERROR  ][OrbRunner] subject exoter not found!
+26.376 [ ERROR  ][OrbRunner] subject exoter not found!
+26.386 [ ERROR  ][OrbRunner] subject exoter not found!
+26.396 [ ERROR  ][OrbRunner] subject exoter not found!
+26.406 [ ERROR  ][OrbRunner] subject exoter not found!
+26.416 [ ERROR  ][OrbRunner] subject exoter not found!
+26.427 [ ERROR  ][OrbRunner] subject exoter not found!
+26.437 [ ERROR  ][OrbRunner] subject exoter not found!
+26.447 [ ERROR  ][OrbRunner] subject exoter not found!
+26.467 [ ERROR  ][OrbRunner] subject exoter not found!
+26.476 [ ERROR  ][OrbRunner] subject exoter not found!
+26.486 [ ERROR  ][OrbRunner] subject exoter not found!
+26.497 [ ERROR  ][OrbRunner] subject exoter not found!
+26.506 [ ERROR  ][OrbRunner] subject exoter not found!
+26.516 [ ERROR  ][OrbRunner] subject exoter not found!
+26.526 [ ERROR  ][OrbRunner] subject exoter not found!
+26.536 [ ERROR  ][OrbRunner] subject exoter not found!
+26.546 [ ERROR  ][OrbRunner] subject exoter not found!
+26.556 [ ERROR  ][OrbRunner] subject exoter not found!
+26.566 [ ERROR  ][OrbRunner] subject exoter not found!
+26.576 [ ERROR  ][OrbRunner] subject exoter not found!
+26.586 [ ERROR  ][OrbRunner] subject exoter not found!
+26.596 [ ERROR  ][OrbRunner] subject exoter not found!
+26.607 [ ERROR  ][OrbRunner] subject exoter not found!
+26.617 [ ERROR  ][OrbRunner] subject exoter not found!
+26.627 [ ERROR  ][OrbRunner] subject exoter not found!
+26.637 [ ERROR  ][OrbRunner] subject exoter not found!
+26.647 [ ERROR  ][OrbRunner] subject exoter not found!
+26.657 [ ERROR  ][OrbRunner] subject exoter not found!
+26.667 [ ERROR  ][OrbRunner] subject exoter not found!
+26.677 [ ERROR  ][OrbRunner] subject exoter not found!
+26.687 [ ERROR  ][OrbRunner] subject exoter not found!
+26.696 [ ERROR  ][OrbRunner] subject exoter not found!
+26.706 [ ERROR  ][OrbRunner] subject exoter not found!
+26.716 [ ERROR  ][OrbRunner] subject exoter not found!
+26.726 [ ERROR  ][OrbRunner] subject exoter not found!
+26.737 [ ERROR  ][OrbRunner] subject exoter not found!
+26.747 [ ERROR  ][OrbRunner] subject exoter not found!
+26.756 [ ERROR  ][OrbRunner] subject exoter not found!
+26.766 [ ERROR  ][OrbRunner] subject exoter not found!
+26.776 [ ERROR  ][OrbRunner] subject exoter not found!
+26.786 [ ERROR  ][OrbRunner] subject exoter not found!
+26.796 [ ERROR  ][OrbRunner] subject exoter not found!
+26.807 [ ERROR  ][OrbRunner] subject exoter not found!
+26.817 [ ERROR  ][OrbRunner] subject exoter not found!
+26.827 [ ERROR  ][OrbRunner] subject exoter not found!
+26.837 [ ERROR  ][OrbRunner] subject exoter not found!
+26.847 [ ERROR  ][OrbRunner] subject exoter not found!
+26.857 [ ERROR  ][OrbRunner] subject exoter not found!
+26.867 [ ERROR  ][OrbRunner] subject exoter not found!
+26.877 [ ERROR  ][OrbRunner] subject exoter not found!
+26.887 [ ERROR  ][OrbRunner] subject exoter not found!
+26.897 [ ERROR  ][OrbRunner] subject exoter not found!
+26.907 [ ERROR  ][OrbRunner] subject exoter not found!
+26.916 [ ERROR  ][OrbRunner] subject exoter not found!
+26.926 [ ERROR  ][OrbRunner] subject exoter not found!
+26.936 [ ERROR  ][OrbRunner] subject exoter not found!
+26.946 [ ERROR  ][OrbRunner] subject exoter not found!
+26.956 [ ERROR  ][OrbRunner] subject exoter not found!
+26.966 [ ERROR  ][OrbRunner] subject exoter not found!
+26.976 [ ERROR  ][OrbRunner] subject exoter not found!
+26.986 [ ERROR  ][OrbRunner] subject exoter not found!
+26.996 [ ERROR  ][OrbRunner] subject exoter not found!
+27.006 [ ERROR  ][OrbRunner] subject exoter not found!
+27.016 [ ERROR  ][OrbRunner] subject exoter not found!
+27.026 [ ERROR  ][OrbRunner] subject exoter not found!
+27.036 [ ERROR  ][OrbRunner] subject exoter not found!
+27.046 [ ERROR  ][OrbRunner] subject exoter not found!
+27.056 [ ERROR  ][OrbRunner] subject exoter not found!
+27.066 [ ERROR  ][OrbRunner] subject exoter not found!
+27.087 [ ERROR  ][OrbRunner] subject exoter not found!
+27.097 [ ERROR  ][OrbRunner] subject exoter not found!
+27.107 [ ERROR  ][OrbRunner] subject exoter not found!
+27.117 [ ERROR  ][OrbRunner] subject exoter not found!
+27.126 [ ERROR  ][OrbRunner] subject exoter not found!
+27.136 [ ERROR  ][OrbRunner] subject exoter not found!
+27.146 [ ERROR  ][OrbRunner] subject exoter not found!
+27.156 [ ERROR  ][OrbRunner] subject exoter not found!
+27.167 [ ERROR  ][OrbRunner] subject exoter not found!
+27.176 [ ERROR  ][OrbRunner] subject exoter not found!
+27.187 [ ERROR  ][OrbRunner] subject exoter not found!
+27.197 [ ERROR  ][OrbRunner] subject exoter not found!
+27.207 [ ERROR  ][OrbRunner] subject exoter not found!
+27.217 [ ERROR  ][OrbRunner] subject exoter not found!
+27.226 [ ERROR  ][OrbRunner] subject exoter not found!
+27.236 [ ERROR  ][OrbRunner] subject exoter not found!
+27.246 [ ERROR  ][OrbRunner] subject exoter not found!
+27.256 [ ERROR  ][OrbRunner] subject exoter not found!
+27.266 [ ERROR  ][OrbRunner] subject exoter not found!
+27.277 [ ERROR  ][OrbRunner] subject exoter not found!
+27.287 [ ERROR  ][OrbRunner] subject exoter not found!
+27.297 [ ERROR  ][OrbRunner] subject exoter not found!
+27.306 [ ERROR  ][OrbRunner] subject exoter not found!
+27.316 [ ERROR  ][OrbRunner] subject exoter not found!
+27.326 [ ERROR  ][OrbRunner] subject exoter not found!
+27.337 [ ERROR  ][OrbRunner] subject exoter not found!
+27.346 [ ERROR  ][OrbRunner] subject exoter not found!
+27.356 [ ERROR  ][OrbRunner] subject exoter not found!
+27.366 [ ERROR  ][OrbRunner] subject exoter not found!
+27.376 [ ERROR  ][OrbRunner] subject exoter not found!
+27.386 [ ERROR  ][OrbRunner] subject exoter not found!
+27.396 [ ERROR  ][OrbRunner] subject exoter not found!
+27.406 [ ERROR  ][OrbRunner] subject exoter not found!
+27.417 [ ERROR  ][OrbRunner] subject exoter not found!
+27.427 [ ERROR  ][OrbRunner] subject exoter not found!
+27.437 [ ERROR  ][OrbRunner] subject exoter not found!
+27.447 [ ERROR  ][OrbRunner] subject exoter not found!
+27.457 [ ERROR  ][OrbRunner] subject exoter not found!
+27.467 [ ERROR  ][OrbRunner] subject exoter not found!
+27.476 [ ERROR  ][OrbRunner] subject exoter not found!
+27.486 [ ERROR  ][OrbRunner] subject exoter not found!
+27.496 [ ERROR  ][OrbRunner] subject exoter not found!
+27.506 [ ERROR  ][OrbRunner] subject exoter not found!
+27.516 [ ERROR  ][OrbRunner] subject exoter not found!
+27.526 [ ERROR  ][OrbRunner] subject exoter not found!
+27.536 [ ERROR  ][OrbRunner] subject exoter not found!
+27.546 [ ERROR  ][OrbRunner] subject exoter not found!
+27.556 [ ERROR  ][OrbRunner] subject exoter not found!
+27.566 [ ERROR  ][OrbRunner] subject exoter not found!
+27.577 [ ERROR  ][OrbRunner] subject exoter not found!
+27.587 [ ERROR  ][OrbRunner] subject exoter not found!
+27.597 [ ERROR  ][OrbRunner] subject exoter not found!
+27.607 [ ERROR  ][OrbRunner] subject exoter not found!
+27.616 [ ERROR  ][OrbRunner] subject exoter not found!
+27.627 [ ERROR  ][OrbRunner] subject exoter not found!
+27.637 [ ERROR  ][OrbRunner] subject exoter not found!
+27.647 [ ERROR  ][OrbRunner] subject exoter not found!
+27.657 [ ERROR  ][OrbRunner] subject exoter not found!
+27.667 [ ERROR  ][OrbRunner] subject exoter not found!
+27.676 [ ERROR  ][OrbRunner] subject exoter not found!
+27.686 [ ERROR  ][OrbRunner] subject exoter not found!
+27.696 [ ERROR  ][OrbRunner] subject exoter not found!
+27.706 [ ERROR  ][OrbRunner] subject exoter not found!
+27.716 [ ERROR  ][OrbRunner] subject exoter not found!
+27.727 [ ERROR  ][OrbRunner] subject exoter not found!
+27.737 [ ERROR  ][OrbRunner] subject exoter not found!
+27.747 [ ERROR  ][OrbRunner] subject exoter not found!
+27.757 [ ERROR  ][OrbRunner] subject exoter not found!
+27.768 [ ERROR  ][OrbRunner] subject exoter not found!
+27.777 [ ERROR  ][OrbRunner] subject exoter not found!
+27.787 [ ERROR  ][OrbRunner] subject exoter not found!
+27.796 [ ERROR  ][OrbRunner] subject exoter not found!
+27.806 [ ERROR  ][OrbRunner] subject exoter not found!
+27.816 [ ERROR  ][OrbRunner] subject exoter not found!
+27.827 [ ERROR  ][OrbRunner] subject exoter not found!
+27.837 [ ERROR  ][OrbRunner] subject exoter not found!
+27.847 [ ERROR  ][OrbRunner] subject exoter not found!
+27.857 [ ERROR  ][OrbRunner] subject exoter not found!
+27.867 [ ERROR  ][OrbRunner] subject exoter not found!
+27.876 [ ERROR  ][OrbRunner] subject exoter not found!
+27.886 [ ERROR  ][OrbRunner] subject exoter not found!
+27.896 [ ERROR  ][OrbRunner] subject exoter not found!
+27.906 [ ERROR  ][OrbRunner] subject exoter not found!
+27.916 [ ERROR  ][OrbRunner] subject exoter not found!
+27.927 [ ERROR  ][OrbRunner] subject exoter not found!
+27.937 [ ERROR  ][OrbRunner] subject exoter not found!
+27.947 [ ERROR  ][OrbRunner] subject exoter not found!
+27.957 [ ERROR  ][OrbRunner] subject exoter not found!
+27.969 [ ERROR  ][OrbRunner] subject exoter not found!
+27.977 [ ERROR  ][OrbRunner] subject exoter not found!
+27.986 [ ERROR  ][OrbRunner] subject exoter not found!
+27.996 [ ERROR  ][OrbRunner] subject exoter not found!
+28.006 [ ERROR  ][OrbRunner] subject exoter not found!
+28.016 [ ERROR  ][OrbRunner] subject exoter not found!
+28.027 [ ERROR  ][OrbRunner] subject exoter not found!
+28.037 [ ERROR  ][OrbRunner] subject exoter not found!
+28.047 [ ERROR  ][OrbRunner] subject exoter not found!
+28.057 [ ERROR  ][OrbRunner] subject exoter not found!
+28.067 [ ERROR  ][OrbRunner] subject exoter not found!
+28.077 [ ERROR  ][OrbRunner] subject exoter not found!
+28.087 [ ERROR  ][OrbRunner] subject exoter not found!
+28.096 [ ERROR  ][OrbRunner] subject exoter not found!
+28.106 [ ERROR  ][OrbRunner] subject exoter not found!
+28.116 [ ERROR  ][OrbRunner] subject exoter not found!
+28.126 [ ERROR  ][OrbRunner] subject exoter not found!
+28.136 [ ERROR  ][OrbRunner] subject exoter not found!
+28.146 [ ERROR  ][OrbRunner] subject exoter not found!
+28.156 [ ERROR  ][OrbRunner] subject exoter not found!
+28.166 [ ERROR  ][OrbRunner] subject exoter not found!
+28.176 [ ERROR  ][OrbRunner] subject exoter not found!
+28.186 [ ERROR  ][OrbRunner] subject exoter not found!
+28.196 [ ERROR  ][OrbRunner] subject exoter not found!
+28.206 [ ERROR  ][OrbRunner] subject exoter not found!
+28.216 [ ERROR  ][OrbRunner] subject exoter not found!
+28.226 [ ERROR  ][OrbRunner] subject exoter not found!
+28.236 [ ERROR  ][OrbRunner] subject exoter not found!
+28.246 [ ERROR  ][OrbRunner] subject exoter not found!
+28.256 [ ERROR  ][OrbRunner] subject exoter not found!
+28.266 [ ERROR  ][OrbRunner] subject exoter not found!
+28.276 [ ERROR  ][OrbRunner] subject exoter not found!
+28.286 [ ERROR  ][OrbRunner] subject exoter not found!
+28.296 [ ERROR  ][OrbRunner] subject exoter not found!
+28.306 [ ERROR  ][OrbRunner] subject exoter not found!
+28.316 [ ERROR  ][OrbRunner] subject exoter not found!
+28.326 [ ERROR  ][OrbRunner] subject exoter not found!
+28.336 [ ERROR  ][OrbRunner] subject exoter not found!
+28.347 [ ERROR  ][OrbRunner] subject exoter not found!
+28.357 [ ERROR  ][OrbRunner] subject exoter not found!
+28.367 [ ERROR  ][OrbRunner] subject exoter not found!
+28.377 [ ERROR  ][OrbRunner] subject exoter not found!
+28.387 [ ERROR  ][OrbRunner] subject exoter not found!
+28.397 [ ERROR  ][OrbRunner] subject exoter not found!
+28.406 [ ERROR  ][OrbRunner] subject exoter not found!
+28.416 [ ERROR  ][OrbRunner] subject exoter not found!
+28.436 [ ERROR  ][OrbRunner] subject exoter not found!
+28.448 [ ERROR  ][OrbRunner] subject exoter not found!
+28.456 [ ERROR  ][OrbRunner] subject exoter not found!
+28.466 [ ERROR  ][OrbRunner] subject exoter not found!
+28.536 [ ERROR  ][OrbRunner] subject exoter not found!
+28.546 [ ERROR  ][OrbRunner] subject exoter not found!
+28.556 [ ERROR  ][OrbRunner] subject exoter not found!
+28.566 [ ERROR  ][OrbRunner] subject exoter not found!
+28.576 [ ERROR  ][OrbRunner] subject exoter not found!
+28.587 [ ERROR  ][OrbRunner] subject exoter not found!
+28.597 [ ERROR  ][OrbRunner] subject exoter not found!
+28.607 [ ERROR  ][OrbRunner] subject exoter not found!
+28.618 [ ERROR  ][OrbRunner] subject exoter not found!
+28.626 [ ERROR  ][OrbRunner] subject exoter not found!
+28.636 [ ERROR  ][OrbRunner] subject exoter not found!
+28.646 [ ERROR  ][OrbRunner] subject exoter not found!
+28.656 [ ERROR  ][OrbRunner] subject exoter not found!
+28.666 [ ERROR  ][OrbRunner] subject exoter not found!
+28.676 [ ERROR  ][OrbRunner] subject exoter not found!
+28.686 [ ERROR  ][OrbRunner] subject exoter not found!
+28.697 [ ERROR  ][OrbRunner] subject exoter not found!
+28.707 [ ERROR  ][OrbRunner] subject exoter not found!
+28.716 [ ERROR  ][OrbRunner] subject exoter not found!
+28.726 [ ERROR  ][OrbRunner] subject exoter not found!
+28.736 [ ERROR  ][OrbRunner] subject exoter not found!
+28.746 [ ERROR  ][OrbRunner] subject exoter not found!
+28.756 [ ERROR  ][OrbRunner] subject exoter not found!
+28.836 [ ERROR  ][OrbRunner] subject exoter not found!
+28.846 [ ERROR  ][OrbRunner] subject exoter not found!
+28.856 [ ERROR  ][OrbRunner] subject exoter not found!
+28.866 [ ERROR  ][OrbRunner] subject exoter not found!
+28.876 [ ERROR  ][OrbRunner] subject exoter not found!
+28.886 [ ERROR  ][OrbRunner] subject exoter not found!
+28.896 [ ERROR  ][OrbRunner] subject exoter not found!
+28.906 [ ERROR  ][OrbRunner] subject exoter not found!
+28.916 [ ERROR  ][OrbRunner] subject exoter not found!
+28.926 [ ERROR  ][OrbRunner] subject exoter not found!
+28.936 [ ERROR  ][OrbRunner] subject exoter not found!
+28.946 [ ERROR  ][OrbRunner] subject exoter not found!
+28.956 [ ERROR  ][OrbRunner] subject exoter not found!
+28.966 [ ERROR  ][OrbRunner] subject exoter not found!
+28.996 [ ERROR  ][OrbRunner] subject exoter not found!
+29.006 [ ERROR  ][OrbRunner] subject exoter not found!
+29.016 [ ERROR  ][OrbRunner] subject exoter not found!
+29.026 [ ERROR  ][OrbRunner] subject exoter not found!
+29.036 [ ERROR  ][OrbRunner] subject exoter not found!
+29.046 [ ERROR  ][OrbRunner] subject exoter not found!
+29.056 [ ERROR  ][OrbRunner] subject exoter not found!
+29.066 [ ERROR  ][OrbRunner] subject exoter not found!
+29.076 [ ERROR  ][OrbRunner] subject exoter not found!
+29.086 [ ERROR  ][OrbRunner] subject exoter not found!
+29.096 [ ERROR  ][OrbRunner] subject exoter not found!
+29.106 [ ERROR  ][OrbRunner] subject exoter not found!
+29.116 [ ERROR  ][OrbRunner] subject exoter not found!
+29.126 [ ERROR  ][OrbRunner] subject exoter not found!
+29.136 [ ERROR  ][OrbRunner] subject exoter not found!
+29.146 [ ERROR  ][OrbRunner] subject exoter not found!
+29.156 [ ERROR  ][OrbRunner] subject exoter not found!
+29.166 [ ERROR  ][OrbRunner] subject exoter not found!
+29.186 [ ERROR  ][OrbRunner] subject exoter not found!
+29.196 [ ERROR  ][OrbRunner] subject exoter not found!
+29.222 [ Info   ][ShutdownOrb] Cleaning up TaskContextServers...
+29.222 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'vicon' from CORBA Naming Service.
+29.222 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'vicon_Logger' from CORBA Naming Service.
+29.222 [ Info   ][ShutdownOrb] Orb Shutdown...waiting...
+29.223 [ Info   ][ShutdownOrb] done.
+29.223 [ Info   ][OrbRunner] Breaking out of orb->run().
+29.223 [ Info   ][OrbRunner] Safely stopped.
+29.223 [ Info   ][DestroyOrb] Orb destroyed.
+29.226 [ Info   ][Logger] Orocos Logging Deactivated.
