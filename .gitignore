@@ -38,6 +38,8 @@ octave-workspace
 unit_visual_odometry.*.log
 loccam.*.log
 spartan.*.log
+imu.*.log
+control.*.log
 
 # tar.gz files that are usually too big
 *.tar.gz
