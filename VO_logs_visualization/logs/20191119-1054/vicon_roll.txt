@@ -6724,8 +6724,6 @@ pocolog.rb[INFO]: loading file info from ./vicon.0.idx...
 -0.02586398786684644
 -0.025884768233589459
 -0.02569878137192904
-pocolog.rb[INFO]: loading file info from ./vicon.0.idx... 
-/vicon.roll_samples
 -0.042277719229522316
 -0.043124926219807569
 -0.043066436609321558
