@@ -1,0 +1,10 @@
+orocos.rb[WARN]: Name service is unreachable: CORBA transient exception: TRANSIENT_ConnectFailed
+
+orocos.rb[WARN]: You can try to fix this manually by restarting the nameserver:
+
+orocos.rb[WARN]:     sudo /etc/init.d/omniorb4-nameserver stop
+
+orocos.rb[WARN]:     sudo rm -f /var/lib/omniorb/*
+
+orocos.rb[WARN]:     sudo /etc/init.d/omniorb4-nameserver start
+
