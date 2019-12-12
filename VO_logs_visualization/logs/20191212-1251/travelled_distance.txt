@@ -1,0 +1,8 @@
+pocolog.rb[INFO]: loading file info from ./viso2_evaluation_imu.0.idx... 
+/viso2_evaluation_imu.travelled_distance
+0.26758628528177625
+1.2333220808172392
+2.2504188900528508
+3.2506945326208672
+4.2648910417316959
+4.9513148332253003
