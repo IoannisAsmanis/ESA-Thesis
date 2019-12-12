@@ -1,0 +1,7 @@
+pocolog.rb[INFO]: loading file info from ./viso2_evaluation_imu.0.idx... 
+/viso2_evaluation_imu.odometry_pitch
+-0.010914052526466276
+-0.034101749870187326
+0.060083662118018015
+0.021075288554007619
+-0.049895944739644246

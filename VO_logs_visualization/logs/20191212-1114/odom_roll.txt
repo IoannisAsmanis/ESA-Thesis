@@ -1,0 +1,7 @@
+pocolog.rb[INFO]: loading file info from ./viso2_evaluation_imu.0.idx... 
+/viso2_evaluation_imu.odometry_roll
+-0.0022937256001059991
+-0.042014039726512555
+-0.042551398103612012
+-0.031716342814629109
+-0.036467948017496393

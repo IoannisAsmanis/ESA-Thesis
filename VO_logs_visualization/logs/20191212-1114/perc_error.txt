@@ -1,0 +1,7 @@
+pocolog.rb[INFO]: loading file info from ./viso2_evaluation_imu.0.idx... 
+/viso2_evaluation_imu.perc_error
+0.086287775005967987
+0.1034398922281906
+0.08348164094931998
+0.064546613796810523
+0.044973864870910346
