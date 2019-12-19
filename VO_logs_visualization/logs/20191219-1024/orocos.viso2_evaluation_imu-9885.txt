@@ -1,7 +1,7 @@
 0.000 [ Info   ][Logger] No ORO_LOGLEVEL environment variable set.
 0.000 [ Info   ][Logger]  OROCOS version '2.8.99' compiled with GCC 5.4.0. Running in GNU/Linux.
 0.000 [ Info   ][Logger] Orocos Logging Activated at level : [ Warning] ( 4 ) 
-0.000 [ Info   ][Logger] Reference System Time is : 1092363255292 ticks ( 1092.36 seconds ).
+0.000 [ Info   ][Logger] Reference System Time is : 2076874311542 ticks ( 2076.87 seconds ).
 0.000 [ Info   ][Logger] Logging is relative to this time.
 0.000 [ Info   ][Logger] No RTT_COMPONENT_PATH set. Using default: /
 0.000 [ Info   ][Logger] plugin 'rtt' not loaded before.
@@ -126,8 +126,8 @@
 0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/DepthMap
 0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/DistanceImage
 0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/IMUSensors
-0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Joints
-0.033 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/LaserScan
+0.034 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Joints
+0.034 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/LaserScan
 0.034 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Motion2D
 0.034 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/Pointcloud
 0.034 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /base/samples/PoseWithCovariance
@@ -195,8 +195,8 @@
 0.058 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Pointcloud
 0.058 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/PoseWithCovariance
 0.058 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Pressure
-0.059 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/RigidBodyAcceleration
-0.059 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/RigidBodyState
+0.058 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/RigidBodyAcceleration
+0.058 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/RigidBodyState
 0.059 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/Sonar
 0.059 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/SonarBeam
 0.059 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /base/samples/SonarScan
@@ -225,7 +225,7 @@
 0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /logger/Marker
 0.060 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</logger/StreamMetadata>
 0.060 [ Info   ][TypekitRepository::Import] Loading Typekit std.
-0.061 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/string
+0.060 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /std/string
 0.061 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/std.
 0.061 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /bool
 0.061 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for /double
@@ -256,18 +256,18 @@
 0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint64_t
 0.062 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /uint8_t
 0.062 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/std.
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /bool
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /double
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /float
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int16_t
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int32_t
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int64_t
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int8_t
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /metadata/TaskContext
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</double>
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint16_t
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint32_t
-0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint64_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /bool
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /double
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /float
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int16_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int32_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int64_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /int8_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /metadata/TaskContext
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</double>
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint16_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint32_t
+0.063 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint64_t
 0.064 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /uint8_t
 0.064 [ Info   ][TypekitRepository::Import] Loading Typekit transformer.
 0.064 [ Info   ][TypekitRepository::Import] Loading Transport CORBA:///orogen/transformer.
@@ -279,10 +279,10 @@
 0.066 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /transformer/ConfigurationState
 0.066 [ Info   ][TypekitRepository::Import] Registered new 'MQueue' transport for /transformer/TransformerStatus
 0.066 [ Info   ][TypekitRepository::Import] Loading Transport Typelib:///orogen/transformer.
-0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/samples/RigidBodyState>
-0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /transformer/ConfigurationState
-0.069 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /transformer/TransformerStatus
-0.069 [ Info   ][TypekitRepository::Import] Loading Typekit rtt-types.
+0.068 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /std/vector</base/samples/RigidBodyState>
+0.068 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /transformer/ConfigurationState
+0.068 [ Info   ][TypekitRepository::Import] Registered new 'Typelib' transport for /transformer/TransformerStatus
+0.068 [ Info   ][TypekitRepository::Import] Loading Typekit rtt-types.
 0.069 [ Info   ][TypekitRepository::Import] Loading Transport CORBA://rtt-types.
 0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for ConnPolicy
 0.069 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for TaskContext
@@ -295,42 +295,42 @@
 0.069 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for char
 0.069 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for llong
 0.069 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for ullong
-0.070 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='GlobalEngine'
-0.070 [ Info   ][GlobalEngine] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 4402 ).
+0.069 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='GlobalEngine'
+0.070 [ Info   ][GlobalEngine] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 9907 ).
 0.070 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='viso2_evaluation_imu'
-0.070 [ Info   ][viso2_evaluation_imu] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 4403 ).
+0.070 [ Info   ][viso2_evaluation_imu] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 9908 ).
 0.071 [ Info   ][/home/marta/rock/install/bin/orogen_default_viso2_evaluation__Task::main()] Creating new TaskContextServer for viso2_evaluation_imu
 0.071 [ Info   ][TaskContextServer()] CTaskContext 'viso2_evaluation_imu' found CORBA Naming Service.
-0.072 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'viso2_evaluation_imu' to CORBA Naming Service.
-0.072 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='viso2_evaluation_imu_Logger'
-0.072 [ Info   ][viso2_evaluation_imu_Logger] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 4406 ).
+0.071 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'viso2_evaluation_imu' to CORBA Naming Service.
+0.071 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='viso2_evaluation_imu_Logger'
+0.072 [ Info   ][viso2_evaluation_imu_Logger] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 9911 ).
 0.072 [ Info   ][/home/marta/rock/install/bin/orogen_default_viso2_evaluation__Task::main()] Creating new TaskContextServer for viso2_evaluation_imu_Logger
 0.072 [ Info   ][TaskContextServer()] CTaskContext 'viso2_evaluation_imu_Logger' found CORBA Naming Service.
-0.073 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'viso2_evaluation_imu_Logger' to CORBA Naming Service.
-0.073 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='orogen_default_viso2_evaluation__Task'
-0.073 [ Info   ][orogen_default_viso2_evaluation__Task] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0.1 (PID= 4407 ).
-0.073 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='orogen_default_viso2_evaluation__Task_Logger'
-0.073 [ Info   ][orogen_default_viso2_evaluation__Task_Logger] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 4408 ).
-0.073 [ Info   ][ThreadOrb] Starting Orb in a thread.
-0.073 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='OrbRunner'
-0.073 [ Info   ][OrbRunner] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 4409 ).
+0.072 [ Info   ][TaskContextServer()] Successfully added CTaskContext 'viso2_evaluation_imu_Logger' to CORBA Naming Service.
+0.072 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='orogen_default_viso2_evaluation__Task'
+0.072 [ Info   ][orogen_default_viso2_evaluation__Task] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0.1 (PID= 9912 ).
+0.072 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='orogen_default_viso2_evaluation__Task_Logger'
+0.072 [ Info   ][orogen_default_viso2_evaluation__Task_Logger] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 9913 ).
+0.072 [ Info   ][ThreadOrb] Starting Orb in a thread.
+0.072 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='OrbRunner'
+0.072 [ Info   ][OrbRunner] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 9914 ).
 0.073 [ Info   ][OrbRunner] Entering orb->run().
-0.109 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='viso2_evaluation_imuCorba'
-0.109 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
-0.109 [ Warning][viso2_evaluation_imuCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
-0.109 [ Info   ][viso2_evaluation_imuCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 4415 ).
-0.109 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started viso2_evaluation_imuCorba.
-0.518 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='viso2_evaluation_imu_LoggerCorba'
-0.518 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
-0.518 [ Warning][viso2_evaluation_imu_LoggerCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
-0.518 [ Info   ][viso2_evaluation_imu_LoggerCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 4425 ).
-0.518 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started viso2_evaluation_imu_LoggerCorba.
-57.438 [ Info   ][ShutdownOrb] Cleaning up TaskContextServers...
-57.438 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'viso2_evaluation_imu_Logger' from CORBA Naming Service.
-57.438 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'viso2_evaluation_imu' from CORBA Naming Service.
-57.438 [ Info   ][ShutdownOrb] Orb Shutdown...waiting...
-57.441 [ Info   ][ShutdownOrb] done.
-57.441 [ Info   ][DestroyOrb] Breaking out of orb->run().
-57.441 [ Info   ][OrbRunner] Safely stopped.
-57.443 [ Info   ][/home/marta/rock/install/bin/orogen_default_viso2_evaluation__Task::main()] Orb destroyed.
-57.446 [ Info   ][Logger] Orocos Logging Deactivated.
+0.110 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='viso2_evaluation_imuCorba'
+0.110 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.110 [ Warning][viso2_evaluation_imuCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.110 [ Info   ][viso2_evaluation_imuCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 9922 ).
+0.110 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started viso2_evaluation_imuCorba.
+0.496 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=1, CPU affinity=0, with name='viso2_evaluation_imu_LoggerCorba'
+0.496 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.496 [ Warning][viso2_evaluation_imu_LoggerCorba] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.496 [ Info   ][viso2_evaluation_imu_LoggerCorba] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 15 and period 0 (PID= 9934 ).
+0.496 [ Info   ][RemoteInputPort::buildRemoteChannelOutput] Started viso2_evaluation_imu_LoggerCorba.
+96.211 [ Info   ][ShutdownOrb] Cleaning up TaskContextServers...
+96.211 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'viso2_evaluation_imu_Logger' from CORBA Naming Service.
+96.211 [ Info   ][~TaskContextServer()] Successfully removed CTaskContext 'viso2_evaluation_imu' from CORBA Naming Service.
+96.211 [ Info   ][ShutdownOrb] Orb Shutdown...waiting...
+96.212 [ Info   ][ShutdownOrb] done.
+96.212 [ Info   ][CDataFlowInterface_i::createConnection] Breaking out of orb->run().
+96.212 [ Info   ][OrbRunner] Safely stopped.
+96.218 [ Info   ][DestroyOrb] Orb destroyed.
+96.220 [ Info   ][Logger] Orocos Logging Deactivated.
