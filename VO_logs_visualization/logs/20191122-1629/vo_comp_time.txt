@@ -1,4 +1,5 @@
-pocolog.rb[INFO]: loading file info from ./spartan.0.idx... 
+pocolog.rb[INFO]: building index ./spartan.0.idx ...
+pocolog.rb[INFO]: done
 /spartan.computation_time
 0.31502599999999997
 0.34343099999999999

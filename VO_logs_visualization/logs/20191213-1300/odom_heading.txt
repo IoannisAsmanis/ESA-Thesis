@@ -1,5 +1,6 @@
 pocolog.rb[INFO]: loading file info from ./viso2_evaluation_imu.0.idx... 
 /viso2_evaluation_imu.odometry_heading
+h
 0.027836487793621072
 0.049923396582940489
 0.040120762463871536
