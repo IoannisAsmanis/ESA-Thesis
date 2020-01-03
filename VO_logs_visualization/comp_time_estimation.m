@@ -25,5 +25,5 @@ STD_comp_time = std(comp_time)
 WOET = max(comp_time)
 BOET = min(comp_time)
 
-figure, hist(comp_time, 50), title('SpartaVO Computation Time Analysis');
+figure, hist(comp_time, 50), title('SpartanVO Computation Time Analysis');
 xlabel('Computation times [s]'), ylabel('# of occurances'), grid on
