@@ -625,7 +625,7 @@ addpath('../functions')
 %     'logs/20191203-1123',
 %     'logs/20191203-1123'}; 
 
-% different vo frequences at 0.07m/s
+% % different vo frequences at 0.07m/s
 % path_ca = {
 %     'logs/20191204-1626/with_imu',
 %     'logs/20191204-1631/with_imu',
@@ -650,12 +650,15 @@ addpath('../functions')
 %     'logs/20191204-1620'}; 
 
 % % new stream aligner for vo_with_imu
-% path_ca = {
-%     'logs/20191205-1249/with_imu',
-%     'logs/20191205-1242/with_imu'}; %
-% vicon_path_ca = {
-%     'logs/20191204-1620',
-%     'logs/20191204-1620'}; 
+path_ca = {
+    'logs/20191205-1249/with_imu',
+    'logs/20191205-1242/with_imu'}; %
+vicon_path_ca = {
+    'logs/20191204-1620',
+    'logs/20191204-1620'}; 
+legend_names_verbose = {
+    'without stream aligner',
+    'with stream aligner'};
 
 % % new stream aligner for vo_evaluation
 % path_ca = {
@@ -663,7 +666,12 @@ addpath('../functions')
 %     'logs/20191205-1558/with_imu'}; %
 % vicon_path_ca = {
 %     'logs/20191203-1123',
-%     'logs/20191203-1123'}; 
+%     'logs/20191203-1123'};
+% legend_names_verbose = {
+%     'without stream aligner',
+%     'with stream aligner'};
+
+
 
 % % different vo freq at 0.02m/s
 % path_ca = {
@@ -680,6 +688,13 @@ addpath('../functions')
 %     'logs/20191206-1045',
 %     'logs/20191206-1045',
 %     'logs/20191206-1045'}; 
+% legend_names_verbose = {
+%     'IFD = 0.03',
+%     'IFD = 0.07',
+%     'IFD = 0.14',
+%     'IFD = 0.21',
+%     'IFD = 0.28',
+%     'IFD = 0.35'};
 
 % % compare fast and slow with same period
 % path_ca = {
@@ -735,85 +750,86 @@ addpath('../functions')
 %     'slow with IFD=0.2'};
 
 % % compare fast and slow with same ifd
-path_ca = {
-    'logs/20191211-1524', % 0.02 at IFD=0.03m
-    'logs/20191210-1854', % 0.07 at IFD=0.03m
-    'logs/20191211-1803', % 0.02 at IFD=0.1m
-    'logs/20191210-1858', % 0.07 at IFD=0.1m
-    'logs/20191211-1809', % 0.02 at IFD=0.2m
-    'logs/20191210-1900'}; % 0.07 at IFD=0.2m
-vicon_path_ca = {
-    'logs/20191210-1806',
-    'logs/20191210-1827',
-    'logs/20191210-1806',
-    'logs/20191210-1827',
-    'logs/20191210-1806',
-    'logs/20191210-1827'}; 
-legend_names_verbose = {
-    'slow with IFD=0.03',
-    'fast with IFD=0.03',
-%     'fast with IFD=0.06',
-%     'slow with IFD=0.06',
-    'slow with IFD=0.1',
-    'fast with IFD=0.1',
-    'slow with IFD=0.2',
-    'fast with IFD=0.2'};
+% path_ca = {
+%     'logs/20191211-1524', % 0.02 at IFD=0.03m
+%     'logs/20191210-1854', % 0.07 at IFD=0.03m
+%     'logs/20191211-1803', % 0.02 at IFD=0.1m
+%     'logs/20191210-1858', % 0.07 at IFD=0.1m
+%     'logs/20191211-1809', % 0.02 at IFD=0.2m
+%     'logs/20191210-1900'}; % 0.07 at IFD=0.2m
+% vicon_path_ca = {
+%     'logs/20191210-1806',
+%     'logs/20191210-1827',
+%     'logs/20191210-1806',
+%     'logs/20191210-1827',
+%     'logs/20191210-1806',
+%     'logs/20191210-1827'}; 
+% legend_names_verbose = {
+%     'slow with IFD=0.03',
+%     'fast with IFD=0.03',
+% %     'fast with IFD=0.06',
+% %     'slow with IFD=0.06',
+%     'slow with IFD=0.1',
+%     'fast with IFD=0.1',
+%     'slow with IFD=0.2',
+%     'fast with IFD=0.2'};
 
 % % slow with varying ifd
 % path_ca = {
-%     'logs/20191212-1051', 
+% %     'logs/20191212-1051', 
 %     'logs/20191211-1524', 
 %     'logs/20191211-1758', 
 %     'logs/20191211-1803', 
-%     'logs/20191211-1809',}; 
-% %     'logs/20191212-1043'} 
+%     'logs/20191211-1809'};
+% %     'logs/20191212-1043'};
 % %     'logs/20191212-1100'}; 
 % %     'logs/20191212-1106'}; 
 % vicon_path_ca = {
 %     'logs/20191210-1806',
 %     'logs/20191210-1806',
-%     'logs/20191210-1806',
-%     'logs/20191210-1806',
-%     'logs/20191210-1806',
 % %     'logs/20191210-1806',
+%     'logs/20191210-1806',
+%     'logs/20191210-1806',
+%     'logs/20191210-1806',
 %     'logs/20191210-1806'}; 
 % legend_names_verbose = {
-%     'IFD=0.01',
+% %     'IFD=0.01',
 %     'IFD=0.03',
 %     'IFD=0.06',
 %     'IFD=0.1',
-%     'IFD=0.2',};
+%     'IFD=0.2'};
 % %     'IFD=0.3'};
 % %     'IFD=0.5'};
 % %     'IFD=0.75'};
 
 % % fast with varying ifd
-path_ca = {
-    'logs/20191209-1409', % 0.02 at IFD=0.03m
-    'logs/20191212-1128', % 0.02 at IFD=0.03m
-    'logs/20191212-1130', % 0.02 at IFD=0.1m
-    'logs/20191212-1610',}; % 0.02 at IFD=0.1m
-%     'logs/20191212-1239'}; % 0.07 at IFD=0.1m
-%     'logs/20191212-1243', % 0.02 at IFD=0.2m
-%     'logs/20191212-1245'}; % 0.02 at IFD=0.2m
-%     'logs/20191212-1251'}; % 0.07 at IFD=0.2m
-vicon_path_ca = {
-    'logs/20191204-1620',
-    'logs/20191210-1827',
-    'logs/20191210-1827',
-    'logs/20191210-1827',
-    'logs/20191210-1827',
-    'logs/20191210-1827',
-    'logs/20191210-1827'}; 
-legend_names_verbose = {
-    'IFD=0.03',
-    'IFD=0.06',
-    'IFD=0.1',
-    'IFD=0.2',};
-%     'IFD=0.3'};
-%     'IFD=0.5',
-%     'IFD=0.75'};
-%     'IFD=0.1'};
+% path_ca = {
+%     'logs/20191209-1409', 
+%     'logs/20191212-1128', 
+%     'logs/20191212-1130', 
+%     'logs/20191212-1610'}; 
+% %     'logs/20191212-1239', 
+% %     'logs/20191212-1243'}; 
+% %     'logs/20191212-1245'}; 
+% %     'logs/20191212-1251'}; 
+% vicon_path_ca = {
+%     'logs/20191204-1620',
+%     'logs/20191210-1827',
+%     'logs/20191210-1827',
+%     'logs/20191210-1827',
+%     'logs/20191210-1827',
+%     'logs/20191210-1827',
+%     'logs/20191210-1827',
+%     'logs/20191210-1827'}; 
+% legend_names_verbose = {
+%     'IFD=0.03',
+%     'IFD=0.06',
+%     'IFD=0.1',
+%     'IFD=0.2'};
+% %     'IFD=0.3',
+% %     'IFD=0.5'};
+% %     'IFD=0.75'};
+% %     'IFD=0.1'};
 
 % % ifd=0.03 fast vs slow
 % path_ca = {
@@ -934,73 +950,73 @@ legend_names_verbose = {
 %     'speed = 0.07 m/s'};
 
 % % test vo on the ptu finally MAAAAYBE working
-path_ca = {
-    'logs/20191217-1656',
-    'logs/20191217-1740'}; 
-vicon_path_ca = {
-    'logs/20191217-1442',
-    'logs/20191217-1729'}; 
-legend_names_verbose = {
-    'speed = 0.07 m/s, pitch = 30 deg',
-    'speed = 0.07 m/s, pitch = 30 deg'}; % new transfor with 88 yaw and new sequence with camera stop
+% path_ca = {
+%     'logs/20191217-1656',
+%     'logs/20191217-1740'}; 
+% vicon_path_ca = {
+%     'logs/20191217-1442',
+%     'logs/20191217-1729'}; 
+% legend_names_verbose = {
+%     'speed = 0.07 m/s, pitch = 30 deg',
+%     'speed = 0.07 m/s, pitch = 30 deg'}; % new transfor with 88 yaw and new sequence with camera stop
 
 % % refining ptu transform - yaw
-path_ca = {
-    'logs/20191218-1011',
-    'logs/20191218-1004',
-    'logs/20191218-1014',
-    'logs/20191218-1006',
-    'logs/20191218-1012',
-    'logs/20191218-1008',
-    'logs/20191218-1010'}; 
-vicon_path_ca = {
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729'}; 
-legend_names_verbose = {
-    '-86',
-    '-88',
-    '-89',
-    '-90',
-    '-91',
-    '-92',
-    '-94'};
+% path_ca = {
+%     'logs/20191218-1011',
+%     'logs/20191218-1004',
+%     'logs/20191218-1014',
+%     'logs/20191218-1006',
+%     'logs/20191218-1012',
+%     'logs/20191218-1008',
+%     'logs/20191218-1010'}; 
+% vicon_path_ca = {
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729'}; 
+% legend_names_verbose = {
+%     '-86',
+%     '-88',
+%     '-89',
+%     '-90',
+%     '-91',
+%     '-92',
+%     '-94'};
 
 % % refining ptu transform - pitch
-path_ca = {
-    'logs/20191218-1255',
-    'logs/20191218-1258',
-    'logs/20191218-1302',
-    'logs/20191218-1306',
-    'logs/20191218-1012',
-    'logs/20191218-1309',
-    'logs/20191218-1310',
-    'logs/20191218-1311',
-    'logs/20191218-1315'}; 
-vicon_path_ca = {
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729',
-    'logs/20191217-1729'}; 
-legend_names_verbose = {
-    '-116',
-    '-118',
-    '-119',
-    '-120',
-    '-120.4',
-    '-121',
-    '-122',
-    '-123',
-    '-125'};
+% path_ca = {
+%     'logs/20191218-1255',
+%     'logs/20191218-1258',
+%     'logs/20191218-1302',
+%     'logs/20191218-1306',
+%     'logs/20191218-1012',
+%     'logs/20191218-1309',
+%     'logs/20191218-1310',
+%     'logs/20191218-1311',
+%     'logs/20191218-1315'}; 
+% vicon_path_ca = {
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729',
+%     'logs/20191217-1729'}; 
+% legend_names_verbose = {
+%     '-116',
+%     '-118',
+%     '-119',
+%     '-120',
+%     '-120.4',
+%     '-121',
+%     '-122',
+%     '-123',
+%     '-125'};
 
 % % refining ptu transform - z
 % path_ca = {
@@ -1046,37 +1062,37 @@ legend_names_verbose = {
 %     '0.125'};
 
 % % navcam vo initial vs refined transform 
-path_ca = {
-    'logs/20191218-1006',
-    'logs/20191218-1012'}; 
-vicon_path_ca = {
-    'logs/20191217-1729',
-    'logs/20191217-1729'}; 
-legend_names_verbose = {
-    'initial',
-    'refined'}; % new transfor with 88 yaw and new sequence with camera stop
+% path_ca = {
+%     'logs/20191218-1006',
+%     'logs/20191218-1012'}; 
+% vicon_path_ca = {
+%     'logs/20191217-1729',
+%     'logs/20191217-1729'}; 
+% legend_names_verbose = {
+%     'initial',
+%     'refined'}; % new transfor with 88 yaw and new sequence with camera stop
 
 % % direct comparison navcam loccam, IDF=0.11, IOP=86%
-path_ca = {
-    'logs/20191212-1130',
-    'logs/20191219-1354'}; 
-vicon_path_ca = {
-    'logs/20191210-1827',
-    'logs/20191218-1542'}; 
-legend_names_verbose = {
-    'loccam',
-    'navcam'}; % new transfor with 88 yaw and new sequence with camera stop
+% path_ca = {
+%     'logs/20191212-1130',
+%     'logs/20191219-1354'}; 
+% vicon_path_ca = {
+%     'logs/20191210-1827',
+%     'logs/20191218-1542'}; 
+% legend_names_verbose = {
+%     'loccam',
+%     'navcam'}; % new transfor with 88 yaw and new sequence with camera stop
 
-% % % direct comparison navcam loccam, IDF=0.3, IOP=71%
-path_ca = {
-    'logs/20191212-1239',
-    'logs/20191219-1344'}; 
-vicon_path_ca = {
-    'logs/20191210-1827',
-    'logs/20191219-1252'}; 
-legend_names_verbose = {
-    'loccam',
-    'navcam'}; % new transfor with 88 yaw and new sequence with camera stop
+% % direct comparison navcam loccam, IDF=0.3, IOP=71%
+% path_ca = {
+%     'logs/20191212-1239',
+%     'logs/20191219-1344'}; 
+% vicon_path_ca = {
+%     'logs/20191210-1827',
+%     'logs/20191219-1252'}; 
+% legend_names_verbose = {
+%     'loccam',
+%     'navcam'}; % new transfor with 88 yaw and new sequence with camera stop
 
 % % refining ptu transform 1536 - pitch
 % path_ca = {
@@ -1195,51 +1211,124 @@ legend_names_verbose = {
 %     '-122',
 %     '-123'};
 
-% % tests at different pitches
-path_ca = {
-    'logs/20191219-1441',
-    'logs/20191219-1443',
-    'logs/20191204-1626/with_imu',
-    'logs/20191219-1446',
-    'logs/20191219-1448'};
-%     'logs/20191219-1450'}; 
-vicon_path_ca = {
-    'logs/20191218-1531',
-    'logs/20191218-1524',
-    'logs/20191204-1620',
-    'logs/20191218-1548',
-    'logs/20191218-1554'};
-%     'logs/20191218-1559'}; 
-legend_names_verbose = {
-    'navcam 20',
-    'navcam 30',
-    'loccam 30',
-    'navcam 40',
-    'navcam 50'};
-%     'navcam 60'};
+% % tests at different pitches, period=0s
+% path_ca = {
+%     'logs/20191219-1441',
+%     'logs/20191219-1443',
+%     'logs/20191204-1626/with_imu',
+%     'logs/20191219-1446',
+%     'logs/20191219-1448'};
+% %     'logs/20191219-1450'}; 
+% vicon_path_ca = {
+%     'logs/20191218-1531',
+%     'logs/20191218-1524',
+%     'logs/20191204-1620',
+%     'logs/20191218-1548',
+%     'logs/20191218-1554'};
+% %     'logs/20191218-1559'}; 
+% legend_names_verbose = {
+%     'navcam 20',
+%     'navcam 30',
+%     'loccam 30',
+%     'navcam 40',
+%     'navcam 50'};
+% %     'navcam 60'};
 
-% % tests at different pitches
-path_ca = {
-    'logs/20191219-1547',
-    'logs/20191219-1549',
-    'logs/20191204-1631/with_imu',
-    'logs/20191219-1556',
-    'logs/20191219-1559'};
-%     'logs/20191219-1622'}; 
-vicon_path_ca = {
-    'logs/20191218-1531',
-    'logs/20191218-1524',
-    'logs/20191204-1620',
-    'logs/20191218-1548',
-    'logs/20191218-1554'};
-%     'logs/20191218-1559'}; 
-legend_names_verbose = {
-    'navcam 20',
-    'navcam 30',
-    'loccam 30',
-    'navcam 40',
-    'navcam 50'};
-%     'navcam 60'};
+% % tests at different pitches, period=1s
+% path_ca = {
+%     'logs/20191219-1547',
+%     'logs/20191219-1549',
+%     'logs/20191204-1631/with_imu',
+%     'logs/20191219-1556',
+%     'logs/20191219-1559'};
+% %     'logs/20191219-1622'}; 
+% vicon_path_ca = {
+%     'logs/20191218-1531',
+%     'logs/20191218-1524',
+%     'logs/20191204-1620',
+%     'logs/20191218-1548',
+%     'logs/20191218-1554'};
+% %     'logs/20191218-1559'}; 
+% legend_names_verbose = {
+%     'navcam 20',
+%     'navcam 30',
+%     'loccam 30',
+%     'navcam 40',
+%     'navcam 50'};
+% %     'navcam 60'};
+
+% % direct comparison navcam loccam, IDF=0.1, IOP=93%
+% path_ca = {
+%     'logs/20191212-1130',
+%     'logs/20191220-1344'}; 
+% vicon_path_ca = {
+%     'logs/20191210-1827',
+%     'logs/20191218-1542'}; 
+% legend_names_verbose = {
+%     'loccam',
+%     'navcam'}; % new transfor with 88 yaw and new sequence with camera stop
+
+% % direct comparison navcam loccam, IDF=0.3, IOP=85%
+% path_ca = {
+%     'logs/20191212-1239',
+%     'logs/20191220-1342'}; 
+% vicon_path_ca = {
+%     'logs/20191210-1827',
+%     'logs/20191218-1542'}; 
+% legend_names_verbose = {
+%     'loccam',
+%     'navcam'}; % new transfor with 88 yaw and new sequence with camera stop
+
+
+% % direct comparison navcam loccam, IOP=85%
+% path_ca = {
+%     'logs/20191212-1239',
+%     'logs/20191220-1658'}; 
+% vicon_path_ca = {
+%     'logs/20191210-1827',
+%     'logs/20191218-1524'}; 
+% legend_names_verbose = {
+%     'loccam',
+%     'navcam'}; 
+
+% % direct comparison navcam loccam, IOP=95%
+% path_ca = {
+%     'logs/20191212-1130',
+%     'logs/20191220-1656'}; 
+% vicon_path_ca = {
+%     'logs/20191210-1827',
+%     'logs/20191218-1524'}; 
+% legend_names_verbose = {
+%     'loccam',
+%     'navcam'}; 
+
+% % tests at different pitches, period=1s
+% path_ca = {
+%     'logs/20191220-1700.1',
+%     'logs/20191220-1706',
+%     'logs/20191204-1631/with_imu',
+%     'logs/20191220-1709',
+%     'logs/20191220-1711'};
+% vicon_path_ca = {
+%     'logs/20191218-1531',
+%     'logs/20191218-1524',
+%     'logs/20191204-1620',
+%     'logs/20191218-1548',
+%     'logs/20191218-1554'};
+% legend_names_verbose = {
+%     'navcam 20',
+%     'navcam 30',
+%     'loccam 30',
+%     'navcam 40',
+%     'navcam 50'};
+
+% % good sequence 0.07 m/s
+% path_ca = {
+%     'logs/20191212-1128'}; 
+% vicon_path_ca = {
+%     'logs/20191210-1827'}; 
+% legend_names_verbose = {
+%     'VO estimate'}; 
 
 % set true if also other files are provided in the log folder
 CONTROL_FILE = false; control_path = '';
@@ -1601,17 +1690,29 @@ end
 
 
 % % ground truth trajectory on xy plane
-% figure(104);
-% hold on
-% for i=1:n_logs
-%     plot(gt_pose_ca{i}(:,1), gt_pose_ca{i}(:,2));
-%     xlabel('x [m]'), ylabel('y [m]')
-% end
-% title({'Visual Odometry Evaluation', 'ground truth trajectory'});
-% grid on, %axis equal; 
-% legend(legend_names);
-% hold off
+figure(104);
+hold on
+for i=1:n_logs
+    plot(gt_pose_ca{i}(:,2), gt_pose_ca{i}(:,3));
+    xlabel('x [m]'), ylabel('y [m]')
+end
+title({'Visual Odometry Evaluation', 'ground truth trajectory'});
+grid on, %axis equal; 
+legend(legend_names);
+hold off
 
+
+% % ground truth trajectory vs VO estimate on xy plane
+figure(122), close(122), figure(122);
+hold on
+for i=1:n_logs
+    plot(vicon_pose_ca{i}(:,2), vicon_pose_ca{i}(:,3), odom_pose_ca{i}(:,2), odom_pose_ca{i}(:,3), '-*');
+    xlabel('x [m]'), ylabel('y [m]')
+end
+title({'Visual Odometry Evaluation', 'ground truth trajectory'});
+grid on, %axis equal; 
+legend('Ground Truth', 'VO estimate'); 
+hold off
 
 % % heading estimate vs heading gt over time
 % figure(105);
@@ -2160,7 +2261,7 @@ end
 
 
 
-% figs used: 121
+% figs used: 122
 
 
 %% STUFF
