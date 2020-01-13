@@ -43,3 +43,10 @@ control.*.log
 
 # tar.gz files that are usually too big
 *.tar.gz
+
+# office save files 
+~$*.doc*
+Backup of *.doc*
+~$*.xls*
+*.xlk
+~$*.ppt*
