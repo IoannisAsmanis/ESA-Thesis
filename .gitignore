@@ -46,6 +46,7 @@ control.*.log
 
 # office save files 
 ~$*.doc*
+~$*.docx*
 Backup of *.doc*
 ~$*.xls*
 *.xlk
