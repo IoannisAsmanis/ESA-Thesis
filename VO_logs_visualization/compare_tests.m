@@ -1330,6 +1330,160 @@ legend_names_verbose = {
 % legend_names_verbose = {
 %     'VO estimate'}; 
 
+% % terrain test - LOCCAM
+path_ca = {
+    'logs/20200103-1422',
+    'logs/20200103-1424'};
+vicon_path_ca = {
+    'logs/20200103-1410',
+    'logs/20200103-1403'};
+legend_names_verbose = {
+    'loccam sand',
+    'loccam rocks'};
+
+% % terrain test - LOCCAM
+% path_ca = {
+%     'logs/20200103-1422',
+%     'logs/20200109-1455'}; %'logs/20200103-1424'};
+% vicon_path_ca = {
+%     'logs/20200103-1410',
+%     'logs/20200109-1452'}; %'logs/20200103-1403'};
+% legend_names_verbose = {
+%     'loccam sand',
+%     'loccam rocks'};
+
+% % terrain test - LOCCAM
+path_ca = {
+    'logs/20200103-1422',
+    'logs/20200109-1455', 
+    'logs/20200103-1424'};
+vicon_path_ca = {
+    'logs/20200103-1410',
+    'logs/20200109-1452',
+    'logs/20200103-1403'};
+legend_names_verbose = {
+    'loccam sand',
+    'loccam rocks',
+    'loccam near tables'};
+
+
+% % terrain test - NAVCAM
+path_ca = {
+    'logs/20200103-1636', %1429
+    'logs/20200109-1400',
+    'logs/20200103-1630'}; %1431
+vicon_path_ca = {
+    'logs/20200103-1415',
+    'logs/20200109-1354',
+    'logs/20200103-1358'};
+legend_names_verbose = {
+    'navcam sand',
+    'navcam rocks',
+    'navcam near tables'};
+
+
+% % navcam best search
+% path_ca = {
+%     'logs/20200107-1007',
+%     'logs/20200107-1011',
+%     'logs/20200107-1013',
+%     'logs/20200107-1015',
+%     'logs/20200107-1019',
+%     'logs/20200107-1017'};
+% vicon_path_ca = {
+%     'logs/20191218-1531',
+%     'logs/20191218-1531',
+%     'logs/20191218-1531',
+%     'logs/20191218-1524',
+%     'logs/20191218-1524',
+%     'logs/20191218-1524'};
+% legend_names_verbose = {
+%     'pitch=20 per=0',
+%     'pitch=20 per=0.5',
+%     'pitch=20 per=1',
+%     'pitch=30 per=0',
+%     'pitch=30 per=0.5',
+%     'pitch=30 per=1'};
+
+% % navcam best search 2
+% path_ca = {
+% %     'logs/20200107-1033',
+%     'logs/20200107-1036',    
+%     'logs/20200107-1037',
+%     'logs/20200107-1039',
+%     'logs/20200107-1046',
+%     'logs/20200107-1050',
+%     'logs/20200107-1234',
+%     'logs/20200107-1236',
+%     'logs/20200107-1248'};
+% vicon_path_ca = {
+% %     'logs/20191218-1548',
+%     'logs/20191218-1548',
+%     'logs/20191218-1548',    
+%     'logs/20191218-1554',
+%     'logs/20191218-1554',
+%     'logs/20191218-1554',
+%     'logs/20191218-1542',
+%     'logs/20191218-1542',
+%     'logs/20191218-1542'};
+% legend_names_verbose = {
+% %     'pitch=40 per=0',
+%     'pitch=40 per=0.5',
+%     'pitch=40 per=1',
+%     'pitch=50 per=0',
+%     'pitch=50 per=0.5',
+%     'pitch=50 per=1',
+%     'pitch=37 per=0',
+%     'pitch=37 per=0.5',
+%     'pitch=37 per=1'};
+
+% % navcam best search 3
+% path_ca = {
+%     'logs/20200107-1015',
+%     'logs/20200107-1017',
+%     'logs/20200107-1234',
+%     'logs/20200107-1236'};
+% vicon_path_ca = {
+%     'logs/20191218-1524',
+%     'logs/20191218-1524',
+%     'logs/20191218-1542',
+%     'logs/20191218-1542'};
+% legend_names_verbose = {
+%     'pitch=30 per=0',
+%     'pitch=30 per=1',
+%     'pitch=37 per=0',
+%     'pitch=37 per=0.5'};
+
+% % navcam best vs loccam best 
+% path_ca = {
+%     'logs/20200107-1234',
+%     'logs/20191209-1409'};
+% vicon_path_ca = {
+%     'logs/20191218-1542',
+%     'logs/20191204-1620'};
+% legend_names_verbose = {
+%     'navcam',
+%     'loccam'};
+
+% % navcam best vs loccam L trajectory 
+% path_ca = {
+%     'logs/20200107-1421',
+%     'logs/20200107-1425'};
+% vicon_path_ca = {
+%     'logs/20200107-1408',
+%     'logs/20200107-1414'};
+% legend_names_verbose = {
+%     'navcam',
+%     'loccam'};
+
+% % autonav with spartan test
+% path_ca = {
+%     'logs/autonav_L-trajectory'}; 
+% vicon_path_ca = {
+%     'logs/autonav_L-trajectory'};
+% legend_names_verbose = {
+%     'autonav test'};
+
 % set true if also other files are provided in the log folder
 CONTROL_FILE = false; control_path = '';
 IMU_FILE = false; imu_path = '';
@@ -1447,12 +1601,14 @@ for i=1:n_logs
     hdg_err = diff_pose(:,9);
     diff_pose(:,10) = quaternion2pitch(diff_pose(:,5:8));
     diff_pose(:,11) = quaternion2roll(diff_pose(:,5:8));
+    
     % convert odom heading QUAT to ZYX
     if (~ODOM_FILE_RPY)
         odom_pose(:,9) = quaternion2heading(odom_pose(:,5:8));
         odom_pose(:,10) = quaternion2pitch(odom_pose(:,5:8));
         odom_pose(:,11) = quaternion2roll(odom_pose(:,5:8));
     end
+    
     % convert vicon heading QUAT to ZYX
     if (~VICON_FILE_RPY)
         vicon_pose(:,9) = quaternion2heading(vicon_pose(:,5:8));
@@ -1524,13 +1680,15 @@ for i=1:n_logs
 %         dist_accum(j) = dist + dist_accum(j-1);     
 %         %dist_accum(j) = norm(gt_pose(j,2:4) - gt_pose(1,2:4));
 %     end
-    dist_accum = zeros(size(vicon_pose,1),2);
-    k=2;
-    for j = 2:100:size(vicon_pose,1)
-        dist = norm(vicon_pose(j,2:4) - vicon_pose(j-1,2:4));
-        dist_accum(k,2) = dist + dist_accum(k-1,2); 
-        dist_accum(k,1) = vicon_pose(j,1);
-        k=k+1;
+    if(VICON_FILE)
+        dist_accum = zeros(size(vicon_pose,1),2);
+        k=2;
+        for j = 2:100:size(vicon_pose,1)
+            dist = norm(vicon_pose(j,2:4) - vicon_pose(j-1,2:4));
+            dist_accum(k,2) = dist + dist_accum(k-1,2); %distance
+            dist_accum(k,1) = vicon_pose(j,1); %time
+            k=k+1;
+        end
     end
     
     % initially spartan VO did NOT put time in the vo, so use the timestamps from vicon
@@ -1560,7 +1718,16 @@ for i=1:n_logs
 end
 
 
-%% PLOT DATA 
+%% PLOT DATA
+
+% % cheaty adjustment
+% for i=1:size(odom_pose_ca{2}(:,1),1)
+%     odom_pose_ca{2}(i,2) = odom_pose_ca{2}(i,2) - 0.03536;
+%     odom_pose_ca{2}(i,3) = odom_pose_ca{2}(i,3) - 0.07393;
+%     odom_pose_ca{2}(i,4) = odom_pose_ca{2}(i,4) + 0.03884;
+% end
+% vicon_pose_interp_ca{2}(56:end,2) = vicon_pose_interp_ca{2}(56:end,2) - 0.13;
+
 
 close all
 
@@ -1588,6 +1755,9 @@ if(LEGEND_NAMES_VERBOSE)
     
     legend_names = legend_names_verbose;
     legend_names_and2percent = legend_names_verbose_and2percent;
+    
+    legend_names_verbose_and_gt = legend_names_verbose;
+    legend_names_verbose_and_gt{i+1} = 'ground truth';
 end
 
 % % remove by hand stuff over tot indexes
@@ -1706,12 +1876,13 @@ hold off
 figure(122), close(122), figure(122);
 hold on
 for i=1:n_logs
-    plot(vicon_pose_ca{i}(:,2), vicon_pose_ca{i}(:,3), odom_pose_ca{i}(:,2), odom_pose_ca{i}(:,3), '-*');
+    plot(odom_pose_ca{i}(:,2), odom_pose_ca{i}(:,3), '-*');
     xlabel('x [m]'), ylabel('y [m]')
 end
-title({'Visual Odometry Evaluation', 'ground truth trajectory'});
+plot(vicon_pose_ca{i}(:,2), vicon_pose_ca{i}(:,3), 'green', 'LineWidth', 1)
+title({'Visual Odometry Evaluation', 'VO estimate and GT'});
 grid on, %axis equal; 
-legend('Ground Truth', 'VO estimate'); 
+legend(legend_names_verbose_and_gt); 
 hold off
 
 % % heading estimate vs heading gt over time
