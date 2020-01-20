@@ -18,7 +18,7 @@ l2 = h/(cos(pi/2 - pitch + VFOV/2));
 c = sin(VFOV/2 + pi/2)/sin(pi/2 - pitch)*(l2-l1);
 g = l1*sin(pi/2 - pitch - VFOV/2);
 
-a = 2*tan(HFOV/2)*c;
+a = 2*tan(HFOV/2)*g;
 b = 2*tan(HFOV/2)*(c + g);
 theta = atan( ((b - a)/2)/c );
 
